@@ -1,0 +1,49 @@
+# Bỏ qua tất cả các thư mục node_modules (kể cả trong client/server)
+node_modules/
+**/node_modules/
+client/node_modules/
+
+# Bỏ qua tất cả các file chứa thông tin bảo mật / API Key
+.env
+*.env
+**/.env
+client/.env
+
+# Bỏ qua thư mục build / xuất bản sản phẩm
+dist/
+**/dist/
+build/
+**/build/
+
+# Bỏ qua file cache, log và cấu hình trình soạn thảo
+.DS_Store
+*.log
+.vscode/
+.idea/
+# Chặn node_modules ở tất cả các cấp và các định dạng hệ điều hành
+node_modules/
+node_modules\
+**/node_modules/
+**/node_modules/**
+client/node_modules/
+client/node_modules/**
+client\node_modules\
+
+# Chặn file môi trường và thông tin bảo mật
+.env
+*.env
+**/.env
+client/.env
+client\.env
+
+# Chặn thư mục build
+dist/
+**/dist/
+build/
+**/build/
+
+# Chặn file rác
+.DS_Store
+*.log
+.vscode/
+.idea/
