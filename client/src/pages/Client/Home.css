@@ -518,3 +518,177 @@
     grid-template-columns: 1fr;
   }
 }
+/* Đổi màu thanh Header/Navbar sang tone Đen Luxury */
+.navbar, nav, header {
+  background-color: #0d0d0d !important; /* Đen tuyền sang trọng */
+  border-bottom: 1px solid #222222;
+}
+
+/* Đổi màu Logo sang vàng kim */
+.navbar-brand, .logo {
+  color: #c5a059 !important;
+}
+
+/* Đổi màu ô Tìm kiếm */
+nav input[type="text"], .search-input {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333333 !important;
+}
+
+/* Đổi màu chữ Menu & Icon */
+nav a, .nav-link, nav .icon {
+  color: #ffffff !important;
+}
+
+/* Hiệu ứng khi di chuột vào Menu */
+nav a:hover, .nav-link:hover {
+  color: #c5a059 !important;
+}
+/* Đổi màu nền Footer từ Đỏ sang Đen tuyền */
+footer, .footer {
+  background-color: #0d0d0d !important; /* Đen tuyền */
+  color: #ffffff !important;
+  border-top: 1px solid #222222;
+}
+
+/* Đổi màu tiêu đề trong Footer (LAVIO, Hỗ trợ khách hàng, Thông tin liên hệ) */
+footer h3, footer h4, footer h5, .footer-title {
+  color: #c5a059 !important; /* Màu Vàng Kim Gold */
+}
+
+/* Đổi màu các đường link trong Footer */
+footer a, .footer-link {
+  color: #cccccc !important;
+  transition: color 0.3s ease;
+}
+
+footer a:hover, .footer-link:hover {
+  color: #c5a059 !important; /* Đổi sang màu vàng khi di chuột vào */
+}
+/* Đổi màu nút Explore Now / Check Now */
+.btn-primary, .explore-btn, .check-now-btn {
+  background-color: #c5a059 !important; /* Màu Vàng Kim */
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 4px; /* Bo góc nhẹ thay vì tròn sọc */
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .explore-btn:hover, .check-now-btn:hover {
+  background-color: #d4af37 !important;
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.4);
+}/* Đổi màu widget chat bên góc phải */
+.chat-widget, .fixed-chat-btn {
+  background-color: #c5a059 !important;
+  color: #000000 !important;
+}
+/* ===================================================
+   1. CHUYỂN MÀU 4 Ô CAM KẾT / DỊCH VỤ (SERVICE CARDS)
+   =================================================== */
+/* Đổi nền ô cam kết thành màu đen nhám nhẹ và viền gold/xám mờ */
+.service-card, .policy-card, .feature-box,
+div[class*="border"][class*="rounded"]:has(img) {
+  background-color: #141414 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào ô cam kết */
+.service-card:hover, .policy-card:hover {
+  border-color: #c5a059 !important; /* Viền sáng vàng kim */
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.15);
+}
+
+/* Đổi màu Icon và Tiêu đề trong ô cam kết sang Vàng Kim (Gold) */
+.service-card h4, .service-card h5, .service-card .title,
+.policy-card h4, .policy-card div, .policy-card svg,
+div[class*="border"] img, div[class*="border"] svg {
+  color: #c5a059 !important;
+  filter: none !important; /* Giữ nguyên màu gốc nếu dùng SVG/FontIcon */
+}
+
+/* Đổi màu dòng chữ mô tả nhỏ dưới tiêu đề sang Trắng Xám */
+.service-card p, .policy-card p, div[class*="border"] p {
+  color: #a0a0a0 !important;
+}
+/* ======================================================
+   CHUYỂN TẤT CẢ MÀU ĐỎ TRONG KHU VỰC NÀY SANG VÀNG KIM (GOLD)
+   ====================================================== */
+
+/* 1. Đổi màu 4 Icon (Xe giao hàng, Đổi trả, Khiên, Tai nghe) sang Vàng Kim */
+div[class*="border"] svg, 
+div[class*="border"] i, 
+div[class*="border"] img,
+.policy-card svg, 
+.service-card i {
+  color: #c5a059 !important;
+  fill: #c5a059 !important;
+}
+
+/* 2. Đổi màu tiêu đề bị chìm/đỏ (GIAO HÀNG TOÀN QUỐC, ĐỔI TRẢ DỄ DÀNG...) sang Vàng Kim */
+div[class*="border"] h5, 
+div[class*="border"] h6, 
+div[class*="border"] div,
+.policy-card h5,
+.service-card h5 {
+  color: #c5a059 !important;
+  font-weight: 600;
+}
+
+/* 3. Đổi chữ phụ màu đỏ (MORE COLLECTION, NEW COLLECTION) sang Vàng Kim */
+span, p, h6, .text-danger, .text-pink {
+  color: #c5a059 !important;
+}
+
+/* 4. Đổi nút "Explore Now" đỏ sang nền Vàng Kim, chữ Đen */
+button:contains("Explore"), 
+.btn-danger, 
+a[class*="bg-danger"],
+div[class*="bg-danger"] {
+  background-color: #c5a059 !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 600;
+}
+
+/* 5. Đổi nút "Check Now" (viền đỏ, chữ đỏ) sang viền Vàng Kim, chữ Vàng Kim */
+button:contains("Check"), 
+.btn-outline-danger, 
+a[class*="border-danger"] {
+  border-color: #c5a059 !important;
+  color: #c5a059 !important;
+  background-color: transparent !important;
+}
+
+/* Hiệu ứng khi di chuột vào nút Check Now */
+button:contains("Check"):hover, 
+.btn-outline-danger:hover {
+  background-color: #c5a059 !important;
+  color: #000000 !important;
+}
+/* Đổi nút Explore Now từ Đỏ sang Vàng Kim Gold */
+.carousel-inner button,
+.explore-btn,
+button.btn-danger,
+a.btn-danger,
+.carousel-item .btn,
+button:contains("Explore Now") {
+  background-color: #c5a059 !important; /* Màu Vàng Kim Gold */
+  color: #000000 !important;             /* Chữ màu đen */
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;       /* Giữ bo tròn viên thuốc */
+  transition: all 0.3s ease !important;
+}
+
+/* Hiệu ứng khi di chuột (Hover) */
+.carousel-inner button:hover,
+.explore-btn:hover,
+button.btn-danger:hover {
+  background-color: #d4af37 !important; /* Vàng kim sáng hơn */
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4) !important;
+  transform: translateY(-2px);
+}
