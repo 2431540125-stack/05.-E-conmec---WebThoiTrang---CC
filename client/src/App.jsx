@@ -50,7 +50,7 @@ import ResetPassword from "./pages/Auth/ResetPassword";
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ToastContainer
           position="top-right"
           autoClose={3000}
