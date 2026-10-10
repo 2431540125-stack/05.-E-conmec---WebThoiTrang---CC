@@ -47,6 +47,3 @@ build/
 *.log
 .vscode/
 .idea/
-git add .
-git commit -m "fix: include image files"
-git push
