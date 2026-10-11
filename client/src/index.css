@@ -1,190 +1,127 @@
+/* ==========================================================================
+   RESET CHI TIẾT - CHUẨN DARK LUXURY & GOLD (TINH TẾ, KHÔNG CHÓI)
+   ========================================================================== */
+
+/* 1. ĐỔI MÀU NỀN TỔNG THỂ & KHUNG SIDEBAR */
 :root {
-  --blue-main: #4f97bb;
-  --blue-dark: #35799d;
-  --blue-light: #c7deea;
-  --blue-soft: #e2eef5;
-  --blue-bg: #f3f3f3;
-  --blue-bg-2: #f7fafc;
-  --blue-border: #bdd4e0;
-  --blue-hover: #d5e7f0;
-
-  --brand-primary: #a9141e;
-  --brand-secondary: #de5b87;
-  --brand-white: #ffffff;
-  --brand-light: #fff1f2;
-
-  --white: #ffffff;
-  --text-dark: #244656;
-  --text-light: #f8fafc;
-
-  font-family: "Roboto", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light;
-  color: var(--text-dark);
-  background-color: var(--blue-bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark !important;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html, body, #root, main, .main-content, section {
+  background-color: #0d0d0d !important;
+  color: #e5e5e5 !important;
 }
 
-html,
-body,
-#root {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  width: 100%;
-  font-family: "Roboto", sans-serif;
+/* Khung sidebar & card: Nền đen nhám, viền xám tối */
+.card, 
+aside, 
+div[class*="sidebar"],
+div[class*="filter"] {
+  background-color: #121212 !important;
+  border: 1px solid #222222 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
 }
 
-html,
-body {
-  overflow-x: hidden;
+/* 2. SỬA LẠI CÁC THẺ DANH MỤC (KHÔNG BỊ PHỦ VÀNG NGUYÊN KHỐI) */
+div[class*="sidebar"] a,
+div[class*="sidebar"] div[class*="item"],
+.list-group-item,
+ul li button,
+ul li a {
+  background-color: transparent !important;
+  color: #b0b0b0 !important;
+  border: none !important;
+  padding: 10px 14px !important;
+  transition: all 0.25s ease !important;
+  border-radius: 8px !important;
+  text-align: left !important;
+  font-weight: 400 !important;
 }
 
-body {
-  background-image: linear-gradient(
-    180deg,
-    rgba(79, 151, 187, 0.04),
-    rgba(0, 0, 0, 0)
-  );
-  background-color: #f8fafc !important;
-  color: var(--text-dark);
+/* Khi di chuột qua mục Danh mục */
+div[class*="sidebar"] a:hover,
+.list-group-item:hover,
+ul li a:hover {
+  background-color: #1c1c1c !important;
+  color: #c5a059 !important; /* Chữ chuyển Vàng Kim nhẹ */
 }
 
-a {
-  font-weight: 600;
-  color: var(--blue-dark);
-  text-decoration: none;
+/* Mục Danh Mục Đang Chọn (Active) -> Chữ Vàng Kim, Nền xám đen mờ nhẹ */
+.active, 
+div[class*="active"], 
+.list-group-item.active {
+  background-color: rgba(197, 160, 89, 0.12) !important;
+  color: #c5a059 !important;
+  font-weight: 600 !important;
+  border-left: 3px solid #c5a059 !important; /* Vạch vàng nhỏ bên trái */
 }
 
-a:hover {
-  color: var(--blue-main);
+/* 3. SỬA LẠI CÁC NÚT BẤM SIZE (S, M, L, XL) */
+div[class*="size"] button,
+button[class*="size"] {
+  background-color: #1a1a1a !important;
+  color: #cccccc !important;
+  border: 1px solid #333333 !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  min-width: 38px !important;
+  box-shadow: none !important;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+div[class*="size"] button:hover {
+  border-color: #c5a059 !important;
+  color: #c5a059 !important;
+  background-color: #222222 !important;
 }
 
-input,
-textarea,
-select {
-  font: inherit;
+/* 4. SỬA CÁC NÚT BẤM CHÍNH (Xóa bộ lọc, Reset, Gửi) -> VÀNG KIM SANG TRỌNG */
+button.btn-danger, 
+.btn-danger, 
+button[type="submit"] {
+  background-color: #c5a059 !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  padding: 8px 18px !important;
 }
 
-h1 {
-  font-family: "Roboto", sans-serif;
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: var(--text-dark);
-  margin: 0;
+button.btn-danger:hover {
+  background-color: #d4af37 !important;
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25) !important;
 }
 
-/* Utility */
-.glass {
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
-  border-radius: 10px;
+/* Nút viền mờ (Reset bộ lọc) */
+.btn-outline-danger, 
+button[class*="outline"] {
+  background-color: transparent !important;
+  border: 1px solid #444444 !important;
+  color: #c5a059 !important;
 }
 
-.panel-glass {
-  background: rgba(79, 151, 187, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+.btn-outline-danger:hover {
+  border-color: #c5a059 !important;
+  background-color: rgba(197, 160, 89, 0.1) !important;
 }
 
-@keyframes shine-sweep {
-  0% {
-    transform: translateX(-120%) rotate(6deg);
-  }
-  100% {
-    transform: translateX(120%) rotate(6deg);
-  }
+/* 5. CÁC Ô NHẬP TÌM KIẾM, KHOẢNG GIÁ, CÁC HỘP CHECKBOX */
+input, select, textarea {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333333 !important;
+  border-radius: 6px !important;
 }
 
-@media (max-width: 768px) {
-  body {
-    -webkit-text-size-adjust: 100%;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  button {
-    padding: 12px 14px;
-    font-size: 15px;
-  }
+input[type="checkbox"] {
+  accent-color: #c5a059 !important;
 }
 
-@media (max-width: 420px) {
-  body {
-    font-size: 15px;
-  }
+/* 6. TIÊU ĐỀ & CHỮ MÔ TẢ */
+h1, h2, h3, h4, h5, h6, .title {
+  color: #f1f1f1 !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --blue-main: #438caf;
-    --blue-dark: #2d7093;
-    --blue-light: #7fb1ca;
-    --blue-soft: #1d2a31;
-    --blue-bg: #12181c;
-    --blue-border: #2b3f4a;
-    --text-dark: #eaf3f8;
-    background-color: #12181c;
-    color: var(--text-dark);
-  }
-
-  a {
-    color: var(--blue-light);
-  }
-
-  a:hover {
-    color: var(--white);
-  }
-
-  body {
-    background-image: linear-gradient(
-      180deg,
-      rgba(79, 151, 187, 0.08),
-      rgba(0, 0, 0, 0)
-    );
-    background-color: var(--blue-bg);
-  }
-
-  .glass {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .panel-glass {
-    background: rgba(79, 151, 187, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  button {
-    background-color: var(--blue-main);
-    color: var(--white);
-    border-color: rgba(127, 177, 202, 0.16);
-  }
-
-  button:hover {
-    background-color: var(--blue-dark);
-  }
+.text-danger, .text-pink {
+  color: #c5a059 !important;
 }
