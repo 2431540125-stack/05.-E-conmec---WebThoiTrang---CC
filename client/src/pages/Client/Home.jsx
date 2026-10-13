@@ -8,7 +8,7 @@ import "./Home.css";
 const API_BASE = "http://localhost:5000";
 
 // ==============================
-// HELPERS
+// HELPERS (Giữ nguyên cấu trúc của dự án)
 // ==============================
 function extractProducts(data) {
   if (!data) return [];
@@ -38,8 +38,7 @@ function extractPosts(data) {
 
 function toAbsoluteImageUrl(url) {
   const value = String(url || "").trim();
-
-  if (!value) return "https://via.placeholder.com/400x400?text=No+Image";
+  if (!value) return "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800";
 
   if (value.startsWith("http://") || value.startsWith("https://")) {
     return value;
@@ -74,7 +73,7 @@ function getMainImage(product) {
     }
   }
 
-  return "https://via.placeholder.com/400x400?text=No+Image";
+  return "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800";
 }
 
 function getPostImage(post) {
@@ -82,7 +81,7 @@ function getPostImage(post) {
     return toAbsoluteImageUrl(post.thumbnail);
   }
 
-  return "https://via.placeholder.com/600x400?text=No+Image";
+  return "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800";
 }
 
 function formatPostDate(post) {
@@ -214,12 +213,42 @@ export default function Home() {
   };
 
   return (
-    <div className="home">
+    <div className="home home-luxury">
+      {/* BANNER HEADER */}
       <Banner />
 
+      {/* DỊCH VỤ BESPOKE & LUXURY CAM KẾT */}
+      <section className="home-service">
+        <div className="service-item service-box">
+          <i className="fas fa-cut"></i>
+          <h4>May Đo Bespoke</h4>
+          <p>Thiết kế & tư vấn phom dáng theo kích thước riêng</p>
+        </div>
+
+        <div className="service-item service-box">
+          <i className="fas fa-crown"></i>
+          <h4>Vải Ý Cao Cấp</h4>
+          <p>Nhập khẩu Wool Super 130s - 150s thượng hạng</p>
+        </div>
+
+        <div className="service-item service-box">
+          <i className="fas fa-truck-fast"></i>
+          <h4>Giao Hàng Tận Nơi</h4>
+          <p>Đóng gói hộp Luxury bảo vệ dáng áo chuẩn VIP</p>
+        </div>
+
+        <div className="service-item service-box">
+          <i className="fas fa-user-shield"></i>
+          <h4>Bảo Hành Trọn Đời</h4>
+          <p>Hỗ trợ chỉnh sửa phom áo miễn phí trọn đời</p>
+        </div>
+      </section>
+
+      {/* DANH SÁCH SẢN PHẨM NỔI BẬT */}
       <section className="home-pro">
         <div className="heading">
-          <h3>Sản phẩm nổi bật</h3>
+          <span className="sub-title">Tuyệt Tác May Đo</span>
+          <h3>Bộ Sưu Tập Vest & Suit Nổi Bật</h3>
         </div>
 
         <div className="product-slider-wrap">
@@ -237,7 +266,7 @@ export default function Home() {
           <div className="pro-card pro-card-slider" ref={sliderRef}>
             {loadingPro && (
               <div className="home-state-box home-state-info">
-                Đang tải sản phẩm...
+                Đang tải bộ sưu tập Vest...
               </div>
             )}
 
@@ -275,81 +304,66 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-service">
-        <div className="service-item service-box">
-          <i className="fas fa-truck"></i>
-          <h4>Giao hàng toàn quốc</h4>
-          <p>Ship nhanh toàn quốc, nhận hàng cực tiện</p>
-        </div>
-
-        <div className="service-item service-box">
-          <i className="fas fa-sync-alt"></i>
-          <h4>Đổi trả dễ dàng</h4>
-          <p>Hỗ trợ đổi trả trong vòng 7 ngày</p>
-        </div>
-
-        <div className="service-item service-box">
-          <i className="fas fa-shield-alt"></i>
-          <h4>Bảo mật thanh toán</h4>
-          <p>Thông tin khách hàng luôn được bảo vệ</p>
-        </div>
-
-        <div className="service-item service-box">
-          <i className="fas fa-headset"></i>
-          <h4>Hỗ trợ 24/7</h4>
-          <p>Luôn sẵn sàng hỗ trợ mọi lúc</p>
-        </div>
-      </section>
-
+      {/* BANNER PROMOTION LUXURY VEST */}
       <section className="home-banner">
         <div className="banner-left">
           <div className="banner-item banner-box banner-large-box">
             <img
-              src="https://i.pinimg.com/1200x/50/ef/0b/50ef0ba407223310229e931710ba56b8.jpg"
-              alt=""
+              src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=1200"
+              alt="Bespoke Business Suit"
             />
-            <button>Explore Now</button>
+            <div className="banner-overlay">
+              <span>Italian Wool Super 150s</span>
+              <h4>Vest Doanh Nhân Bespoke</h4>
+              <button>Khám Phá Ngay</button>
+            </div>
           </div>
 
           <div className="banner-item banner-box banner-large-box">
             <img
-              src="https://i.pinimg.com/1200x/32/09/0b/32090b06a3278ef51ac13d94b1c1ba0e.jpg"
-              alt=""
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200"
+              alt="Black Tuxedo Heritage"
             />
-            <button>Explore Now</button>
+            <div className="banner-overlay">
+              <span>Satin Heritage Edition</span>
+              <h4>Tuxedo Dạ Hội Sang Trọng</h4>
+              <button>Khám Phá Ngay</button>
+            </div>
           </div>
         </div>
 
         <div className="banner-right">
           <div className="banner-item banner-box banner-small-box">
             <img
-              src="https://i.pinimg.com/736x/dd/dd/d7/ddddd7d9e4ab53ce241c88c0aedd795a.jpg"
-              alt=""
+              src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&q=80&w=800"
+              alt="Cashmere Blazer"
             />
             <div className="banner-text banner-text-box">
-              <p>More Collection</p>
-              <h4>Stylish Winter T-Shirt for Woman</h4>
-              <button>Check Now</button>
+              <p>Autumn / Winter 2026</p>
+              <h4>Áo Blazer Dạ Cashmere Ý</h4>
+              <button>Xem Chi Tiết</button>
             </div>
           </div>
 
           <div className="banner-item banner-box banner-small-box">
             <img
-              src="https://i.pinimg.com/1200x/6d/dd/ee/6dddeef6f75690ba9c2392d32b3820cd.jpg"
-              alt=""
+              src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&q=80&w=800"
+              alt="Classic Double Breasted"
             />
             <div className="banner-text banner-text-box">
-              <p>New Collection</p>
-              <h4>Stylish Winter Shirt for Man</h4>
-              <button>Check Now</button>
+              <p>Classic Collection</p>
+              <h4>Bộ Suit Double Breasted</h4>
+              <button>Xem Chi Tiết</button>
             </div>
           </div>
         </div>
       </section>
 
+      {/* FASHION BLOG QUÝ ÔNG */}
       <section className="home-blog">
         <div className="heading">
-          <h3>Bài viết mới</h3>
+          <span className="sub-title">Phong Cách Quý Ông</span>
+          <h3>Góc Fashion Blog & Nghệ Thuật Phối Đồ</h3>
         </div>
 
         <div className="blog-list">
@@ -375,28 +389,32 @@ export default function Home() {
             !errorPosts &&
             posts.map((post) => (
               <div className="blog-item blog-card-box" key={post._id}>
-                <img
-                  src={getPostImage(post)}
-                  alt={post.title || "blog"}
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "https://via.placeholder.com/600x400?text=No+Image";
-                  }}
-                />
+                <div className="blog-img-wrap">
+                  <img
+                    src={getPostImage(post)}
+                    alt={post.title || "blog"}
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800";
+                    }}
+                  />
+                </div>
                 <div className="blog-body">
                   <span className="blog-date">{formatPostDate(post)}</span>
                   <h4>{post.title || "Bài viết"}</h4>
                   <p>{post.summary || post.description || "Chưa có mô tả."}</p>
-                  <a href={`/bai-viet/${post.slug}`}>Xem chi tiết</a>
+                  <a href={`/bai-viet/${post.slug}`}>Đọc tiếp câu chuyện →</a>
                 </div>
               </div>
             ))}
         </div>
       </section>
 
+      {/* FEEDBACK DÀNH CHO KHÁCH HÀNG VIP */}
       <section className="home-feedback">
         <div className="heading">
-          <h3>Đánh giá từ khách hàng</h3>
+          <span className="sub-title">Cảm Nhận Trải Nghiệm</span>
+          <h3>Khách Hàng Nói Gì Về Chúng Tôi</h3>
         </div>
 
         <div className="feedback-box-wrap">
