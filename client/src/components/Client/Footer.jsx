@@ -12,8 +12,9 @@ const Footer = () => {
             <h3 className="footer-logo">LAVIO</h3>
           </a>
           <p className="footer-desc">
-            Tự hào là đồ Việt – thiết kế bởi người Việt, dành cho người
-            Việt. Mang phong cách streetwear hiện đại, trẻ trung và cá tính.
+            Tự hào may dệt bởi đôi tay người Việt – Chuẩn mực Vest Luxury dành
+            cho quý ông thành đạt. Định hình khí chất thượng lưu, tôn vinh
+            phong thái dẫn đầu.
           </p>
 
           <div className="footer-apps">

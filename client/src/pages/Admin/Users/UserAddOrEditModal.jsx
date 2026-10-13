@@ -139,7 +139,7 @@ const UserAddOrEditModal = ({
                         <label htmlFor="password" className="user-label">
                           Mật khẩu
                           {isEditMode && (
-                            <small className="text-muted ml-2">
+                            <small className="text-gold ml-2">
                               (Để trống nếu không đổi)
                             </small>
                           )}
@@ -258,24 +258,10 @@ const UserAddOrEditModal = ({
       </div>
 
       <style jsx>{`
-        :global(:root) {
-          --blue-main: #4f97bb;
-          --blue-dark: #35799d;
-          --blue-light: #c7deea;
-          --blue-soft: #e2eef5;
-          --blue-bg: #f3f3f3;
-          --blue-bg-2: #f7fafc;
-          --blue-border: #bdd4e0;
-          --blue-hover: #d5e7f0;
-          --white: #ffffff;
-          --text-dark: #244656;
-          --text-light: #f8fafc;
-        }
-
         .user-backdrop {
-          background: rgba(36, 70, 86, 0.28);
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px);
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
         }
 
         .user-modal-shell {
@@ -287,20 +273,13 @@ const UserAddOrEditModal = ({
           padding: 20px;
         }
 
-        .user-modal-shell {
-          position: fixed;
-          inset: 0;
-          display: grid;
-          place-items: center;
-          padding: 20px;
-        }
-
         .user-modal {
-          font-family: "Roboto", sans-serif;
-          border: 1px solid var(--blue-border);
-          border-radius: 16px;
-          box-shadow: 0 16px 40px rgba(53, 121, 157, 0.16);
-          background: var(--white);
+          font-family: "Plus Jakarta Sans", sans-serif;
+          border: 1px solid rgba(212, 175, 55, 0.25);
+          border-radius: 18px;
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+          background: #131b2e;
+          color: #ffffff;
           overflow: hidden;
         }
 
@@ -311,40 +290,38 @@ const UserAddOrEditModal = ({
         }
 
         .user-modal-title {
-          font-size: 1.3rem;
+          font-size: 1.25rem;
           font-weight: 800;
-          color: var(--text-dark);
+          color: #fbbf24;
           line-height: 1.2;
         }
 
         .user-modal-subtitle {
           font-size: 0.88rem;
-          color: #6d8796;
+          color: #94a3b8;
           line-height: 1.45;
-          margin-top: 2px;
+          margin-top: 4px;
         }
 
         .user-modal-close {
           width: 36px;
           height: 36px;
-          border: 1px solid var(--blue-border);
+          border: 1px solid rgba(212, 175, 55, 0.3);
           border-radius: 8px;
-          background: var(--blue-soft);
-          color: var(--blue-dark);
+          background: #090d16;
+          color: #fbbf24;
           opacity: 1;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.05rem;
+          font-size: 1.2rem;
           transition: all 0.2s ease;
-          box-shadow: none;
           flex-shrink: 0;
         }
 
         .user-modal-close:hover {
-          background: var(--blue-hover);
-          color: var(--text-dark);
-          border-color: var(--blue-main);
+          background: #fbbf24;
+          color: #090d16;
         }
 
         .user-form {
@@ -357,39 +334,49 @@ const UserAddOrEditModal = ({
 
         .user-label {
           font-weight: 700;
-          color: var(--text-dark);
+          color: #fbbf24;
           margin-bottom: 0.42rem;
           display: inline-block;
           font-size: 0.9rem;
         }
 
+        .text-gold {
+          color: #cbd5e1;
+          font-weight: normal;
+        }
+
         .user-input {
-          font-family: "Roboto", sans-serif;
-          min-height: 38px;
-          height: 38px;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          min-height: 40px;
+          height: 40px;
           border-radius: 10px;
-          border: 1px solid var(--blue-border);
-          background: var(--blue-bg-2);
-          color: var(--text-dark);
+          border: 1px solid rgba(212, 175, 55, 0.3);
+          background: #090d16;
+          color: #ffffff;
           box-shadow: none !important;
           transition: all 0.2s ease;
           padding: 0.5rem 0.8rem;
           font-size: 0.9rem;
         }
 
+        .user-input select option {
+          background: #131b2e;
+          color: #ffffff;
+        }
+
         .user-input::placeholder {
-          color: #90a5b1;
+          color: #64748b;
         }
 
         .user-input:focus {
-          border-color: var(--blue-main);
-          background: var(--white);
-          box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14) !important;
+          border-color: #fbbf24;
+          background: #090d16;
+          box-shadow: 0 0 8px rgba(251, 191, 36, 0.25) !important;
         }
 
         .user-input:disabled {
-          background: #eef4f7;
-          color: #6e8795;
+          background: #1e293b;
+          color: #64748b;
           cursor: not-allowed;
         }
 
@@ -397,142 +384,60 @@ const UserAddOrEditModal = ({
         .user-btn-secondary {
           border-radius: 8px;
           min-width: 98px;
-          height: 36px;
-          padding: 0 14px;
+          height: 38px;
+          padding: 0 16px;
           font-size: 0.88rem;
-          font-weight: 700;
-          font-family: "Roboto", sans-serif;
+          font-weight: 800;
+          font-family: "Plus Jakarta Sans", sans-serif;
           margin: 0 !important;
-          transition:
-            border-color 0.2s,
-            background-color 0.18s,
-            transform 0.12s,
-            box-shadow 0.18s;
+          transition: all 0.2s ease;
         }
 
         .user-btn-primary {
-          background-color: var(--blue-main);
-          border: 1px solid rgba(53, 121, 157, 0.14);
-          color: var(--white);
-          box-shadow: 0 8px 18px rgba(79, 151, 187, 0.14);
+          background-color: #fbbf24;
+          border: none;
+          color: #090d16;
+          box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
         }
 
         .user-btn-primary:hover {
-          border-color: var(--blue-dark);
-          background-color: var(--blue-dark);
+          background-color: #f59e0b;
           transform: translateY(-1px);
-          box-shadow: 0 14px 30px rgba(79, 151, 187, 0.18);
-          color: var(--white);
         }
 
         .user-btn-secondary {
-          background: var(--white);
-          border: 1px solid var(--blue-border);
-          color: var(--blue-dark);
-          box-shadow: 0 6px 14px rgba(79, 151, 187, 0.06);
+          background: #090d16;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+          color: #cbd5e1;
         }
 
         .user-btn-secondary:hover {
-          background: var(--blue-soft);
-          border-color: var(--blue-main);
-          color: var(--text-dark);
-          transform: translateY(-1px);
-          box-shadow: 0 12px 24px rgba(79, 151, 187, 0.1);
-        }
-
-        .modal-header,
-        .modal-body,
-        .modal-footer {
-          padding-left: 18px;
-          padding-right: 18px;
+          border-color: #fbbf24;
+          color: #fbbf24;
         }
 
         .modal-header {
-          padding-top: 18px;
-          padding-bottom: 10px;
+          padding: 18px 20px 14px;
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
           gap: 14px;
-          border-bottom: 1px solid #e6eef3;
-          background: #f7fafc;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+          background: #090d16;
         }
 
         .modal-body {
-          padding-top: 14px;
-          padding-bottom: 4px;
-        }
-
-        .modal-body .row {
-          display: flex;
-          flex-wrap: wrap;
-          margin-left: -8px;
-          margin-right: -8px;
-        }
-
-        .modal-body .col-md-6 {
-          padding-left: 8px;
-          padding-right: 8px;
+          padding: 20px;
         }
 
         .modal-footer {
-          padding-top: 10px;
-          padding-bottom: 16px;
+          padding: 14px 20px 18px;
           display: flex;
           justify-content: flex-end;
           align-items: center;
           gap: 10px;
-          flex-wrap: wrap;
-          border-top: 1px solid #e6eef3;
-          background: #fff;
-        }
-
-        @media (max-width: 768px) {
-          .user-modal-shell {
-            padding: 12px;
-            align-items: center;
-          }
-
-          .user-modal-dialog {
-            max-width: 100%;
-            margin: 0 auto !important;
-          }
-
-          .user-modal {
-            border-radius: 14px;
-          }
-
-          .user-modal-title {
-            font-size: 1.05rem;
-          }
-
-          .user-modal-subtitle {
-            font-size: 0.84rem;
-          }
-
-          .modal-header,
-          .modal-body,
-          .modal-footer {
-            padding-left: 14px;
-            padding-right: 14px;
-          }
-
-          .modal-body {
-            padding-top: 12px;
-          }
-
-          .modal-footer {
-            gap: 8px;
-          }
-
-          .modal-footer .btn {
-            width: 100%;
-          }
-
-          .user-btn-primary,
-          .user-btn-secondary {
-            width: 100%;
-          }
+          border-top: 1px solid rgba(212, 175, 55, 0.2);
+          background: #090d16;
         }
       `}</style>
     </>

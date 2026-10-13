@@ -1,148 +1,153 @@
+/* =========================================================
+   ADMINCONTACTS.CSS - TÔNG LUXURY DARK GOLD ADMIN (FIX BẢNG)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 .admin-contacts-page {
-  padding: 20px;
-  /* background: #f3f3f3; */
+  padding: 24px;
+  background: #0b0f17 !important;
   min-height: 100vh;
-  font-family: "Roboto", sans-serif;
-  color: #244656;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f8fafc !important;
 }
 
 .admin-contacts-head {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .admin-contacts-title {
   margin: 0;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
-  color: #35799d;
+  color: #fbbf24 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .admin-contacts-subtitle {
   margin: 6px 0 0;
+  color: #94a3b8 !important;
   font-size: 14px;
-  line-height: 1.5;
-  color: #6d8796;
 }
 
+/* NÚT LỌC "TẤT CẢ" & "CHƯA TRẢ LỜI" */
 .admin-top-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
 .admin-btn {
   min-height: 38px;
-  padding: 0 14px;
+  padding: 0 18px;
   border-radius: 10px;
-  border: 1px solid transparent;
-  font-family: "Roboto", sans-serif;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-  transition: all 0.18s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
-}
-
-.admin-btn:hover {
-  transform: translateY(-1px);
 }
 
 .admin-btn-primary {
-  background: #4f97bb;
-  border-color: #4f97bb;
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(79, 151, 187, 0.16);
+  background: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  color: #090d16 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
 }
 
 .admin-btn-primary:hover {
-  background: #35799d;
-  border-color: #35799d;
+  background: #f59e0b !important;
+  transform: translateY(-1px);
 }
 
 .admin-btn-ghost {
-  background: #fff;
-  border-color: #bdd4e0;
-  color: #35799d;
+  background: #090d16 !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  color: #cbd5e1 !important;
 }
 
 .admin-btn-ghost:hover {
-  background: #e2eef5;
-  border-color: #4f97bb;
-  color: #244656;
+  border-color: #fbbf24 !important;
+  color: #fbbf24 !important;
 }
 
+/* KHUNG CHỨA BẢNG LIÊN HỆ (FIX BO GÓC & TÁCH CỘT) */
 .admin-table-wrap {
   width: 100%;
   overflow-x: auto;
-  background: #fff;
-  border: 1px solid #bdd4e0;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(79, 151, 187, 0.08);
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
 }
 
 .admin-table {
-  width: 100%;
-  min-width: 900px;
-  border-collapse: collapse;
-  font-family: "Roboto", sans-serif;
-  background: #fff;
+  width: 100% !important;
+  min-width: 800px;
+  border-collapse: collapse !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #131b2e !important;
+  table-layout: fixed !important; /* Cố định tỉ lệ các cột */
 }
 
+/* FIX CHIA CỘT TIÊU ĐỀ RÕ RÀNG */
 .admin-table thead th {
-  background: #e2edf4;
-  color: #5f7d8d;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 13px 12px;
-  border-bottom: 1px solid #d7e5ec;
+  background: #090d16 !important;
+  color: #fbbf24 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  padding: 16px 14px !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
   white-space: nowrap;
-  text-align: center;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px;
 }
+
+/* Tỉ lệ chiều rộng 4 cột */
+.admin-table thead th:nth-child(1) { width: 25%; } /* Email */
+.admin-table thead th:nth-child(2) { width: 45%; } /* Nội dung */
+.admin-table thead th:nth-child(3) { width: 15%; text-align: center !important; } /* Trạng thái */
+.admin-table thead th:nth-child(4) { width: 15%; text-align: center !important; } /* Hành động */
 
 .admin-table td {
-  padding: 12px;
-  border-bottom: 1px solid #edf3f6;
-  font-size: 13px;
-  color: #244656;
-  text-align: center;
-  vertical-align: middle;
-  background: #fff;
-  transition: background 0.18s ease;
+  padding: 16px 14px !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  font-size: 13.5px !important;
+  color: #cbd5e1 !important;
+  vertical-align: middle !important;
+  background: #131b2e !important;
+  text-align: left !important;
 }
 
 .admin-table tbody tr:hover td {
-  background: rgba(79, 151, 187, 0.05);
-}
-
-.admin-table tbody tr:last-child td {
-  border-bottom: none;
+  background: rgba(255, 255, 255, 0.02) !important;
 }
 
 .admin-empty {
-  padding: 24px;
-  text-align: center;
-  color: #7a95a4;
-  font-size: 13px;
+  padding: 40px 20px !important;
+  text-align: center !important;
+  color: #94a3b8 !important;
+  font-size: 14px !important;
 }
 
 .admin-cell-main {
-  font-weight: 700;
-  color: #244656;
-  word-break: break-word;
+  font-weight: 700 !important;
+  color: #ffffff !important;
 }
 
 .admin-message-cell {
-  max-width: 360px;
-  margin: 0 auto;
   line-height: 1.55;
-  color: #486474;
-  text-align: left;
+  color: #cbd5e1 !important;
   word-break: break-word;
 }
 
@@ -151,39 +156,31 @@
   align-items: center;
   justify-content: center;
   min-height: 28px;
-  padding: 0 10px;
+  padding: 0 12px;
   border-radius: 999px;
   font-size: 12px;
   font-weight: 800;
   line-height: 1;
-  border: 1px solid transparent;
-  font-family: "Roboto", sans-serif;
 }
 
 .admin-badge.pending {
-  background: rgba(250, 189, 50, 0.16);
-  color: #9b6a00;
-  border-color: rgba(250, 189, 50, 0.3);
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
 }
 
 .admin-badge.replied {
-  background: rgba(12, 107, 55, 0.1);
-  color: #0c6b37;
-  border-color: rgba(12, 107, 55, 0.22);
+  background: rgba(34, 197, 94, 0.15) !important;
+  color: #4ade80 !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
 }
 
-.admin-actions {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
+/* MODAL TRẢ LỜI */
 .reply-modal {
   position: fixed;
   inset: 0;
-  background: rgba(36, 70, 86, 0.32);
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,142 +189,72 @@
 }
 
 .reply-box {
-  width: 460px;
+  width: 480px;
   max-width: 100%;
-  background: #fff;
-  border: 1px solid #bdd4e0;
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 18px;
-  box-shadow: 0 20px 48px rgba(53, 121, 157, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  font-family: "Roboto", sans-serif;
 }
 
 .reply-box h3 {
   margin: 0;
-  padding: 16px 18px;
-  font-size: 17px;
-  font-weight: 900;
-  color: #35799d;
-  background: #f7fafc;
-  border-bottom: 1px solid #e6eef3;
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fbbf24 !important;
+  background: #090d16 !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
 .reply-body {
-  padding: 16px 18px 18px;
+  padding: 20px;
 }
 
 .reply-box textarea {
   width: 100%;
-  min-height: 120px;
+  min-height: 130px;
   border-radius: 12px;
-  border: 1px solid #bdd4e0;
-  padding: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  padding: 12px 14px;
   outline: none;
   resize: vertical;
-  font-size: 13px;
-  line-height: 1.55;
-  font-family: "Roboto", sans-serif;
-  color: #244656;
+  font-size: 13.5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff !important;
+  background: #090d16 !important;
   box-sizing: border-box;
-  transition: all 0.2s ease;
-  background: #fff;
 }
 
 .reply-box textarea:focus {
-  border-color: #4f97bb;
-  box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14);
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.2) !important;
 }
 
 .reply-actions {
-  margin-top: 16px;
+  margin-top: 18px;
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.btn-send,
-.btn-cancel {
-  min-height: 38px;
-  padding: 0 14px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  font-family: "Roboto", sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.18s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-send:hover,
-.btn-cancel:hover {
-  transform: translateY(-1px);
+  gap: 12px;
 }
 
 .btn-send {
-  background: #4f97bb;
-  border-color: #4f97bb;
-  color: #fff;
-  box-shadow: 0 10px 24px rgba(79, 151, 187, 0.18);
-}
-
-.btn-send:hover {
-  background: #35799d;
-  border-color: #35799d;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
+  border: none !important;
+  font-weight: 800 !important;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .btn-cancel {
-  background: #fff;
-  border-color: #bdd4e0;
-  color: #35799d;
-}
-
-.btn-cancel:hover {
-  background: #e2eef5;
-  border-color: #4f97bb;
-  color: #244656;
-}
-
-@media (max-width: 820px) {
-  .admin-table {
-    min-width: 760px;
-  }
-}
-
-@media (max-width: 576px) {
-  .admin-contacts-page {
-    padding: 16px;
-  }
-
-  .admin-contacts-title {
-    font-size: 22px;
-  }
-
-  .admin-contacts-subtitle {
-    font-size: 13px;
-  }
-
-  .reply-box {
-    border-radius: 14px;
-  }
-
-  .reply-box h3 {
-    font-size: 16px;
-    padding: 14px;
-  }
-
-  .reply-body {
-    padding: 14px;
-  }
-
-  .btn-send,
-  .btn-cancel,
-  .admin-btn {
-    min-height: 38px;
-    font-size: 12px;
-    padding: 0 12px;
-  }
+  background: #090d16 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #cbd5e1 !important;
+  font-weight: 700 !important;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }

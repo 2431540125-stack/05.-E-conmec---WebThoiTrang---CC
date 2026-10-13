@@ -1,9 +1,16 @@
+/* =========================================================
+   PROFILE.CSS - TÔNG LUXURY DARK GOLD VIP (TRANG TÀI KHOẢN)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 .pf-wrap {
-  min-height: 70vh;
-  background: #fff1f2;
-  padding: 24px;
-  font-family: "Roboto", sans-serif;
+  min-height: 80vh;
+  background: #0b0f17 !important;
+  padding: 32px 24px 60px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   box-sizing: border-box;
+  color: #f8fafc !important;
 }
 
 .pf-wrap *,
@@ -14,30 +21,33 @@
 
 .pf-container {
   max-width: 1400px;
-  margin: 10px auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
-  gap: 18px;
+  gap: 24px;
   align-items: start;
 }
 
+/* 1. SIDEBAR NAVIGATION BÊN TRÁI */
 .pf-side {
-  background: #ffffff;
+  background: #131b2e !important;
   border-radius: 18px;
-  border-bottom: 1px solid #a9141e14;
-  padding: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  padding: 20px;
   position: sticky;
-  top: 16px;
+  top: 20px;
   height: fit-content;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .pf-user {
   display: flex;
   gap: 12px;
   align-items: center;
-  padding: 12px;
+  padding: 14px;
   border-radius: 14px;
-  background: #fff1f2;
+  background: #090d16 !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
 .pf-avatar {
@@ -46,8 +56,8 @@
   border-radius: 14px;
   object-fit: cover;
   flex-shrink: 0;
-  background: #f3d9de;
-  border: 1px solid rgba(169, 20, 30, 0.1);
+  background: #1e293b;
+  border: 1px solid #fbbf24 !important;
 }
 
 .pf-user-meta {
@@ -57,8 +67,8 @@
 
 .pf-user-name {
   font-weight: 800;
-  font-size: 14px;
-  color: #a9141e;
+  font-size: 15px;
+  color: #fbbf24 !important;
   line-height: 1.4;
   word-break: break-word;
 }
@@ -67,10 +77,11 @@
   font-size: 12px;
   line-height: 1.4;
   word-break: break-word;
+  color: #94a3b8 !important;
 }
 
 .muted {
-  color: #6b585e;
+  color: #94a3b8 !important;
 }
 
 .mono {
@@ -79,73 +90,79 @@
 
 .money {
   font-weight: 900;
-  color: #a9141e;
+  color: #fbbf24 !important;
 }
 
 .pf-error {
   margin-bottom: 12px;
   padding: 12px 14px;
   border-radius: 12px;
-  background: #fff1f2;
-  color: #a9141e;
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
   font-size: 13px;
   font-weight: 700;
-  border: 1px solid rgba(169, 20, 30, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
 }
 
+/* MENU CHUYỂN TABS BÊN TRÁI */
 .pf-nav {
   display: flex;
   flex-direction: column;
-  margin-top: 14px;
+  margin-top: 16px;
   gap: 8px;
 }
 
 .pf-nav-item {
   width: 100%;
   text-align: left;
-  padding: 12px;
+  padding: 12px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(169, 20, 30, 0.08);
-  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+  background: #090d16 !important;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
-  color: #6b585e;
-  transition: 0.2s ease;
+  color: #cbd5e1 !important;
+  transition: all 0.25s ease;
 }
 
 .pf-nav-item:hover {
-  background: #fff1f2;
-  border-color: rgba(169, 20, 30, 0.14);
-  color: #a9141e;
+  background: rgba(212, 175, 55, 0.15) !important;
+  color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
 }
 
 .pf-nav-item.active {
-  background: #a9141e;
-  color: #ffffff;
-  border-color: #a9141e;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
+  border-color: #fbbf24 !important;
+  font-weight: 800 !important;
 }
 
+/* 2. KHU VỰC NỘI DUNG CHÍNH (BÊN PHẢI) */
 .pf-main {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   min-width: 0;
 }
 
 .pf-card {
-  background: #ffffff;
+  background: #131b2e !important;
   border-radius: 18px;
-  border: 1px solid rgba(169, 20, 30, 0.1);
-  padding: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  padding: 24px;
   min-width: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .pf-title {
-  margin: 0 0 14px;
-  font-size: 16px;
-  font-weight: 900;
-  color: #a9141e;
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fbbf24 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .pf-row {
@@ -153,7 +170,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
 }
 
@@ -161,21 +178,10 @@
   min-width: 220px;
 }
 
-.pf-filter input {
-  width: 100%;
-  border: 1px solid rgba(169, 20, 30, 0.12);
-  border-radius: 12px;
-  padding: 10px 12px;
-  outline: none;
-  font-size: 13px;
-  background: #fff;
-  color: #432e35;
-}
-
 .pf-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 16px;
 }
 
 .pf-field {
@@ -184,61 +190,58 @@
 
 .pf-field label {
   display: block;
-  font-size: 12px;
-  font-weight: 800;
-  margin-bottom: 6px;
-  color: #a9141e;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fbbf24 !important;
 }
 
+/* INPUTS & SELECTS */
 .pf-field input,
 .pf-field select,
 .pf-filter input {
   width: 100%;
-  border: 1px solid rgba(169, 20, 30, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   border-radius: 12px;
-  padding: 11px 12px;
+  padding: 12px 14px;
   outline: none;
-  font-size: 13px;
-  background: #fff;
-  color: #432e35;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  font-size: 13.5px;
+  background: #090d16 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease;
 }
 
 .pf-field input:focus,
 .pf-field select:focus,
 .pf-filter input:focus {
-  border-color: #de5b87;
-  box-shadow: 0 0 0 3px rgba(222, 91, 135, 0.08);
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.2) !important;
 }
 
 .pf-field input:disabled,
 .pf-field select:disabled {
-  background: #fff7f8;
-  color: #8a7279;
+  background: #1e293b !important;
+  color: #64748b !important;
   cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .pf-field small {
   display: block;
   margin-top: 6px;
-  font-size: 11px;
-  color: #8a7279;
+  font-size: 11.5px;
+  color: #94a3b8 !important;
   line-height: 1.5;
 }
 
+/* NÚT BẤM (BUTTONS) */
 .pf-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  margin-top: 14px;
+  gap: 12px;
+  margin-top: 20px;
   flex-wrap: wrap;
-}
-
-.pf-actions > button {
-  flex-shrink: 0;
 }
 
 .pf-btn-primary,
@@ -248,66 +251,56 @@
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  padding: 10px 14px;
+  padding: 10px 20px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: 800;
-  font-size: 13px;
-  font-family: "Roboto", sans-serif;
+  font-size: 13.5px;
   line-height: 1;
-  transition: 0.2s ease;
-  appearance: none;
-  -webkit-appearance: none;
-  box-shadow: none;
-  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .pf-btn-primary {
-  background: #a9141e;
-  color: #fff;
-  border: none;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
+  border: none !important;
 }
 
 .pf-btn-primary:hover {
-  background: #de5b87;
+  background: #f59e0b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
 }
 
 .pf-btn-secondary {
-  background: #fff1f2;
-  color: #a9141e;
-  border: 1px solid rgba(169, 20, 30, 0.1);
+  background: #090d16 !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
 }
 
 .pf-btn-secondary:hover {
-  background: #ffe3e7;
+  border-color: #fbbf24 !important;
+  color: #fbbf24 !important;
 }
 
 .pf-btn-danger {
-  background: #ef4444;
-  color: #fff;
-  border: none;
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border: none !important;
 }
 
 .pf-btn-danger:hover {
-  background: #dc2626;
-}
-
-.pf-btn-primary:disabled,
-.pf-btn-secondary:disabled,
-.pf-btn-danger:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  background: #dc2626 !important;
 }
 
 .pf-btn-link {
   border: none;
   background: transparent;
   cursor: pointer;
-  font-weight: 800;
-  color: #a9141e;
+  font-weight: 700;
+  color: #fbbf24 !important;
   padding: 0;
   font-size: 13px;
-  font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
 
@@ -315,13 +308,10 @@
   text-decoration: underline;
 }
 
-.pf-btn-link-danger {
-  color: #ef4444;
-}
-
+/* 3. BẢNG QUẢN LÝ ĐƠN HÀNG */
 .pf-table {
   width: 100%;
-  border: 1px solid rgba(169, 20, 30, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 14px;
   overflow: hidden;
   min-width: 0;
@@ -332,143 +322,88 @@
   display: grid;
   grid-template-columns: 1.1fr 1fr 1fr 1fr 0.8fr;
   gap: 8px;
-  padding: 12px;
+  padding: 14px;
   align-items: center;
 }
 
 .pf-thead {
-  background: #fff1f2;
-  font-weight: 900;
-  font-size: 12px;
-  color: #a9141e;
+  background: #090d16 !important;
+  font-weight: 800;
+  font-size: 13px;
+  color: #fbbf24 !important;
+  text-transform: uppercase;
 }
 
 .pf-tr {
-  border-top: 1px solid rgba(169, 20, 30, 0.08);
-  font-size: 13px;
-  background: #fff;
-}
-
-.pf-tr > div,
-.pf-thead > div {
-  min-width: 0;
-  word-break: break-word;
-}
-
-.pf-tr-actions {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.15) !important;
+  font-size: 13.5px;
+  background: #131b2e !important;
+  color: #f8fafc !important;
 }
 
 .pf-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 900;
-  background: #fff1f2;
-  color: #a9141e;
-  white-space: nowrap;
+  font-weight: 800;
+  background: #090d16 !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .pf-badge.success {
-  background: #dcfce7;
-  color: #166534;
+  background: rgba(34, 197, 94, 0.15) !important;
+  color: #4ade80 !important;
+  border-color: rgba(34, 197, 94, 0.3) !important;
 }
 
 .pf-badge.warning {
-  background: #fef3c7;
-  color: #92400e;
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
 }
 
 .pf-badge.danger {
-  background: #fee2e2;
-  color: #991b1b;
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #f87171 !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
 }
 
-.pf-badge.default {
-  background: #fff1f2;
-  color: #a9141e;
-}
-
-.pf-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
+/* 4. SỔ ĐỊA CHỈ (ADDRESSES) */
 .pf-address {
-  border: 1px solid rgba(169, 20, 30, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 16px;
-  padding: 14px;
-  background: #fff7f8;
-}
-
-.pf-address-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.pf-address-name {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  padding: 16px;
+  background: #090d16 !important;
 }
 
 .pf-tag {
-  background: #a9141e;
-  color: #fff;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
   font-size: 11px;
-  font-weight: 900;
+  font-weight: 800;
   padding: 4px 10px;
   border-radius: 999px;
-}
-
-.pf-address-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .pf-address-body {
   margin-top: 10px;
   display: grid;
   gap: 6px;
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.5;
-  color: #432e35;
+  color: #cbd5e1 !important;
 }
 
-.pf-danger-zone {
-  margin-top: 18px;
-  border-top: 1px dashed rgba(169, 20, 30, 0.16);
-  padding-top: 14px;
-}
-
-.pf-danger-zone h4 {
-  margin: 0 0 8px;
-  font-size: 15px;
-  font-weight: 900;
-  color: #a9141e;
-}
-
-.pf-danger-zone p {
-  margin: 0 0 12px;
-  line-height: 1.5;
-}
-
+/* POPUP MODAL (XEM ĐƠN HÀNG / SỬA ĐỊA CHỈ) */
 .pf-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(70, 20, 28, 0.35);
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -479,343 +414,46 @@
 .pf-modal {
   width: 100%;
   max-width: 680px;
-  background: #fff;
+  background: #131b2e !important;
   border-radius: 18px;
-  border: 1px solid rgba(169, 20, 30, 0.1);
-  padding: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  padding: 24px;
   max-height: 90vh;
   overflow-y: auto;
-}
-
-.pf-modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
+  color: #ffffff !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
 }
 
 .pf-modal-close {
   border: none;
-  color: #a9141e;
-  background: #fff1f2;
+  color: #fbbf24 !important;
+  background: #090d16 !important;
   width: 36px;
   height: 36px;
   border-radius: 10px;
   font-size: 22px;
-  line-height: 1;
   cursor: pointer;
   font-weight: 700;
-}
-
-.pf-modal-form {
-  display: block;
-}
-
-.pf-field-full {
-  grid-column: 1 / -1;
-}
-
-.pf-check {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-}
-
-.pf-check label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #a9141e;
-}
-
-.pf-check input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #a9141e;
-}
-
-.pf-order-modal {
-  max-width: 900px;
-}
-
-.pf-subtitle {
-  margin: 0 0 12px;
-  font-size: 15px;
-  font-weight: 900;
-  color: #a9141e;
 }
 
 .pf-order-summary {
-  display: grid;
-  gap: 10px;
-  margin-bottom: 18px;
-  padding: 14px;
-  border: 1px solid rgba(169, 20, 30, 0.08);
+  background: #090d16 !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
   border-radius: 14px;
-  background: #fff7f8;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #432e35;
-}
-
-.pf-order-items {
-  margin-top: 6px;
-}
-
-.pf-order-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid rgba(169, 20, 30, 0.08);
-}
-
-.pf-order-item:first-of-type {
-  border-top: none;
-}
-
-.pf-order-item-left {
-  display: flex;
-  gap: 12px;
-  min-width: 0;
-  flex: 1;
-}
-
-.pf-order-item-image {
-  width: 78px;
-  height: 78px;
-  border-radius: 12px;
-  object-fit: cover;
-  background: #fff1f2;
-  flex-shrink: 0;
-  border: 1px solid rgba(169, 20, 30, 0.08);
-}
-
-.pf-order-item-info {
-  min-width: 0;
-  display: grid;
-  gap: 4px;
+  padding: 16px;
+  color: #cbd5e1 !important;
 }
 
 .pf-order-item-name {
-  font-size: 14px;
-  font-weight: 900;
-  color: #a9141e;
-  line-height: 1.5;
-  word-break: break-word;
+  color: #ffffff !important;
 }
 
-.pf-order-item-meta {
-  font-size: 12px;
-}
-
-.pf-order-item-price {
-  font-size: 13px;
-  font-weight: 800;
-  color: #432e35;
-}
-
-.pf-order-item-right {
-  min-width: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-.pf-pagination {
-  margin-top: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.pf-page-btn {
-  min-width: 38px;
-  height: 38px;
-  padding: 0 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(169, 20, 30, 0.12);
-  background: #ffffff;
-  color: #a9141e;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 800;
-  font-family: "Roboto", sans-serif;
-  transition: all 0.2s ease;
-}
-
-.pf-page-btn:hover:not(:disabled) {
-  background: #fff1f2;
-  border-color: #de5b87;
-}
-
-.pf-page-btn.active {
-  background: #a9141e;
-  color: #ffffff;
-  border-color: #a9141e;
-}
-
-.pf-page-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-@media (max-width: 768px) {
-  .pf-order-item {
-    flex-direction: column;
-  }
-
-  .pf-order-item-right {
-    min-width: unset;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 1100px) {
-  .pf-thead,
-  .pf-tr {
-    grid-template-columns: 1.2fr 0.9fr 1fr 1fr 0.9fr;
-  }
-}
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .pf-modal {
-    padding: 14px;
-    border-radius: 14px;
-  }
-
-  .pf-wrap {
-    padding: 16px;
-  }
-
   .pf-container {
     grid-template-columns: 1fr;
   }
-
-  .pf-side {
-    position: relative;
-    top: 0;
-  }
-
   .pf-grid {
     grid-template-columns: 1fr;
-  }
-
-  .pf-row {
-    align-items: stretch;
-  }
-
-  .pf-filter {
-    width: 100%;
-    min-width: unset;
-  }
-
-  .pf-table {
-    border: none;
-    overflow: visible;
-  }
-
-  .pf-thead {
-    display: none;
-  }
-
-  .pf-tr {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    border: 1px solid rgba(169, 20, 30, 0.08);
-    border-radius: 14px;
-    margin-bottom: 10px;
-    padding: 12px;
-  }
-
-  .pf-tr > div {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .pf-tr > div::before {
-    font-weight: 800;
-    color: #8a7279;
-  }
-
-  .pf-tr > div:nth-child(1)::before {
-    content: "Mã đơn";
-  }
-
-  .pf-tr > div:nth-child(2)::before {
-    content: "Ngày";
-  }
-
-  .pf-tr > div:nth-child(3)::before {
-    content: "Tổng";
-  }
-
-  .pf-tr > div:nth-child(4)::before {
-    content: "Trạng thái";
-  }
-
-  .pf-tr > div:nth-child(5)::before {
-    content: "Thao tác";
-  }
-
-  .pf-address-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .pf-address-actions {
-    justify-content: flex-start;
-  }
-
-  .pf-actions {
-    justify-content: stretch;
-  }
-
-  .pf-actions .pf-btn-primary,
-  .pf-actions .pf-btn-secondary,
-  .pf-actions .pf-btn-danger {
-    flex: 1;
-  }
-}
-
-@media (max-width: 560px) {
-  .pf-wrap {
-    padding: 12px;
-  }
-
-  .pf-card,
-  .pf-side {
-    padding: 14px;
-    border-radius: 14px;
-  }
-
-  .pf-user {
-    padding: 10px;
-  }
-
-  .pf-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-  }
-
-  .pf-title {
-    font-size: 15px;
-  }
-
-  .pf-nav-item,
-  .pf-btn-primary,
-  .pf-btn-secondary,
-  .pf-btn-danger,
-  .pf-btn-link,
-  .pf-field input,
-  .pf-field select,
-  .pf-filter input {
-    font-size: 12px;
   }
 }

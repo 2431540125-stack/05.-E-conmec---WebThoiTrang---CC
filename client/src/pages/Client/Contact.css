@@ -1,52 +1,66 @@
+/* =========================================================
+   CONTACT.CSS - TÔNG LUXURY DARK GOLD VIP (TRANG LIÊN HỆ)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* 1. NỀN TOÀN TRANG CONTACT */
 .contact {
   padding-bottom: 60px;
-  background: #fff1f2;
-  font-family: "Roboto", sans-serif;
-  color: #2d2024;
+  background: #0b0f17 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f8fafc !important;
+  min-height: 100vh;
 }
 
+/* 2. BANNER LIÊN HỆ ĐẦU TRANG */
 .contact-banner {
   text-align: center;
-  padding: 64px 20px;
-  background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%);
-  color: #2d2024;
-  border-bottom: 1px solid rgba(169, 20, 30, 0.08);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #131b2e 0%, #0b0f17 100%) !important;
+  color: #f8fafc !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .contact-banner h2 {
   margin: 0 0 10px;
   font-size: 32px;
   font-weight: 800;
-  color: #a9141e;
+  color: #fbbf24 !important;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
 }
 
 .contact-banner p {
   margin: 0;
   font-size: 15px;
-  color: #6b585e;
+  color: #94a3b8 !important;
   line-height: 1.7;
 }
 
+/* 3. BỐ CỤC CHIA 2 CỘT */
 .contact-container {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 28px;
   padding: 48px 80px;
   align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
+/* 4. KHUNG FORM LIÊN HỆ (BÊN TRÁI) */
 .contact-form {
-  background: #ffffff;
-  border: 1px solid rgba(169, 20, 30, 0.1);
-  padding: 28px;
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  padding: 32px;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(169, 20, 30, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .contact .heading {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .contact .heading h3 {
@@ -54,11 +68,9 @@
   font-size: 24px;
   font-weight: 800;
   text-align: center;
-  color: #a9141e;
-  border-left: none;
-  padding-left: 0;
+  color: #fbbf24 !important;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
 }
 
 .form-group {
@@ -71,20 +83,21 @@
   margin-bottom: 8px;
   font-weight: 700;
   font-size: 14px;
-  color: #a9141e;
+  color: #fbbf24 !important;
 }
 
+/* INPUT & TEXTAREA SẮC NÉT */
 .form-group input,
 .form-group textarea {
-  background: #ffffff;
-  color: #2d2024;
+  background: #090d16 !important;
+  color: #ffffff !important;
   padding: 13px 14px;
-  border: 1px solid rgba(169, 20, 30, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   border-radius: 10px;
   outline: none;
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
-  transition: 0.2s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s ease;
 }
 
 .form-group textarea {
@@ -94,41 +107,44 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #b08993;
+  color: #64748b !important;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #de5b87;
-  box-shadow: 0 0 0 3px rgba(222, 91, 135, 0.12);
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.2) !important;
 }
 
+/* NÚT GỬI LIÊN HỆ VIP GOLD */
 .contact-btn {
-  padding: 12px 22px;
-  background: #a9141e;
-  color: #ffffff;
+  padding: 12px 28px;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
   border: none;
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .contact-btn:hover {
-  background: #de5b87;
+  background: #f59e0b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
 }
 
+/* 5. KHUNG THÔNG TIN LIÊN HỆ (BÊN PHẢI) */
 .info-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: #ffffff;
-  border: 1px solid rgba(169, 20, 30, 0.1);
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(169, 20, 30, 0.06);
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .info-item {
@@ -136,18 +152,18 @@
   align-items: flex-start;
   gap: 15px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(169, 20, 30, 0.08);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
 }
 
 .info-item:last-child {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .info-item i {
   font-size: 20px;
   width: 34px;
   margin-top: 3px;
-  color: #a9141e;
+  color: #fbbf24 !important;
   flex-shrink: 0;
 }
 
@@ -158,31 +174,37 @@
 
 .info-item h4 {
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
-  color: #a9141e;
+  color: #ffffff !important;
 }
 
 .info-item p {
   margin: 6px 0 0;
   font-size: 14px;
-  color: #6b585e;
+  color: #94a3b8 !important;
   line-height: 1.7;
 }
 
+/* 6. BẢN ĐỒ MAPS DƯỚI CÙNG */
 .contact-map {
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 0 80px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-map iframe {
   width: 100%;
-  border: 1px solid rgba(169, 20, 30, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(169, 20, 30, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  filter: invert(90%) hue-rotate(180deg) contrast(1.2); /* Tạo hiệu ứng bản đồ Dark Mode cực đỉnh */
 }
 
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .contact-container {
     grid-template-columns: 1fr;

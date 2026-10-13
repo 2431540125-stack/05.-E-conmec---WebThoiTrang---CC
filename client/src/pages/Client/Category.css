@@ -1,140 +1,107 @@
-/* ================= CATEGORY ================= */
+/* =========================================================
+   CATEGORY.CSS - TÔNG LUXURY DARK GOLD (FIX MỜ CHỮ & FIX DẢI ĐEN)
+   ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Nền tổng thể trang Category */
 .cat {
-  --luxury-bg: #f6f0ea;
-  --luxury-bg-strong: #efe2d4;
-  --luxury-panel: rgba(255, 250, 247, 0.9);
-  --luxury-panel-strong: #fffaf7;
-  --luxury-border: rgba(103, 77, 60, 0.14);
-  --luxury-gold: #c79a5f;
-  --luxury-gold-deep: #8d6842;
-  --luxury-text: #3e2d2a;
-  --luxury-text-soft: #6d5c55;
-  --luxury-rose: #d9b59a;
+  --cat-bg: #0b0f17;
+  --cat-card: #131b2e;
+  --cat-border: rgba(212, 175, 55, 0.25);
+  --cat-gold: #fbbf24;
+  --cat-gold-hover: #f59e0b;
+  --cat-text: #f8fafc;
+  --cat-text-muted: #94a3b8;
+
   width: 100%;
   margin: 0 auto;
-  padding: 18px 16px 44px;
-  background: linear-gradient(180deg, var(--luxury-bg) 0%, var(--luxury-bg-strong) 100%);
+  padding: 24px 20px 60px;
+  background-color: var(--cat-bg) !important;
+  color: var(--cat-text) !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* ===== 2-COL LAYOUT ===== */
-
+/* BỐ CỤC CHIA 2 CỘT */
 .cat-layout {
-  width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 18px;
+  grid-template-columns: 270px 1fr;
+  gap: 24px;
+  align-items: start;
 }
 
-/* ================= LEFT ================= */
-
+/* ================= SIDEBAR BÊN TRÁI ================= */
 .cat-left {
   position: sticky;
-  top: 14px;
-  height: calc(100vh - 28px);
+  top: 16px;
+  max-height: calc(100vh - 32px);
   overflow-y: auto;
-  display: grid;
-  gap: 12px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-
-.cat-left::-webkit-scrollbar {
-  display: none;
-}
-
-/* ===== BOX ===== */
 
 .cat-box {
-  background: var(--luxury-panel);
-  border: 1px solid var(--luxury-border);
-  border-radius: 14px;
-  padding: 14px;
-  box-shadow: 0 10px 22px rgba(90, 69, 56, 0.06);
+  background: var(--cat-card) !important;
+  border: 1px solid var(--cat-border) !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .cat-box__head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(141, 104, 66, 0.16);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--cat-border);
 }
 
-.cat-box__head h4 {
+.cat-box__head h4, 
+.cat-dropHead h4 {
   margin: 0;
-  font-weight: 800;
-  font-size: 14px;
-  color: var(--luxury-gold-deep);
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  color: var(--cat-gold) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
-/* ===== DROPDOWN HEAD ===== */
 
 .cat-dropHead {
   width: 100%;
   border: none;
   background: transparent;
   padding: 0;
-  margin: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.cat-dropBody {
-  margin-top: 8px;
+.cat-dropArrow, .cat-menuToggle {
+  color: var(--cat-gold) !important;
 }
-
-.cat-menuToggle,
-.cat-dropArrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--luxury-gold-deep);
-}
-
-.cat-menuToggle i,
-.cat-dropArrow i {
-  font-size: 15px;
-  line-height: 1;
-}
-
-/* ===== RESET BTN ===== */
 
 .cat-reset {
   border: none;
   background: none;
   cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cat-gold) !important;
   text-decoration: underline;
-  font-size: 13px;
-  color: var(--luxury-gold);
 }
 
-/* ================= CATEGORY MENU ================= */
-.cat-box > .cat-dropHead {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(141, 104, 66, 0.16);
-}
-
-.cat-box > .cat-dropHead h4 {
-  font-weight: 800;
-  font-size: 14px;
-  color: var(--luxury-gold-deep);
-}
-
+/* CÂY DANH MỤC SIDEBAR (RÕ CHỮ 100%) */
 .cat-menuList {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-.cat-menuRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  gap: 4px;
 }
 
 .cat-menuItem {
@@ -143,447 +110,517 @@
   background: transparent;
   text-align: left;
   cursor: pointer;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-size: 13px;
-  color: var(--luxury-text-soft);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #cbd5e1 !important; /* Chữ xám sáng rõ nét */
+  font-weight: 600 !important;
   transition: all 0.2s ease;
 }
 
-.cat-menuItem:hover {
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-}
-
+.cat-menuItem:hover, 
 .cat-menuItem.active {
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-  font-weight: 800;
+  background: var(--cat-gold) !important;
+  color: #090d16 !important; /* Khi chọn thì nền Vàng - Chữ Đen nổi bật */
+  font-weight: 700 !important;
 }
-
-.cat-menuItem--parent {
-  padding-left: 24px;
-}
-
-.cat-menuToggle {
-  width: 36px;
-  height: 32px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.cat-menuToggle:hover {
-  background: rgba(199, 154, 95, 0.12);
-  border-radius: 8px;
-}
-
-/* ================= SUB CATEGORY ================= */
 
 .cat-subList {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-left: 34px;
+  padding-left: 18px;
+  margin-top: 4px;
 }
 
 .cat-subItem {
-  width: 100%;
   border: none;
   background: transparent;
-  cursor: pointer;
-  text-align: left;
   padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  color: var(--luxury-text-soft);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
 }
 
-.cat-subItem:hover {
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-}
-
+.cat-subItem:hover, 
 .cat-subItem.active {
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-  font-weight: 700;
+  color: var(--cat-gold) !important;
+  font-weight: 700 !important;
 }
 
-.cat-subPipe {
-  opacity: 0.7;
-  font-weight: 700;
-  color: var(--luxury-rose);
-}
-
-/* ================= FILTER ================= */
-
+/* LỌC BOK, CHIPS, INPUTS */
 .cat-block {
   padding: 12px 0;
-  border-bottom: 1px solid rgba(141, 104, 66, 0.14);
-}
-
-.cat-block:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cat-label {
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--luxury-gold-deep);
+  margin-bottom: 8px;
+  color: var(--cat-gold) !important;
+  display: block;
 }
 
-/* ===== PRICE ===== */
-
-.cat-price {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cat-price input {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  outline: none;
-  background: var(--luxury-panel-strong);
-  color: var(--luxury-text);
-}
-
-.cat-price input:focus {
-  border-color: var(--luxury-gold);
-}
-
-/* ===== CHIPS ===== */
-
-.cat-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.cat-price input,
+.cat-colorSearchInput {
+  background: #090d16 !important;
+  border: 1px solid var(--cat-border) !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
 }
 
 .cat-chip {
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  background: var(--luxury-panel-strong);
-  cursor: pointer;
+  background: #090d16 !important;
+  border: 1px solid var(--cat-border) !important;
+  color: #cbd5e1 !important;
+  padding: 6px 12px;
+  border-radius: 20px;
   font-size: 12px;
-  color: var(--luxury-text-soft);
-  transition: all 0.2s ease;
+  font-weight: 600;
 }
 
-.cat-chip:hover {
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-}
-
+.cat-chip:hover, 
 .cat-chip.active {
-  border-color: var(--luxury-gold-deep);
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-  font-weight: 700;
+  background: var(--cat-gold) !important;
+  color: #090d16 !important;
 }
 
-/* ===== COLOR SEARCH / SELECTED ===== */
-
-.cat-colorSearchBox {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+.cat-check span {
+  color: #cbd5e1 !important;
+  font-weight: 500 !important;
 }
 
-.cat-colorSearchInput {
-  width: 100%;
-  height: 36px;
-  padding: 0 40px 0 12px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  border-radius: 999px;
-  outline: none;
-  background: var(--luxury-panel-strong);
-  font-size: 13px;
-  color: var(--luxury-text);
-  transition: all 0.2s ease;
-}
-
-.cat-colorSearchInput:focus {
-  border-color: var(--luxury-gold);
-}
-
-.cat-colorSearchInput::placeholder {
-  color: rgba(96, 77, 69, 0.6);
-  font-size: 12px;
-}
-
-.cat-colorSearchBtn {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  color: var(--luxury-gold-deep);
-  font-size: 14px;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cat-colorSuggest {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
-.cat-colorSuggestItem {
-  height: 30px;
-  padding: 0 12px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  border-radius: 999px;
-  background: var(--luxury-panel-strong);
-  color: var(--luxury-text-soft);
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.cat-colorSuggestItem:hover {
-  border-color: var(--luxury-gold);
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-}
-
-.cat-colorSelected {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.cat-colorSelectedTag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 30px;
-  padding: 0 12px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  border-radius: 999px;
-  background: var(--luxury-panel-strong);
-  color: var(--luxury-text);
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.cat-colorSelectedTag:hover {
-  background: rgba(199, 154, 95, 0.12);
-  color: var(--luxury-gold-deep);
-}
-
-.cat-colorSelectedX {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  opacity: 0.7;
-  color: var(--luxury-gold);
-}
-
-/* ===== CHECKBOX ===== */
-
-.cat-check {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0;
-  font-size: 13px;
-  color: var(--luxury-text-soft);
-}
-
-.cat-check input {
-  transform: translateY(1px);
-  accent-color: var(--luxury-gold-deep);
-}
-
-/* ================= RIGHT ================= */
-
+/* ================= KHOẢNG SẢN PHẨM BÊN PHẢI ================= */
 .cat-right {
   min-width: 0;
 }
 
+/* FIX TRIỆT ĐỂ LỖI TIÊU ĐỀ BỊ NỀN ĐEN BẢNG CHE CHỮ */
+.cat-right .heading.cat-title,
+.cat-right .heading,
 .cat-title {
-  text-align: left;
-  margin-bottom: 14px;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 20px !important;
+  text-align: left !important;
 }
 
+.cat-right .heading h3,
 .cat-title h3 {
-  text-align: left;
-  color: var(--luxury-gold-deep);
+  color: var(--cat-gold) !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+  text-shadow: none !important;
 }
 
-/* ===== PRODUCT GRID ===== */
-
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-/* ===== PAGINATION ===== */
-
-.cat-pagination {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-}
-
-.cat-pagination button {
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  background: var(--luxury-panel-strong);
-  color: var(--luxury-gold-deep);
-  cursor: pointer;
-}
-
-.cat-pagination button:hover {
-  background: rgba(199, 154, 95, 0.12);
-}
-
-.cat-pagination button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* ================= EMPTY ================= */
-
+/* KHUNG THÔNG BÁO KHÔNG CÓ SẢN PHẨM */
 .cat-empty {
-  background: rgba(255, 250, 247, 0.8);
-  border: 1px solid rgba(141, 104, 66, 0.14);
-  border-radius: 14px;
-  padding: 30px 18px;
-  text-align: center;
+  background: var(--cat-card) !important;
+  border: 1px solid var(--cat-border) !important;
+  border-radius: 16px !important;
+  padding: 50px 20px !important;
+  text-align: center !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
 }
 
 .cat-empty h4 {
-  margin: 0 0 8px;
-  font-weight: bold;
-  color: var(--luxury-gold-deep);
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
 }
 
 .cat-empty p {
-  margin: 0 0 12px;
-  font-size: 13px;
-  color: var(--luxury-text-soft);
+  color: var(--cat-text-muted) !important;
+  font-size: 14px !important;
 }
 
 .cat-empty button {
-  padding: 10px 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(141, 104, 66, 0.2);
-  background: var(--luxury-panel-strong);
-  color: var(--luxury-gold-deep);
+  background: var(--cat-gold) !important;
+  color: #090d16 !important;
+  border-radius: 8px !important;
+  padding: 10px 22px !important;
+  font-weight: 700 !important;
+  border: none !important;
   cursor: pointer;
 }
 
-/* ================= BEST SELLER ================= */
+.cat-empty button:hover {
+  background: var(--cat-gold-hover) !important;
+}
+
+/* LƯỚI SẢN PHẨM */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
 
 .cat-bestFull {
-  margin-top: 40px;
-  padding: 20px 10px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.cat-bestFull .heading {
-  margin-bottom: 16px;
-}
-
-.cat-bestFull .heading h3 {
-  margin: 0;
-  font-weight: 800;
-  font-size: 24px;
-  color: var(--luxury-gold-deep);
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
 }
 
 .best-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px;
-  width: 100%;
+  margin-top: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1200px) {
-  .cat-layout {
-    width: 100%;
-    grid-template-columns: 260px 1fr;
-  }
-
-  .best-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.cat-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+  color: var(--cat-text-muted);
+  font-weight: 600;
 }
 
-@media (max-width: 992px) {
+.cat-pagination button {
+  background: #131b2e !important;
+  color: var(--cat-gold) !important;
+  border: 1px solid var(--cat-border) !important;
+  border-radius: 10px !important;
+  padding: 8px 16px !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cat-pagination button:hover:not(:disabled) {
+  background: rgba(251, 191, 36, 0.12) !important;
+}
+
+.cat-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cat-grid .procard-grid,
+.best-grid .procard-grid {
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+  transition: all 0.25s ease !important;
+  min-height: 100%;
+}
+
+.cat-grid .procard-grid:hover,
+.best-grid .procard-grid:hover {
+  transform: translateY(-4px) !important;
+  border-color: #fbbf24 !important;
+  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.18) !important;
+}
+
+.cat-grid .procard-body,
+.best-grid .procard-body {
+  background: #131b2e !important;
+  padding: 12px !important;
+}
+
+.cat-grid .procard-title,
+.best-grid .procard-title {
+  color: #f8fafc !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  min-height: 42px !important;
+  margin: 0 0 6px !important;
+}
+
+.cat-grid .procard-desc,
+.best-grid .procard-desc {
+  color: rgba(226, 232, 240, 0.8) !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  height: 34px !important;
+}
+
+.cat-grid .procard-price,
+.best-grid .procard-price,
+.cat-grid .procard-oldPrice,
+.best-grid .procard-oldPrice {
+  color: #fbbf24 !important;
+}
+
+.cat-grid .procard-oldPrice,
+.best-grid .procard-oldPrice {
+  opacity: 0.8;
+}
+
+.cat-grid .btn-add-cart,
+.best-grid .btn-add-cart {
+  background: #fbbf24 !important;
+  color: #090d16 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 8px 14px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2) !important;
+}
+
+.cat-grid .btn-add-cart:hover,
+.best-grid .btn-add-cart:hover {
+  background: #f59e0b !important;
+  transform: scale(1.02) !important;
+}
+
+.cat-grid .btn-add-cart.out,
+.best-grid .btn-add-cart.out,
+.cat-grid .btn-add-cart:disabled,
+.best-grid .btn-add-cart:disabled {
+  background: rgba(148, 163, 184, 0.18) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1024px) {
   .cat-layout {
     grid-template-columns: 1fr;
   }
 
   .cat-left {
     position: static;
-    height: auto;
+    max-height: none;
     overflow: visible;
   }
 
   .cat-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .best-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 600px) {
-  .cat {
-    padding: 14px 10px 36px;
-  }
-
-  .cat-grid {
+@media (max-width: 640px) {
+  .cat-grid,
+  .best-grid {
     grid-template-columns: 1fr;
   }
+}
+/* =========================================================
+   FIX NÚT TÌM KIẾM MÀU SẮC & CHECKBOX TÌNH TRẠNG (LUXURY GOLD)
+   ========================================================= */
 
-  .best-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* 1. Ô TÌM KIẾM MÀU SẮC (SANG TRỌNG, ĐỒNG BỘ NỀN) */
+.cat-colorSearchBox {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 12px !important;
+}
 
-  .cat-colorSearchInput {
-    height: 20px;
-    font-size: 14px;
-    padding: 0 42px 0 18px;
-  }
+.cat-colorSearchInput {
+  width: 100% !important;
+  height: 40px !important;
+  padding: 0 45px 0 14px !important;
+  background: #090d16 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 10px !important;
+  color: #f8fafc !important;
+  font-size: 13px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
 
-  .cat-colorSearchBtn {
-    right: 16px;
-    font-size: 16px;
-  }
+.cat-colorSearchInput:focus {
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.2) !important;
+}
 
-  .cat-colorSelectedTag {
-    height: 20px;
-    font-size: 12px;
-    padding: 0 14px;
-  }
+/* NÚT KÍNH LÚP TÌM MÀU (BO TRÒN GỌN GÀNG TRONG Ô INPUT) */
+.cat-colorSearchBtn {
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: #fbbf24 !important; /* Màu Vàng Gold nổi bật */
+  color: #090d16 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.cat-colorSearchBtn:hover {
+  background: #f59e0b !important;
+  transform: translateY(-50%) scale(1.05) !important;
+}
+
+.cat-colorSearchBtn i {
+  font-size: 13px !important;
+}
+
+/* 2. KHU VỰC TÌNH TRẠNG (XẾP HÀNG DỌC CÂN ĐỐI, CHECKBOX NỔI BẬT) */
+.cat-dropBody {
+  display: flex !important;
+  flex-direction: column !important; /* Ép xếp theo hàng dọc */
+  gap: 12px !important;            /* Khoảng cách giữa các dòng */
+  padding-top: 10px !important;
+}
+
+.cat-check {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 14px !important;
+  color: #cbd5e1 !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  user-select: none !important;
+  transition: color 0.2s !important;
+}
+
+.cat-check:hover {
+  color: #fbbf24 !important; /* Rê chuột vào chữ đổi sang màu Gold */
+}
+
+.cat-check span {
+  color: #cbd5e1 !important;
+  font-weight: 500 !important;
+}
+
+.cat-check:hover span {
+  color: #fbbf24 !important;
+}
+
+/* TÙY CHỈNH Ô CHECKBOX TÙY CHỌN (GOLD VIP) */
+.cat-check input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  border-radius: 5px !important;
+  background-color: #090d16 !important;
+  cursor: pointer !important;
+  position: relative !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.cat-check input[type="checkbox"]:checked {
+  background-color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+}
+
+.cat-check input[type="checkbox"]:checked::after {
+  content: '✓' !important;
+  position: absolute !important;
+  color: #090d16 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+/* =========================================================
+   FIX THẺ SẢN PHẨM TRANG CATEGORY / CLIENT (LUXURY DARK VIP)
+   ========================================================= */
+
+/* 1. Đổi nền Card sản phẩm sang tối VIP (#131b2e) & Viền Gold */
+.product-card,
+[class*="product-card"],
+[class*="productCard"],
+.card-product {
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.25s ease !important;
+  padding-bottom: 12px !important;
+}
+
+.product-card:hover,
+[class*="productCard"]:hover {
+  transform: translateY(-4px) !important;
+  border-color: #fbbf24 !important;
+  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.2) !important;
+}
+
+/* 2. Ép Tên sản phẩm hiển thị màu Vàng Gold / Trắng sáng rõ nét */
+.product-card h3,
+.product-card h4,
+.product-card .product-name,
+[class*="productName"],
+[class*="product-title"] {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  margin: 10px 12px 6px !important;
+  line-height: 1.4 !important;
+}
+
+/* 3. Đổi Giá tiền sang Vàng Gold sáng (#fbbf24) */
+.product-card .price,
+.product-card [class*="price"],
+[class*="productPrice"] {
+  color: #fbbf24 !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+}
+
+/* 4. Sửa nút "Thêm vào giỏ" sang màu Vàng Chữ Đen chuẩn Luxury */
+.product-card button,
+.product-card .btn-add-cart,
+[class*="btnAddToCart"],
+[class*="add-to-cart"] {
+  background: #fbbf24 !important;
+  color: #090d16 !important;
+  border: none !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  padding: 8px 14px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25) !important;
+}
+
+.product-card button:hover,
+[class*="btnAddToCart"]:hover {
+  background: #f59e0b !important;
+  transform: scale(1.03) !important;
+}
+
+/* 5. Đẩy thanh Phân trang (Trước Trang 1/1 Sau) xuống dưới, tách biệt với sản phẩm */
+[class*="pagination"],
+.pagination-wrap {
+  margin-top: 30px !important;
+  clear: both !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #94a3b8 !important;
+}
+
+[class*="pagination"] button {
+  background: #131b2e !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
 }

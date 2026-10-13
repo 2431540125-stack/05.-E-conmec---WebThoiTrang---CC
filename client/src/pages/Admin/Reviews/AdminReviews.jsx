@@ -104,7 +104,7 @@ const AdminReviews = () => {
         <span
           key={i}
           style={{
-            color: i <= rating ? "#f1c40f" : "#d9e2e8",
+            color: i <= rating ? "#fbbf24" : "#475569",
             fontSize: "15px",
             lineHeight: 1,
           }}
@@ -120,24 +120,24 @@ const AdminReviews = () => {
   const getStatusStyle = (status) => {
     if (status === "approved") {
       return {
-        background: "rgba(76, 175, 80, 0.1)",
-        color: "#2e7d32",
-        border: "1px solid rgba(76, 175, 80, 0.2)",
+        background: "rgba(34, 197, 94, 0.15)",
+        color: "#4ade80",
+        border: "1px solid rgba(34, 197, 94, 0.3)",
       };
     }
 
     if (status === "rejected") {
       return {
-        background: "rgba(239, 83, 80, 0.1)",
-        color: "#c62828",
-        border: "1px solid rgba(239, 83, 80, 0.2)",
+        background: "rgba(239, 68, 68, 0.15)",
+        color: "#f87171",
+        border: "1px solid rgba(239, 68, 68, 0.3)",
       };
     }
 
     return {
-      background: "rgba(255, 193, 7, 0.12)",
-      color: "#a16207",
-      border: "1px solid rgba(255, 193, 7, 0.24)",
+      background: "rgba(245, 158, 11, 0.15)",
+      color: "#fbbf24",
+      border: "1px solid rgba(245, 158, 11, 0.3)",
     };
   };
 
@@ -145,9 +145,9 @@ const AdminReviews = () => {
     return (
       <div
         style={{
-          padding: 20,
-          fontFamily: "Roboto, sans-serif",
-          color: "#244656",
+          padding: 24,
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          color: "#fbbf24",
           fontSize: "14px",
         }}
       >
@@ -159,23 +159,27 @@ const AdminReviews = () => {
   return (
     <div
       style={{
-        fontFamily: "Roboto, sans-serif",
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        padding: "20px",
+        background: "#0b0f17",
+        minHeight: "100vh",
+        color: "#f8fafc",
       }}
     >
       <div
         style={{
-          background: "#fff",
-          border: "1px solid #bdd4e0",
+          background: "#131b2e",
+          border: "1px solid rgba(212, 175, 55, 0.25)",
           borderRadius: "16px",
-          boxShadow: "0 8px 24px rgba(79, 151, 187, 0.08)",
+          boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)",
           overflow: "hidden",
         }}
       >
         <div
           style={{
-            padding: "18px 20px 14px",
-            borderBottom: "1px solid #e6eef3",
-            background: "#fff",
+            padding: "20px 24px",
+            borderBottom: "1px solid rgba(212, 175, 55, 0.2)",
+            background: "#090d16",
           }}
         >
           <h2
@@ -183,7 +187,9 @@ const AdminReviews = () => {
               margin: 0,
               fontSize: "22px",
               fontWeight: 800,
-              color: "#244656",
+              color: "#fbbf24",
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
             }}
           >
             Quản lý Đánh giá và Bình luận
@@ -191,8 +197,8 @@ const AdminReviews = () => {
           <p
             style={{
               margin: "6px 0 0",
-              fontSize: "13px",
-              color: "#6d8796",
+              fontSize: "13.5px",
+              color: "#94a3b8",
             }}
           >
             Theo dõi, duyệt, phản hồi và xử lý đánh giá từ khách hàng
@@ -209,7 +215,7 @@ const AdminReviews = () => {
           >
             <thead
               style={{
-                background: "#e2edf4",
+                background: "#090d16",
               }}
             >
               <tr>
@@ -238,8 +244,8 @@ const AdminReviews = () => {
                 <tr
                   key={review._id}
                   style={{
-                    background: review.rating <= 2 ? "#fffafa" : "#fff",
-                    borderBottom: "1px solid #edf3f6",
+                    background: "#131b2e",
+                    borderBottom: "1px solid rgba(212, 175, 55, 0.15)",
                   }}
                 >
                   <td style={tdStyle}>
@@ -260,8 +266,8 @@ const AdminReviews = () => {
                         style={{
                           objectFit: "cover",
                           borderRadius: 10,
-                          border: "1px solid #d7e5ec",
-                          background: "#fff",
+                          border: "1px solid rgba(212, 175, 55, 0.3)",
+                          background: "#090d16",
                           flexShrink: 0,
                         }}
                         alt=""
@@ -270,9 +276,9 @@ const AdminReviews = () => {
                       <div>
                         <div
                           style={{
-                            fontSize: "13px",
+                            fontSize: "13.5px",
                             fontWeight: 700,
-                            color: "#244656",
+                            color: "#ffffff",
                             lineHeight: 1.45,
                           }}
                         >
@@ -285,9 +291,9 @@ const AdminReviews = () => {
                   <td style={tdStyle}>
                     <div
                       style={{
-                        fontSize: "13px",
+                        fontSize: "13.5px",
                         fontWeight: 700,
-                        color: "#244656",
+                        color: "#fbbf24",
                       }}
                     >
                       {review.user?.name || "Ẩn danh"}
@@ -300,7 +306,7 @@ const AdminReviews = () => {
                       style={{
                         marginTop: "4px",
                         fontSize: "12px",
-                        color: "#6d8796",
+                        color: "#94a3b8",
                       }}
                     >
                       ({review.rating}/5)
@@ -312,8 +318,8 @@ const AdminReviews = () => {
                       style={{
                         margin: 0,
                         fontStyle: "italic",
-                        color: "#425c6b",
-                        fontSize: "13px",
+                        color: "#cbd5e1",
+                        fontSize: "13.5px",
                         lineHeight: 1.6,
                       }}
                     >
@@ -324,16 +330,16 @@ const AdminReviews = () => {
                       <div
                         style={{
                           marginTop: "10px",
-                          padding: "9px 10px",
-                          background: "#f7fafc",
-                          borderLeft: "3px solid #4f97bb",
+                          padding: "10px 12px",
+                          background: "#090d16",
+                          borderLeft: "3px solid #fbbf24",
                           borderRadius: "8px",
-                          fontSize: "12px",
-                          color: "#244656",
+                          fontSize: "12.5px",
+                          color: "#cbd5e1",
                           lineHeight: 1.55,
                         }}
                       >
-                        <b style={{ color: "#35799d" }}>Phản hồi admin:</b>{" "}
+                        <b style={{ color: "#fbbf24" }}>Phản hồi admin:</b>{" "}
                         {review.adminReply}
                       </div>
                     )}
@@ -343,7 +349,7 @@ const AdminReviews = () => {
                     <span
                       style={{
                         fontSize: "12px",
-                        color: "#5f7d8d",
+                        color: "#94a3b8",
                         fontWeight: 600,
                       }}
                     >
@@ -362,15 +368,14 @@ const AdminReviews = () => {
                         padding: "6px 10px",
                         borderRadius: "8px",
                         fontSize: "12px",
-                        fontWeight: 700,
+                        fontWeight: 800,
                         cursor: "pointer",
                         outline: "none",
-                        backgroundClip: "padding-box",
                       }}
                     >
-                      <option value="pending">Chờ duyệt</option>
-                      <option value="approved">Đã duyệt</option>
-                      <option value="rejected">Từ chối</option>
+                      <option value="pending" style={{ background: "#131b2e", color: "#fbbf24" }}>Chờ duyệt</option>
+                      <option value="approved" style={{ background: "#131b2e", color: "#4ade80" }}>Đã duyệt</option>
+                      <option value="rejected" style={{ background: "#131b2e", color: "#f87171" }}>Từ chối</option>
                     </select>
                   </td>
 
@@ -387,15 +392,15 @@ const AdminReviews = () => {
                       <button
                         onClick={() => openReplyModal(review._id)}
                         style={{
-                          background: "#4f97bb",
-                          color: "white",
-                          border: "1px solid #4f97bb",
-                          padding: "6px 10px",
+                          background: "#fbbf24",
+                          color: "#090d16",
+                          border: "none",
+                          padding: "7px 12px",
                           borderRadius: "8px",
                           fontSize: "12px",
-                          fontWeight: 700,
+                          fontWeight: 800,
                           cursor: "pointer",
-                          boxShadow: "0 8px 18px rgba(79, 151, 187, 0.14)",
+                          boxShadow: "0 4px 12px rgba(251, 191, 36, 0.2)",
                         }}
                       >
                         Trả lời
@@ -404,13 +409,13 @@ const AdminReviews = () => {
                       <button
                         onClick={() => handleDelete(review._id)}
                         style={{
-                          background: "#fff",
-                          color: "#d64c4c",
-                          border: "1px solid rgba(214, 76, 76, 0.28)",
-                          padding: "6px 10px",
+                          background: "rgba(239, 68, 68, 0.2)",
+                          color: "#f87171",
+                          border: "1px solid rgba(239, 68, 68, 0.4)",
+                          padding: "7px 12px",
                           borderRadius: "8px",
                           fontSize: "12px",
-                          fontWeight: 700,
+                          fontWeight: 800,
                           cursor: "pointer",
                         }}
                       >
@@ -430,25 +435,25 @@ const AdminReviews = () => {
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(36, 70, 86, 0.28)",
+            background: "rgba(0, 0, 0, 0.75)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             zIndex: 999,
             padding: "16px",
-            backdropFilter: "blur(2px)",
-            WebkitBackdropFilter: "blur(2px)",
+            backdropFilter: "blur(4px)",
           }}
         >
           <div
             style={{
               width: "460px",
               maxWidth: "100%",
-              background: "white",
-              border: "1px solid #bdd4e0",
+              background: "#131b2e",
+              border: "1px solid rgba(212, 175, 55, 0.25)",
               padding: "20px",
-              borderRadius: "14px",
-              boxShadow: "0 18px 40px rgba(53, 121, 157, 0.16)",
+              borderRadius: "16px",
+              boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
+              color: "#ffffff",
             }}
           >
             <h2
@@ -456,7 +461,7 @@ const AdminReviews = () => {
                 margin: 0,
                 fontSize: "18px",
                 fontWeight: 800,
-                color: "#244656",
+                color: "#fbbf24",
               }}
             >
               Trả lời đánh giá
@@ -466,7 +471,7 @@ const AdminReviews = () => {
               style={{
                 margin: "6px 0 0",
                 fontSize: "13px",
-                color: "#6d8796",
+                color: "#94a3b8",
               }}
             >
               Nhập phản hồi để gửi tới khách hàng
@@ -479,16 +484,16 @@ const AdminReviews = () => {
               style={{
                 width: "100%",
                 height: "120px",
-                padding: "10px 12px",
+                padding: "12px",
                 marginTop: "14px",
                 borderRadius: "10px",
-                border: "1px solid #bdd4e0",
-                fontSize: "13px",
-                color: "#244656",
+                border: "1px solid rgba(212, 175, 55, 0.3)",
+                fontSize: "13.5px",
+                color: "#ffffff",
                 outline: "none",
                 resize: "vertical",
-                fontFamily: "Roboto, sans-serif",
-                background: "#f7fafc",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                background: "#090d16",
                 boxSizing: "border-box",
               }}
             />
@@ -497,21 +502,21 @@ const AdminReviews = () => {
               style={{
                 display: "flex",
                 justifyContent: "flex-end",
-                marginTop: "14px",
-                gap: "8px",
+                marginTop: "16px",
+                gap: "10px",
                 flexWrap: "wrap",
               }}
             >
               <button
                 onClick={() => setShowReplyModal(false)}
                 style={{
-                  height: "36px",
-                  padding: "0 14px",
-                  background: "#fff",
-                  color: "#35799d",
-                  border: "1px solid #bdd4e0",
+                  height: "38px",
+                  padding: "0 16px",
+                  background: "#090d16",
+                  color: "#cbd5e1",
+                  border: "1px solid rgba(212, 175, 55, 0.3)",
                   borderRadius: "8px",
-                  fontSize: "12px",
+                  fontSize: "12.5px",
                   fontWeight: 700,
                   cursor: "pointer",
                 }}
@@ -522,16 +527,16 @@ const AdminReviews = () => {
               <button
                 onClick={sendReply}
                 style={{
-                  height: "36px",
-                  padding: "0 14px",
-                  background: "#4f97bb",
-                  color: "white",
-                  border: "1px solid #4f97bb",
+                  height: "38px",
+                  padding: "0 18px",
+                  background: "#fbbf24",
+                  color: "#090d16",
+                  border: "none",
                   borderRadius: "8px",
-                  fontSize: "12px",
-                  fontWeight: 700,
+                  fontSize: "12.5px",
+                  fontWeight: 800,
                   cursor: "pointer",
-                  boxShadow: "0 8px 18px rgba(79, 151, 187, 0.14)",
+                  boxShadow: "0 4px 12px rgba(251, 191, 36, 0.25)",
                 }}
               >
                 Gửi phản hồi
@@ -545,18 +550,20 @@ const AdminReviews = () => {
 };
 
 const thStyle = (extra = {}) => ({
-  padding: "13px 12px",
-  fontSize: "12px",
-  fontWeight: 800,
-  color: "#5f7d8d",
-  borderBottom: "1px solid #d7e5ec",
+  padding: "14px 12px",
+  fontSize: "12.5px",
+  fontWeight: "800",
+  color: "#fbbf24",
+  borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
+  textTransform: "uppercase",
+  letterSpacing: "0.5px",
   ...extra,
 });
 
 const tdStyle = {
-  padding: "13px 12px",
-  fontSize: "13px",
-  color: "#244656",
+  padding: "14px 12px",
+  fontSize: "13.5px",
+  color: "#cbd5e1",
   verticalAlign: "middle",
 };
 

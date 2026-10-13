@@ -31,23 +31,27 @@ export default function MoMoResult() {
   return (
     <div style={styles.page}>
       <div style={styles.card}>
+        <div style={styles.brand}>
+          <span style={styles.brandAccent}>LAVIO</span>
+        </div>
+
         {/* Icon */}
-        <div style={{ ...styles.iconCircle, background: isSuccess ? "#e8f9f0" : "#fef0f0" }}>
+        <div style={{ ...styles.iconCircle, background: isSuccess ? "rgba(34, 197, 94, 0.15)" : "rgba(239, 68, 68, 0.15)" }}>
           {isSuccess ? (
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="24" fill="#27ae60" opacity="0.15"/>
-              <path d="M14 24l8 8 12-14" stroke="#27ae60" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="24" cy="24" r="24" fill="#4ade80" opacity="0.15"/>
+              <path d="M14 24l8 8 12-14" stroke="#4ade80" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           ) : (
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="24" fill="#e74c3c" opacity="0.15"/>
-              <path d="M16 16l16 16M32 16L16 32" stroke="#e74c3c" strokeWidth="3.5" strokeLinecap="round"/>
+              <circle cx="24" cy="24" r="24" fill="#f87171" opacity="0.15"/>
+              <path d="M16 16l16 16M32 16L16 32" stroke="#f87171" strokeWidth="3.5" strokeLinecap="round"/>
             </svg>
           )}
         </div>
 
         {/* Tiêu đề */}
-        <h1 style={{ ...styles.title, color: isSuccess ? "#27ae60" : "#e74c3c" }}>
+        <h1 style={{ ...styles.title, color: isSuccess ? "#fbbf24" : "#f87171" }}>
           {isSuccess ? "Thanh toán thành công!" : "Thanh toán thất bại"}
         </h1>
 
@@ -61,7 +65,7 @@ export default function MoMoResult() {
             <div style={styles.divider} />
             <div style={styles.infoRow}>
               <span style={styles.infoLabel}>Số tiền</span>
-              <span style={{ ...styles.infoVal, color: "#d61a72", fontWeight: 700 }}>
+              <span style={{ ...styles.infoVal, color: "#fbbf24", fontWeight: 800 }}>
                 {Number(amount).toLocaleString("vi-VN")}đ
               </span>
             </div>
@@ -73,7 +77,7 @@ export default function MoMoResult() {
             <div style={styles.divider} />
             <div style={styles.infoRow}>
               <span style={styles.infoLabel}>Trạng thái</span>
-              <span style={{ ...styles.infoVal, color: "#27ae60" }}>Đã thanh toán ✓</span>
+              <span style={{ ...styles.infoVal, color: "#4ade80" }}>Đã thanh toán ✓</span>
             </div>
           </div>
         ) : (
@@ -85,7 +89,7 @@ export default function MoMoResult() {
         {/* Đếm ngược */}
         <p style={styles.countdown}>
           Tự động chuyển về {isSuccess ? "trang chủ" : "giỏ hàng"} sau{" "}
-          <strong style={{ color: "#d61a72" }}>{countdown}s</strong>
+          <strong style={{ color: "#fbbf24" }}>{countdown}s</strong>
         </p>
 
         {/* Nút */}
@@ -121,25 +125,35 @@ export default function MoMoResult() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(135deg, #fff0f7 0%, #f8f8f8 100%)",
+    background: "#0b0f17",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     padding: "2rem",
-    fontFamily: "system-ui, sans-serif",
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
   },
   card: {
-    background: "white",
+    background: "#131b2e",
+    border: "1px solid rgba(212, 175, 55, 0.3)",
     borderRadius: 20,
     padding: "2.5rem 2rem",
     maxWidth: 460,
     width: "100%",
-    boxShadow: "0 8px 40px rgba(0,0,0,0.10)",
+    boxShadow: "0 12px 32px rgba(0,0,0,0.4)",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     gap: "1.2rem",
   },
+  brand: {
+    fontSize: 22,
+    fontWeight: 800,
+    letterSpacing: 4,
+    color: "#ffffff",
+    marginBottom: 4,
+    textTransform: "uppercase",
+  },
+  brandAccent: { color: "#fbbf24" },
   iconCircle: {
     width: 90,
     height: 90,
@@ -156,8 +170,8 @@ const styles = {
   },
   infoBox: {
     width: "100%",
-    background: "#fafafa",
-    border: "1px solid #f0f0f0",
+    background: "#090d16",
+    border: "1px solid rgba(212, 175, 55, 0.25)",
     borderRadius: 12,
     padding: "0.5rem 1.2rem",
   },
@@ -167,21 +181,22 @@ const styles = {
     alignItems: "center",
     padding: "10px 0",
   },
-  infoLabel: { fontSize: 14, color: "#999" },
-  infoVal: { fontSize: 14, color: "#222", fontWeight: 600 },
-  divider: { height: 1, background: "#f0f0f0" },
+  infoLabel: { fontSize: 13, color: "#94a3b8" },
+  infoVal: { fontSize: 14, color: "#ffffff", fontWeight: 700 },
+  divider: { height: 1, background: "rgba(212, 175, 55, 0.15)" },
   errorMsg: {
-    color: "#e74c3c",
+    color: "#f87171",
     fontSize: 14,
     textAlign: "center",
-    background: "#fff0f0",
+    background: "rgba(239, 68, 68, 0.15)",
+    border: "1px solid rgba(239, 68, 68, 0.3)",
     borderRadius: 10,
     padding: "12px 16px",
     width: "100%",
   },
   countdown: {
     fontSize: 13,
-    color: "#999",
+    color: "#94a3b8",
     margin: 0,
     textAlign: "center",
   },
@@ -193,23 +208,23 @@ const styles = {
   btnPrimary: {
     flex: 1,
     padding: "12px 0",
-    background: "#d61a72",
-    color: "white",
+    background: "#fbbf24",
+    color: "#090d16",
     border: "none",
     borderRadius: 10,
     fontSize: 14,
-    fontWeight: 600,
+    fontWeight: 800,
     cursor: "pointer",
   },
   btnSecondary: {
     flex: 1,
     padding: "12px 0",
-    background: "white",
-    color: "#333",
-    border: "1px solid #ddd",
+    background: "#090d16",
+    color: "#fbbf24",
+    border: "1px solid rgba(212, 175, 55, 0.3)",
     borderRadius: 10,
     fontSize: 14,
-    fontWeight: 600,
+    fontWeight: 700,
     cursor: "pointer",
   },
 };

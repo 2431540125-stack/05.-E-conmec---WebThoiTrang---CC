@@ -519,9 +519,9 @@ export default function CheckoutPayment() {
       <div className="checkout-container">
         <header className="checkout-header">
           <h1 className="checkout-brand">
-            LOCAL<span className="checkout-brand-accent">BRAND</span>
+            WEB BÁN HÀNG{" "}
+            <span className="checkout-brand-accent">LAVIO</span>
           </h1>
-          <p className="checkout-tagline">Vietnamese Fashion House</p>
           <div className="checkout-gold-line" />
         </header>
 

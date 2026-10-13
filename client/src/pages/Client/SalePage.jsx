@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
-// Import component ProCardGrid của bạn vào đây
 import ProCardGrid from "../../components/common/ProCard/ProCardGrid.jsx";
 
 const API_BASE = "http://localhost:5000";
@@ -29,17 +28,9 @@ function extractProducts(data) {
 
 function toAbsoluteImageUrl(url) {
   const value = String(url || "").trim();
-
   if (!value) return "https://via.placeholder.com/400x400?text=No+Image";
-
-  if (value.startsWith("http://") || value.startsWith("https://")) {
-    return value;
-  }
-
-  if (value.startsWith("/")) {
-    return `${API_BASE}${value}`;
-  }
-
+  if (value.startsWith("http://") || value.startsWith("https://")) return value;
+  if (value.startsWith("/")) return `${API_BASE}${value}`;
   return `${API_BASE}/${value}`;
 }
 
@@ -47,14 +38,11 @@ function getMainImage(product) {
   if (typeof product?.thumbnail === "string" && product.thumbnail.trim()) {
     return toAbsoluteImageUrl(product.thumbnail);
   }
-
   if (Array.isArray(product?.images) && product.images.length > 0) {
     const first = product.images[0];
-
     if (typeof first === "string" && first.trim()) {
       return toAbsoluteImageUrl(first);
     }
-
     if (
       first &&
       typeof first === "object" &&
@@ -64,7 +52,6 @@ function getMainImage(product) {
       return toAbsoluteImageUrl(first.imageUrl);
     }
   }
-
   return "https://via.placeholder.com/400x400?text=No+Image";
 }
 
@@ -80,12 +67,10 @@ const SalePage = () => {
 
   const pickRandomProducts = (items, count = 8) => {
     const list = Array.isArray(items) ? [...items] : [];
-
     for (let i = list.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
       [list[i], list[j]] = [list[j], list[i]];
     }
-
     return list.slice(0, count);
   };
 
@@ -113,13 +98,11 @@ const SalePage = () => {
       const res = await axios.get(`${API_BASE}/api/products?t=${Date.now()}`, {
         headers: { "Cache-Control": "no-cache" },
       });
-
       const list = extractProducts(res.data);
       const activeProducts = list.filter(
         (product) =>
           String(product?.status || "ACTIVE").toUpperCase() === "ACTIVE",
       );
-
       setProducts(activeProducts.length > 0 ? activeProducts : list);
     } catch (error) {
       console.error("Lỗi tải sản phẩm:", error);
@@ -130,7 +113,6 @@ const SalePage = () => {
 
   const handleCopyCode = (coupon) => {
     navigator.clipboard.writeText(coupon.code);
-
     const saved = JSON.parse(localStorage.getItem("savedCoupons")) || [];
     const exists = saved.find((c) => c.code === coupon.code);
 
@@ -138,14 +120,12 @@ const SalePage = () => {
       saved.push(coupon);
       localStorage.setItem("savedCoupons", JSON.stringify(saved));
     }
-
     toast.success(`🎉 Đã lưu mã: ${coupon.code}`);
   };
 
   const formatDate = (dateString, isFlash) => {
     if (!dateString) return "Không có thời hạn";
     const date = new Date(dateString);
-
     if (isFlash) {
       return date.toLocaleString("vi-VN", {
         hour: "2-digit",
@@ -154,7 +134,6 @@ const SalePage = () => {
         month: "2-digit",
       });
     }
-
     return date.toLocaleDateString("vi-VN", {
       day: "2-digit",
       month: "2-digit",
@@ -193,20 +172,35 @@ const SalePage = () => {
   return (
     <div className="sale-page-container fade-in pb-5">
       <style>{`
-      .sale-page-container {
-        background: #fff1f2;
+        /* --- NỀN TOÀN TRANG LUXURY DARK --- */
+        .sale-page-container {
+          background: #0b0f17 !important;
+          color: #f8fafc !important;
+          min-height: 100vh;
         }
-        /* --- HERO BANNER --- */
+
+        /* --- HERO BANNER GOLD --- */
         .sale-hero {
-          background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
-          padding: 80px 0 60px;
+          background: linear-gradient(135deg, #131b2e 0%, #0b0f17 100%) !important;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+          padding: 70px 0 50px;
           text-align: center;
-          border-radius: 0 0 50px 50px;
-          color: white;
-          box-shadow: 0 10px 30px rgba(255, 75, 43, 0.3);
-          margin-bottom: -40px;
+          border-radius: 0 0 40px 40px;
+          color: #fbbf24 !important;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          margin-bottom: -35px;
           position: relative;
           z-index: 1;
+        }
+
+        .sale-hero h1 {
+          color: #fbbf24 !important;
+          text-shadow: none !important;
+          letter-spacing: 1px;
+        }
+
+        .sale-hero p {
+          color: #94a3b8 !important;
         }
 
         /* --- TABS BỘ LỌC --- */
@@ -216,10 +210,11 @@ const SalePage = () => {
           width: fit-content;
           max-width: 100%;
           margin: 0 auto 32px;
-          background: white;
-          padding: 12px 14px;
+          background: #131b2e !important;
+          border: 1px solid rgba(212, 175, 55, 0.3) !important;
+          padding: 8px 12px;
           border-radius: 999px;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+          box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         .filter-tabs {
@@ -228,20 +223,14 @@ const SalePage = () => {
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
-          overflow-x: visible;
-          scrollbar-width: none;
-        }
-
-        .filter-tabs::-webkit-scrollbar {
-          display: none;
         }
 
         .tab-btn {
-          padding: 10px 24px;
+          padding: 8px 22px;
           border-radius: 30px;
           border: 1px solid transparent;
-          background: #f8f9fa;
-          color: #555;
+          background: transparent;
+          color: #cbd5e1 !important;
           white-space: nowrap;
           font-weight: 600;
           transition: all 0.3s ease;
@@ -249,64 +238,67 @@ const SalePage = () => {
         }
 
         .tab-btn:hover {
-          background: #fee2e2;
-          color: #dc2626;
+          color: #fbbf24 !important;
         }
 
         .tab-btn.active {
-          background: #FF416C;
-          color: white;
-          box-shadow: 0 4px 10px rgba(255, 65, 108, 0.3);
+          background: #fbbf24 !important;
+          color: #090d16 !important;
+          font-weight: 700;
+          box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
         }
 
         .tab-btn.active-flash {
-          background: #f59e0b;
-          color: white;
-          box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+          background: #f59e0b !important;
+          color: #090d16 !important;
+          font-weight: 700;
+          box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
         }
 
-        /* --- VOUCHER TICKET --- */
+        /* --- VOUCHER TICKET (VIP GOLD) --- */
         .ticket-card {
-          background: #fff;
+          background: #131b2e !important;
           border-radius: 16px;
           position: relative;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.3);
           overflow: hidden;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           display: flex;
           height: 100%;
           min-height: 190px;
-          border: 1px solid #f1f1f1;
+          border: 1px solid rgba(212, 175, 55, 0.25) !important;
         }
 
         .ticket-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+          border-color: #fbbf24 !important;
+          box-shadow: 0 10px 25px rgba(251, 191, 36, 0.15);
         }
 
         .ticket-left {
-          background: linear-gradient(135deg, #ff6b6b 0%, #ee5253 100%);
-          width: 30%;
+          background: linear-gradient(135deg, #090d16 0%, #131b2e 100%) !important;
+          width: 32%;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          color: white;
+          color: #fbbf24 !important;
           padding: 14px 8px;
-          border-right: 2px dashed rgba(255,255,255,0.6);
+          border-right: 2px dashed rgba(212, 175, 55, 0.4) !important;
           position: relative;
           text-align: center;
         }
 
         .ticket-card.flash-sale .ticket-left {
-          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%) !important;
+          color: #ffffff !important;
         }
 
         .ticket-left::after,
         .ticket-right::before {
           content: "";
           position: absolute;
-          background-color: #f8f9fa;
+          background-color: #0b0f17 !important;
           width: 20px;
           height: 20px;
           border-radius: 50%;
@@ -324,66 +316,29 @@ const SalePage = () => {
         }
 
         .ticket-right {
-          width: 70%;
+          width: 68%;
           padding: 14px 14px 12px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           text-align: center;
-        }
-
-        .ticket-right > div:first-child {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          background: #131b2e !important;
         }
 
         .ticket-right h5 {
-          text-align: center;
-          line-height: 1.35;
-          font-size: 1rem;
-          margin-bottom: 8px !important;
+          color: #ffffff !important;
+          font-weight: 700;
         }
 
         .ticket-right p {
-          text-align: center;
-          margin-bottom: 10px !important;
-          line-height: 1.35 !important;
-          font-size: 0.82rem;
-        }
-
-        .ticket-right .d-flex.align-items-center.mb-3 {
-          justify-content: center;
-          margin-bottom: 10px !important;
-        }
-
-        .ticket-right .d-flex.justify-content-between.align-items-end.mt-2 {
-          flex-direction: column;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 8px;
-          margin-top: 8px !important;
-        }
-
-        .ticket-left .fs-2 {
-          font-size: 1.5rem !important;
-          line-height: 1.1 !important;
-        }
-
-        .ticket-left .small {
-          font-size: 0.72rem;
-        }
-
-        .ticket-left i {
-          font-size: 1.4rem !important;
-          margin-top: 10px !important;
+          color: #94a3b8 !important;
         }
 
         .coupon-code {
-          border: 1px dashed #ff6b6b;
-          background: #fff5f5;
-          color: #ff6b6b;
-          padding: 5px 10px;
+          border: 1px dashed #fbbf24 !important;
+          background: #090d16 !important;
+          color: #fbbf24 !important;
+          padding: 5px 12px;
           border-radius: 6px;
           font-family: 'Courier New', monospace;
           font-weight: 800;
@@ -393,98 +348,51 @@ const SalePage = () => {
           margin: 0 auto;
         }
 
-        .flash-sale .coupon-code {
-          border-color: #d97706;
-          background: #fffbeb;
-          color: #d97706;
-        }
-
         .btn-copy {
-          background-color: #ff6b6b;
-          color: white;
+          background-color: #fbbf24 !important;
+          color: #090d16 !important;
           border: none;
-          padding: 7px 16px;
+          padding: 7px 18px;
           border-radius: 18px;
           font-size: 0.78rem;
-          font-weight: bold;
+          font-weight: 800;
           transition: all 0.2s;
           white-space: nowrap;
+          cursor: pointer;
         }
 
-        .btn-copy:active {
-          transform: scale(0.95);
-        }
-
-        .flash-sale .btn-copy {
-          background-color: #f59e0b;
+        .btn-copy:hover {
+          background-color: #f59e0b !important;
         }
 
         .ticket-right .small.text-secondary {
-          font-size: 0.74rem !important;
-          text-align: center;
-          line-height: 1.35;
+          color: #94a3b8 !important;
         }
 
-        #list-voucher .row.g-4 {
-          --bs-gutter-x: 1rem;
-          --bs-gutter-y: 1rem;
+        /* HEADING TIÊU ĐỀ */
+        h3.fw-bold {
+          color: #fbbf24 !important;
         }
 
-        @media (min-width: 1200px) {
-          .ticket-card {
-            min-height: 185px;
-          }
+        .text-danger {
+          color: #fbbf24 !important;
         }
 
-        @media (max-width: 1199px) {
-          .ticket-card {
-            min-height: 190px;
-          }
+        .border-top {
+          border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
         }
 
-        @media (max-width: 768px) {
-          .filter-section {
-            width: 100%;
-            border-radius: 24px;
-            padding: 12px;
-          }
-
-          .filter-tabs {
-            justify-content: center;
-            gap: 8px;
-          }
-
-          .tab-btn {
-            padding: 10px 18px;
-            font-size: 0.95rem;
-          }
+        .bg-white {
+          background-color: #131b2e !important;
+          border: 1px solid rgba(212, 175, 55, 0.25) !important;
         }
 
-        @media (max-width: 767px) {
-          .ticket-card {
-            flex-direction: column;
-            min-height: auto;
-          }
+        .text-muted {
+          color: #cbd5e1 !important;
+        }
 
-          .ticket-left,
-          .ticket-right {
-            width: 100%;
-          }
-
-          .ticket-left {
-            border-right: none;
-            border-bottom: 2px dashed rgba(255,255,255,0.6);
-            padding: 14px 10px;
-          }
-
-          .ticket-left::after,
-          .ticket-right::before {
-            display: none;
-          }
-
-          .ticket-right {
-            padding: 14px 12px;
-          }
+        .text-secondary {
+          color: #94a3b8 !important;
         }
       `}</style>
 
@@ -530,7 +438,7 @@ const SalePage = () => {
         {loadingCoupons ? (
           <div className="text-center py-5">
             <div
-              className="spinner-border text-danger"
+              className="spinner-border text-warning"
               style={{ width: "3rem", height: "3rem" }}
             ></div>
           </div>
@@ -574,7 +482,7 @@ const SalePage = () => {
                           style={{ lineHeight: "1.4" }}
                         >
                           Đơn tối thiểu:{" "}
-                          <strong className="text-dark">
+                          <strong style={{ color: "#fbbf24" }}>
                             {c.minOrderValue
                               ? c.minOrderValue.toLocaleString()
                               : 0}
@@ -615,7 +523,7 @@ const SalePage = () => {
                   className="mb-3 opacity-50"
                   alt="empty"
                 />
-                <h5 className="text-muted fw-bold">Trời ơi, hết mã rồi!</h5>
+                <h5 className="text-white fw-bold">Trời ơi, hết mã rồi!</h5>
                 <p className="text-secondary">
                   Bạn thử chọn danh mục khác hoặc quay lại sau nhé.
                 </p>
@@ -640,7 +548,7 @@ const SalePage = () => {
 
         {loadingProducts ? (
           <div className="text-center py-4">
-            <div className="spinner-border text-danger"></div>
+            <div className="spinner-border text-warning"></div>
           </div>
         ) : suggestedProducts.length > 0 ? (
           <div className="row g-4">

@@ -5,18 +5,17 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 // success, orderId, amount, bankCode, transactionNo, responseCode
 
 const T = {
-  bg: "#fffafa",
-  surface: "#ffffff",
-  surfaceHigh: "#fff7f8",
-  border: "rgba(169, 20, 30, 0.12)",
-  gold: "#a9141e",
-  goldMuted: "#de5b87",
-  text: "#2d2024",
-  textMuted: "#6b585e",
-  success: "#2e8b57",
-  successBg: "#2e8b57",
-  fail: "#a9141e",
-  failBg: "#a9141e",
+  bg: "#0b0f17",
+  surface: "#131b2e",
+  surfaceHigh: "#090d16",
+  border: "rgba(212, 175, 55, 0.3)",
+  gold: "#fbbf24",
+  text: "#ffffff",
+  textMuted: "#94a3b8",
+  success: "#4ade80",
+  successBg: "rgba(34, 197, 94, 0.15)",
+  fail: "#f87171",
+  failBg: "rgba(239, 68, 68, 0.15)",
 };
 
 const fmtVND = (n) => Number(n || 0).toLocaleString("vi-VN") + "đ";
@@ -87,7 +86,7 @@ export default function VNPayResult() {
 
   const S = {
     root: {
-      fontFamily: "'Roboto','Helvetica Neue',sans-serif",
+      fontFamily: "'Plus Jakarta Sans',sans-serif",
       background: T.bg,
       color: T.text,
       minHeight: "100vh",
@@ -99,12 +98,12 @@ export default function VNPayResult() {
     box: {
       background: T.surface,
       border: `1px solid ${T.border}`,
-      borderRadius: 16,
+      borderRadius: 18,
       padding: "48px 40px",
       maxWidth: 460,
       width: "100%",
       textAlign: "center",
-      boxShadow: "0 8px 24px rgba(169, 20, 30, 0.06)",
+      boxShadow: "0 12px 32px rgba(0,0,0,0.4)",
     },
     brand: {
       fontSize: 22,
@@ -135,13 +134,13 @@ export default function VNPayResult() {
       fontSize: 28,
     }),
     title: {
-      fontSize: 34,
+      fontSize: 28,
       fontWeight: 800,
       color: T.gold,
       marginBottom: 10,
     },
     subtitle: {
-      fontSize: 18,
+      fontSize: 15,
       color: T.textMuted,
       marginBottom: 30,
       lineHeight: 1.7,
@@ -173,34 +172,35 @@ export default function VNPayResult() {
     },
     val: {
       color: T.text,
-      fontWeight: 600,
-      fontSize: 15,
+      fontWeight: 700,
+      fontSize: 14,
     },
     valMono: {
       color: T.text,
-      fontWeight: 600,
+      fontWeight: 700,
       fontFamily: "monospace",
       fontSize: 14,
     },
     valGold: {
       color: T.gold,
-      fontWeight: 700,
-      fontSize: 18,
+      fontWeight: 800,
+      fontSize: 16,
     },
     btnPrimary: {
       width: "100%",
       padding: "16px",
       background: T.gold,
-      color: "#ffffff",
+      color: "#090d16",
       border: "none",
       borderRadius: 12,
-      fontSize: 16,
+      fontSize: 15,
       letterSpacing: 1,
       textTransform: "uppercase",
       cursor: "pointer",
-      fontFamily: "'Roboto',sans-serif",
-      fontWeight: 700,
+      fontFamily: "'Plus Jakarta Sans',sans-serif",
+      fontWeight: 800,
       marginBottom: 14,
+      boxShadow: "0 4px 16px rgba(251, 191, 36, 0.25)",
     },
     btnOutline: {
       width: "100%",
@@ -209,15 +209,15 @@ export default function VNPayResult() {
       color: T.gold,
       border: `1px solid ${T.border}`,
       borderRadius: 12,
-      fontSize: 15,
+      fontSize: 14,
       letterSpacing: 1,
       textTransform: "uppercase",
       cursor: "pointer",
-      fontFamily: "'Roboto',sans-serif",
+      fontFamily: "'Plus Jakarta Sans',sans-serif",
       fontWeight: 700,
     },
     loadingText: {
-      fontSize: 16,
+      fontSize: 15,
       color: T.textMuted,
     },
   };
@@ -235,7 +235,7 @@ export default function VNPayResult() {
 
       <div style={S.box}>
         <div style={S.brand}>
-          LOCAL<span style={S.brandAccent}>BRAND</span>
+          <span style={S.brandAccent}>LAVIO</span>
         </div>
         <div style={S.goldLine} />
 
@@ -306,7 +306,7 @@ export default function VNPayResult() {
             <div style={S.icon(false)}>
               <i className="fas fa-times"></i>
             </div>
-            <h2 style={S.title}>Thanh Toán Thất Bại</h2>
+            <h2 style={{ ...S.title, color: T.fail }}>Thanh Toán Thất Bại</h2>
             <p style={S.subtitle}>
               {responseCode === "24"
                 ? "Giao dịch bị hủy bởi người dùng."

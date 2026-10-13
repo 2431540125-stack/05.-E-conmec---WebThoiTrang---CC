@@ -623,6 +623,40 @@ export default function Product() {
             </div>
           </div>
 
+          <div className="pd-voucher">
+            <div className="pd-voucher-item">
+              <div className="pd-voucher-left">
+                <span className="pd-pill">FLASH</span>
+                <div>
+                  <b>Freeship đơn từ 250K</b>
+                  <div className="pd-voucher-sub">Áp dụng cho đơn hàng nội thành</div>
+                </div>
+              </div>
+              <div className="pd-voucher-right">
+                <span className="pd-code">LAVIOFS</span>
+                <button type="button" className="pd-save">
+                  Lưu
+                </button>
+              </div>
+            </div>
+
+            <div className="pd-voucher-item">
+              <div className="pd-voucher-left">
+                <span className="pd-pill">SALE</span>
+                <div>
+                  <b>Giảm 10% tối đa 200K</b>
+                  <div className="pd-voucher-sub">Dành cho khách hàng mới</div>
+                </div>
+              </div>
+              <div className="pd-voucher-right">
+                <span className="pd-code">NEW10</span>
+                <button type="button" className="pd-save">
+                  Lưu
+                </button>
+              </div>
+            </div>
+          </div>
+
           {colors.length > 0 && (
             <div className="pd-opt">
               <div className="pd-opt-label">Màu:</div>

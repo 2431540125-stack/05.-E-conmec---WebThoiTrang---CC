@@ -1,51 +1,64 @@
+/* =========================================================
+   UPLOADADMIN.CSS - LUXURY DARK GOLD EXECUTIVE VIP
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* 1. NỀN TOÀN TRANG UPLOAD */
 .upload-container {
-  padding: 20px;
+  padding: 24px;
   min-height: 100vh;
-  background: #f3f3f3;
-  font-family: "Roboto", sans-serif;
-  color: #244656;
+  background: #0b0f17 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f8fafc !important;
 }
 
 .upload-head {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .upload-container h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
-  color: #35799d;
+  color: #fbbf24 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .upload-subtitle {
   margin: 6px 0 0;
-  color: #6d8796;
+  color: #94a3b8 !important;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .upload-loading {
-  padding: 20px;
+  padding: 24px;
   text-align: center;
-  font-family: "Roboto", sans-serif;
-  color: #244656;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fbbf24 !important;
+  font-size: 14px;
 }
 
+/* 2. KHU VỰC THẢ ẢNH (DROP ZONE) */
 .drop-zone {
-  background: #ffffff;
-  border: 1px dashed #bdd4e0;
+  background: #131b2e !important;
+  border: 2px dashed rgba(212, 175, 55, 0.35) !important;
   border-radius: 18px;
   min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-.drop-zone.active {
-  border-color: #4f97bb;
-  background: #eef6fa;
+.drop-zone.active,
+.drop-zone:hover {
+  border-color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.05) !important;
 }
 
 .drop-content {
@@ -54,7 +67,7 @@
 
 .upload-icon {
   font-size: 42px;
-  color: #35799d;
+  color: #fbbf24 !important;
   margin-bottom: 14px;
 }
 
@@ -62,36 +75,35 @@
   margin: 0 0 12px;
   font-size: 15px;
   font-weight: 700;
-  color: #244656;
+  color: #ffffff !important;
 }
 
 .browse-btn {
   min-height: 40px;
-  padding: 0 16px;
+  padding: 0 20px;
   border-radius: 10px;
-  border: 1px solid transparent;
-  background: #4f97bb;
-  border-color: #4f97bb;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  border: none !important;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: all 0.18s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.25);
 }
 
 .browse-btn:hover {
-  background: #35799d;
-  border-color: #35799d;
+  background: #f59e0b !important;
   transform: translateY(-1px);
 }
 
 .browse-btn:disabled {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: not-allowed;
   transform: none;
 }
@@ -99,16 +111,17 @@
 .drop-info {
   margin: 12px 0 0;
   font-size: 12px;
-  color: #7a95a4;
+  color: #94a3b8 !important;
 }
 
+/* 3. DANH SÁCH ẢNH ĐÃ UPLOAD (IMAGES LIST) */
 .images-list {
-  margin-top: 22px;
-  background: #fff;
-  border: 1px solid #bdd4e0;
+  margin-top: 24px;
+  background: #131b2e !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(79, 151, 187, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .images-head {
@@ -116,8 +129,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 18px;
-  border-bottom: 1px solid #e6eef3;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  background: #090d16 !important;
   flex-wrap: wrap;
 }
 
@@ -125,47 +139,50 @@
   margin: 0;
   font-size: 18px;
   font-weight: 800;
-  color: #35799d;
+  color: #fbbf24 !important;
 }
 
 .images-count {
-  color: #6d8796;
+  color: #94a3b8 !important;
   font-size: 13px;
   font-weight: 600;
 }
 
 .empty-message {
   margin: 0;
-  padding: 24px 18px;
+  padding: 32px 18px;
   text-align: center;
-  color: #7a95a4;
-  font-size: 13px;
+  color: #94a3b8 !important;
+  font-size: 14px;
 }
 
 .images-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 14px;
-  padding: 18px;
+  gap: 16px;
+  padding: 20px;
 }
 
+/* 4. TỪNG THẺ KHUNG ẢNH (IMAGE CARD) */
 .image-card {
   position: relative;
-  border: 1px solid #d7e5ec;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 14px;
   overflow: hidden;
-  background: #fff;
-  transition: all 0.18s ease;
+  background: #090d16 !important;
+  transition: all 0.2s ease;
 }
 
 .image-card:hover {
-  border-color: #4f97bb;
+  border-color: #fbbf24 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .image-preview {
   width: 100%;
-  height: 150px;
-  background: #f3f3f3;
+  height: 160px;
+  background: #000000 !important;
   overflow: hidden;
 }
 
@@ -177,14 +194,14 @@
 }
 
 .image-info {
-  padding: 12px;
+  padding: 14px;
 }
 
 .image-name {
   margin: 0 0 6px;
-  font-size: 14px;
-  font-weight: 800;
-  color: #244656;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff !important;
   line-height: 1.4;
   word-break: break-word;
 }
@@ -192,9 +209,10 @@
 .image-date {
   margin: 0 0 10px;
   font-size: 12px;
-  color: #7a95a4;
+  color: #94a3b8 !important;
 }
 
+/* Ô CHỨA ĐƯỜNG DẪN LINK ẢNH & NÚT COPY */
 .image-path-container {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -206,58 +224,60 @@
   width: 100%;
   height: 34px;
   padding: 0 10px;
-  border: 1px solid #d7e5ec;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 8px;
-  background: #f7fafc;
-  color: #6d8796;
-  font-family: "Roboto", sans-serif;
-  font-size: 11px;
+  background: #131b2e !important;
+  color: #cbd5e1 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
   box-sizing: border-box;
+  outline: none;
 }
 
 .copy-btn {
   width: 34px;
   height: 34px;
-  border: 1px solid #bdd4e0;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   border-radius: 8px;
-  background: #eef6fa;
-  color: #35799d;
+  background: #131b2e !important;
+  color: #fbbf24 !important;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.18s ease;
+  transition: all 0.2s ease;
 }
 
 .copy-btn:hover {
-  background: #dcecf4;
-  border-color: #4f97bb;
-  color: #244656;
+  background: #fbbf24 !important;
+  color: #090d16 !important;
 }
 
 .delete-btn {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border: none;
-  border-radius: 10px;
-  background: rgba(207, 42, 42, 0.92);
-  color: #fff;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.85) !important;
+  color: #ffffff !important;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  transition: all 0.18s ease;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(2px);
 }
 
 .delete-btn:hover {
-  background: #cf2a2a;
-  transform: translateY(-1px);
+  background: #ef4444 !important;
+  transform: scale(1.05);
 }
 
+/* RESPONSIVE */
 @media (max-width: 820px) {
   .images-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -302,6 +322,6 @@
   .browse-btn {
     min-height: 38px;
     font-size: 12px;
-    padding: 0 12px;
+    padding: 0 14px;
   }
 }

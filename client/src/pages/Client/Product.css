@@ -4,7 +4,7 @@
   width: 100%;
   padding: 18px 16px 44px;
   box-sizing: border-box;
-  background: #fff1f2;
+  background: linear-gradient(180deg, #fff6f8 0%, #fff1f2 100%);
 }
 
 /* ===== MAIN CARD ===== */
@@ -12,15 +12,15 @@
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(169, 20, 30, 0.1);
-  border-radius: 18px;
-  padding: 18px;
+  border-radius: 22px;
+  padding: 22px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  box-shadow: 0 10px 30px rgba(169, 20, 30, 0.05);
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 28px;
+  box-shadow: 0 18px 40px rgba(169, 20, 30, 0.08);
 }
 
 /* ================= LEFT GALLERY ================= */
@@ -37,15 +37,16 @@
 
 .pd-mainImgBox {
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(169, 20, 30, 0.1);
-  background: #ffffff;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(169, 20, 30, 0.02);
 }
 
 .pd-mainImg {
   width: 100%;
-  height: 500px;
+  height: 540px;
   object-fit: cover;
   display: block;
   background: #fff;
@@ -140,20 +141,22 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  padding: 8px 0;
 }
 
 .pd-title {
   margin: 0 0 8px;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: #a9141e;
 }
 
 .pd-brand {
   font-size: 13px;
   color: #6b585e;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .pd-brand b {
@@ -166,9 +169,10 @@
   gap: 10px;
   border: 1px solid rgba(169, 20, 30, 0.1);
   border-radius: 16px;
-  background: #ffffffe8;
+  background: linear-gradient(180deg, #fffafc, #fff);
   padding: 14px;
-  box-shadow: 0 4px 16px rgba(169, 20, 30, 0.03);
+  box-shadow: 0 8px 18px rgba(169, 20, 30, 0.04);
+  margin-bottom: 12px;
 }
 
 .pd-voucher-item {
@@ -273,7 +277,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin: 16px 0 18px;
+  margin: 10px 0 18px;
 }
 
 .pd-oldPrice {
@@ -283,7 +287,7 @@
 }
 
 .pd-price {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
   color: #a9141e;
 }
@@ -310,12 +314,13 @@
   padding: 9px 14px;
   border-radius: 999px;
   border: 1px solid rgba(169, 20, 30, 0.12);
-  background: #ffffff;
+  background: #fff;
   font-size: 13px;
   font-weight: 600;
   color: #6b585e;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-width: 74px;
 }
 
 .pd-chip:hover {
@@ -347,7 +352,7 @@
 /* ===== QUANTITY ===== */
 .pd-qtyRow {
   margin-top: 14px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   border: 1px solid rgba(169, 20, 30, 0.12);
   border-radius: 12px;
@@ -409,6 +414,7 @@
   font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
+  letter-spacing: 0.01em;
 }
 
 .pd-buy {
@@ -444,10 +450,17 @@
 .pd-accordion {
   margin-top: 22px;
   border-top: 1px solid rgba(169, 20, 30, 0.08);
+  background: #fffafc;
+  border-radius: 14px;
+  padding: 0 12px;
 }
 
 .pd-acc-item {
   border-bottom: 1px solid rgba(169, 20, 30, 0.08);
+}
+
+.pd-acc-item:last-child {
+  border-bottom: none;
 }
 
 .pd-acc-header {
@@ -533,6 +546,39 @@
 .pd-reviewSection {
   display: grid;
   gap: 22px;
+}
+
+@media (max-width: 768px) {
+  .pd-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .pd-mainImg {
+    height: 380px;
+  }
+
+  .pd-title {
+    font-size: 26px;
+  }
+
+  .pd-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-voucher-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pd-voucher-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pd-related-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .pd-ratingSummary {
@@ -966,4 +1012,223 @@
   .pd-related-item img {
     height: 240px;
   }
+}
+
+/* ================= LUXURY DARK GOLD THEME ================= */
+
+.pd-wrap {
+  --pd-bg: #0b0f17;
+  --pd-surface: #131b2e;
+  --pd-surface-deep: #090d16;
+  --pd-border: rgba(212, 175, 55, 0.25);
+  --pd-gold: #fbbf24;
+  --pd-gold-hover: #f59e0b;
+  --pd-text: #f8fafc;
+  --pd-muted: #94a3b8;
+  background: var(--pd-bg);
+  color: var(--pd-text);
+}
+
+.pd-card,
+.pd-bottom,
+.pd-related-item {
+  background: var(--pd-surface);
+  color: #cbd5e1;
+  border-color: var(--pd-border);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+}
+
+.pd-title,
+.pd-related h2,
+.pd-reviewForm h3 {
+  color: var(--pd-text);
+}
+
+.pd-brand,
+.pd-brand b,
+.pd-stock,
+.pd-ratingText,
+.pd-ratingCount,
+.pd-ratingStarLabel,
+.pd-ratingNum,
+.pd-reviewItem p,
+.pd-reviewEmpty,
+.pd-related-sold,
+.pd-short-desc {
+  color: var(--pd-muted);
+}
+
+.pd-price,
+.pd-related-price,
+.pd-opt-label,
+.pd-ratingAvg {
+  color: var(--pd-gold);
+}
+
+.pd-oldPrice {
+  color: #64748b;
+}
+
+.pd-voucher,
+.pd-ratingSummary,
+.pd-reviewForm,
+.pd-reviewItem,
+.pd-related-item,
+.pd-accordion {
+  background: var(--pd-surface-deep);
+  border-color: var(--pd-border);
+}
+
+.pd-voucher {
+  border-style: dashed;
+}
+
+.pd-voucher-item,
+.pd-accordion,
+.pd-acc-item,
+.pd-tabs {
+  border-color: var(--pd-border);
+}
+
+.pd-voucher-left b,
+.pd-acc-left,
+.pd-reviewHead b,
+.pd-related-name {
+  color: var(--pd-text);
+}
+
+.pd-voucher-sub,
+.pd-acc-content {
+  color: var(--pd-muted);
+}
+
+.pd-pill {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.pd-code {
+  background: var(--pd-surface);
+  color: var(--pd-gold);
+  border-color: var(--pd-border);
+}
+
+.pd-save,
+.pd-cart,
+.pd-submitReview {
+  background: var(--pd-gold);
+  color: var(--pd-surface-deep);
+  border-color: var(--pd-gold);
+  font-weight: 800;
+}
+
+.pd-save:hover,
+.pd-cart:hover,
+.pd-submitReview:hover {
+  background: var(--pd-gold-hover);
+  border-color: var(--pd-gold-hover);
+}
+
+.pd-chip,
+.pd-qtyRow,
+.pd-tab,
+.pd-nav,
+.pd-reviewInput {
+  background: var(--pd-surface-deep);
+  color: #cbd5e1;
+  border-color: var(--pd-border);
+}
+
+.pd-chip:hover,
+.pd-tab:hover,
+.pd-nav:hover,
+.pd-qtyBtn:hover {
+  background: var(--pd-surface);
+  border-color: var(--pd-gold);
+  color: var(--pd-gold);
+}
+
+.pd-chip.active,
+.pd-tab.active {
+  background: var(--pd-gold);
+  color: var(--pd-surface-deep);
+  border-color: var(--pd-gold);
+}
+
+.pd-qtyBtn {
+  color: var(--pd-gold);
+}
+
+.pd-qtyInput {
+  background: var(--pd-surface-deep);
+  color: var(--pd-text);
+  border-color: var(--pd-border);
+}
+
+.pd-buy {
+  background: var(--pd-surface-deep);
+  color: var(--pd-gold);
+  border-color: var(--pd-gold);
+}
+
+.pd-buy:hover {
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.pd-acc-arrow,
+.pd-reviewStar,
+.pd-starBtn.active {
+  color: var(--pd-gold);
+}
+
+.pd-bar {
+  background: #263247;
+}
+
+.pd-barFill {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.pd-reviewInput::placeholder {
+  color: #64748b;
+}
+
+.pd-reviewInput:focus {
+  border-color: var(--pd-gold);
+}
+
+.pd-adminReply {
+  background: #131b2e;
+  color: #cbd5e1;
+  border-left-color: var(--pd-gold);
+}
+
+.pd-mainImgBox,
+.pd-thumb,
+.pd-thumb img,
+.pd-related-item img {
+  border-color: var(--pd-border);
+  background: var(--pd-surface-deep);
+}
+
+.pd-thumb.active {
+  border-color: var(--pd-gold);
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.35);
+}
+
+.pd-related-item:hover {
+  border-color: var(--pd-gold);
+}
+
+.pd-soldout {
+  background: rgba(9, 13, 22, 0.72);
+}
+
+.pd-btn:disabled,
+.pd-qtyBtn:disabled,
+.pd-chip:disabled,
+.pd-starBtn:disabled,
+.pd-submitReview:disabled {
+  opacity: 0.55;
 }

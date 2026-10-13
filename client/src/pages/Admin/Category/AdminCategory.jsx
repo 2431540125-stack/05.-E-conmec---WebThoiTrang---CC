@@ -111,7 +111,7 @@ const AdminCategory = () => {
       const prefix = level === 0 ? "" : "--".repeat(level) + " ";
 
       options.push(
-        <option key={node._id} value={node._id}>
+        <option key={node._id} value={node._id} style={{ background: "#131b2e", color: "#ffffff" }}>
           {prefix + node.name}
         </option>,
       );
@@ -238,9 +238,9 @@ const AdminCategory = () => {
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
           >
-            <option value="">-- Tất cả --</option>
-            <option value="root">Danh mục gốc</option>
-            <option value="child">Danh mục con</option>
+            <option value="" style={{ background: "#131b2e", color: "#ffffff" }}>-- Tất cả --</option>
+            <option value="root" style={{ background: "#131b2e", color: "#ffffff" }}>Danh mục gốc</option>
+            <option value="child" style={{ background: "#131b2e", color: "#ffffff" }}>Danh mục con</option>
           </select>
         </div>
 
@@ -284,7 +284,7 @@ const AdminCategory = () => {
               ) : filteredTableData.length > 0 ? (
                 filteredTableData.map((cat, index) => (
                   <tr key={cat._id}>
-                    <td className="ac-center">{index + 1}</td>
+                    <td className="ac-center ac-stt">{index + 1}</td>
 
                     <td>
                       <div
@@ -397,7 +397,7 @@ const AdminCategory = () => {
                       setFormData({ ...formData, parentId: e.target.value })
                     }
                   >
-                    <option value="">
+                    <option value="" style={{ background: "#131b2e", color: "#ffffff" }}>
                       -- Là danh mục gốc (Không có cha) --
                     </option>
                     {renderOptions(categoryTreeForDropdown)}
@@ -428,9 +428,15 @@ const AdminCategory = () => {
       )}
 
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
         .ac-page {
-          font-family: "Roboto", sans-serif;
+          font-family: "Plus Jakarta Sans", sans-serif;
           animation: acFadeIn 0.25s ease-in-out;
+          background: #0b0f17;
+          min-height: 100vh;
+          padding: 24px;
+          color: #f8fafc;
         }
 
         @keyframes acFadeIn {
@@ -449,23 +455,24 @@ const AdminCategory = () => {
           align-items: flex-start;
           justify-content: space-between;
           gap: 16px;
-          margin-top: 18px;
-          margin-bottom: 12px;
+          margin-bottom: 20px;
           flex-wrap: wrap;
         }
 
         .ac-title {
           margin: 0;
-          font-size: 24px;
+          font-size: 26px;
           font-weight: 800;
-          color: #35799d;
+          color: #fbbf24;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .ac-subtitle {
           margin: 6px 0 0;
-          font-size: 13px;
+          font-size: 13.5px;
           line-height: 1.5;
-          color: #6d8796;
+          color: #94a3b8;
         }
 
         .ac-actions {
@@ -476,15 +483,15 @@ const AdminCategory = () => {
         }
 
         .ac-btn {
-          font-family: "Roboto", sans-serif;
-          min-height: 38px;
-          padding: 0 14px;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          min-height: 40px;
+          padding: 0 18px;
           border-radius: 10px;
           border: 1px solid transparent;
           cursor: pointer;
-          font-weight: 700;
+          font-weight: 800;
           font-size: 13px;
-          transition: all 0.18s ease;
+          transition: all 0.2s ease;
           user-select: none;
           display: inline-flex;
           align-items: center;
@@ -493,89 +500,88 @@ const AdminCategory = () => {
         }
 
         .ac-btn:disabled {
-          opacity: 0.6;
+          opacity: 0.5;
           cursor: not-allowed;
         }
 
         .ac-btnPrimary {
-          background: #4f97bb;
-          border-color: #4f97bb;
-          color: #fff;
-          box-shadow: 0 10px 24px rgba(79, 151, 187, 0.18);
+          background: #fbbf24;
+          border-color: #fbbf24;
+          color: #090d16;
+          box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
         }
 
         .ac-btnPrimary:hover {
-          background: #35799d;
-          border-color: #35799d;
+          background: #f59e0b;
+          border-color: #f59e0b;
           transform: translateY(-1px);
         }
 
         .ac-btnGhost {
-          background: #fff;
-          border-color: #bdd4e0;
-          color: #35799d;
+          background: #090d16;
+          border-color: rgba(212, 175, 55, 0.3);
+          color: #cbd5e1;
         }
 
         .ac-btnGhost:hover {
-          background: #e2eef5;
-          border-color: #4f97bb;
-          color: #244656;
+          border-color: #fbbf24;
+          color: #fbbf24;
         }
 
         .ac-btnEdit {
-          min-width: 64px;
-          background: #1e459f;
-          border-color: #1e459f;
-          color: #fff;
-          box-shadow: 0 8px 18px rgba(30, 69, 159, 0.14);
+          min-width: 60px;
+          height: 30px;
+          min-height: 30px;
+          background: #fbbf24;
+          border-color: #fbbf24;
+          color: #090d16;
+          font-weight: 800;
         }
 
         .ac-btnEdit:hover {
-          background: #183b87;
-          border-color: #183b87;
-          transform: translateY(-1px);
+          background: #f59e0b;
         }
 
         .ac-btnDanger {
-          min-width: 64px;
-          background: #cf2a2a;
-          border-color: #cf2a2a;
-          color: #fff;
-          box-shadow: 0 8px 18px rgba(207, 42, 42, 0.14);
+          min-width: 60px;
+          height: 30px;
+          min-height: 30px;
+          background: rgba(239, 68, 68, 0.2);
+          border-color: rgba(239, 68, 68, 0.4);
+          color: #f87171;
+          font-weight: 800;
         }
 
         .ac-btnDanger:hover {
-          background: #b82424;
-          border-color: #b82424;
-          transform: translateY(-1px);
+          background: rgba(239, 68, 68, 0.4);
         }
 
         .ac-stats {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 14px;
-          margin: 20px 0 14px;
+          margin: 20px 0 16px;
         }
 
         .ac-statCard {
-          background: #fff;
-          border: 1px solid #bdd4e0;
+          background: #131b2e;
+          border: 1px solid rgba(212, 175, 55, 0.25);
           border-radius: 16px;
-          padding: 16px 18px;
-          box-shadow: 0 6px 18px rgba(79, 151, 187, 0.08);
+          padding: 18px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
         .ac-statLabel {
-          font-size: 12px;
+          font-size: 13px;
           font-weight: 700;
-          color: #6d8796;
+          color: #94a3b8;
           margin-bottom: 8px;
         }
 
         .ac-statValue {
           font-size: 28px;
           font-weight: 800;
-          color: #244656;
+          color: #fbbf24;
           line-height: 1;
         }
 
@@ -584,16 +590,16 @@ const AdminCategory = () => {
           grid-template-columns: 1.3fr 1fr auto;
           gap: 14px;
           align-items: end;
-          background: #fff;
-          border: 1px solid #bdd4e0;
+          background: #131b2e;
+          border: 1px solid rgba(212, 175, 55, 0.25);
           border-radius: 16px;
           padding: 16px;
-          margin: 0 0 24px;
-          box-shadow: 0 6px 18px rgba(79, 151, 187, 0.08);
+          margin: 0 0 20px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
         .ac-statBox {
-          min-height: 42px;
+          min-height: 40px;
           display: flex;
           align-items: center;
         }
@@ -623,52 +629,52 @@ const AdminCategory = () => {
         }
 
         .ac-label {
-          font-size: 14px;
+          font-size: 13.5px;
           font-weight: 700;
-          color: #244656;
+          color: #fbbf24;
           line-height: 1.4;
         }
 
         .ac-required {
-          color: #cf2a2a;
+          color: #f87171;
         }
 
         .ac-input {
-          font-family: "Roboto", sans-serif;
-          height: 42px;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          height: 40px;
           padding: 0 12px;
-          border-radius: 12px;
-          border: 1px solid #bdd4e0;
+          border-radius: 10px;
+          border: 1px solid rgba(212, 175, 55, 0.3);
           outline: none;
-          background: #fff;
-          color: #244656;
-          font-size: 13px;
+          background: #090d16;
+          color: #ffffff;
+          font-size: 13.5px;
           width: 100%;
           box-sizing: border-box;
           transition: all 0.2s ease;
         }
 
         .ac-input:focus {
-          border-color: #4f97bb;
-          box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14);
+          border-color: #fbbf24;
+          box-shadow: 0 0 8px rgba(251, 191, 36, 0.25);
         }
 
         .ac-input::placeholder {
-          color: #90a5b1;
+          color: #64748b;
         }
 
         .ac-helpText {
-          margin-top: -2px;
+          margin-top: 2px;
           font-size: 12px;
-          color: #7a95a4;
+          color: #94a3b8;
         }
 
         .ac-card {
-          background: #fff;
-          border-radius: 16px;
-          border: 1px solid #bdd4e0;
+          background: #131b2e;
+          border-radius: 18px;
+          border: 1px solid rgba(212, 175, 55, 0.25);
           overflow: hidden;
-          box-shadow: 0 6px 18px rgba(79, 151, 187, 0.08);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
         .ac-tableWrap {
@@ -680,33 +686,37 @@ const AdminCategory = () => {
           width: 100%;
           border-collapse: collapse;
           min-width: 920px;
+          background: #131b2e;
         }
 
         .ac-table thead th {
-          background: #e2edf4;
-          color: #5f7d8d;
-          font-size: 12px;
+          background: #090d16;
+          color: #fbbf24;
+          font-size: 12.5px;
           font-weight: 800;
-          border-bottom: 1px solid #d7e5ec;
-          padding: 13px 12px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+          padding: 14px 12px;
           white-space: nowrap;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .ac-table td {
-          padding: 12px;
-          border-bottom: 1px solid #edf3f6;
-          font-size: 13px;
-          color: #244656;
+          padding: 14px 12px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+          font-size: 13.5px;
+          color: #cbd5e1;
           vertical-align: middle;
           word-break: break-word;
         }
 
         .ac-table tbody tr:hover td {
-          background: rgba(79, 151, 187, 0.05);
+          background: rgba(255, 255, 255, 0.02);
         }
 
-        .ac-right {
-          text-align: right !important;
+        .ac-stt {
+          font-weight: 800;
+          color: #fbbf24;
         }
 
         .ac-center {
@@ -714,13 +724,13 @@ const AdminCategory = () => {
         }
 
         .ac-muted {
-          color: #7a95a4 !important;
+          color: #94a3b8 !important;
         }
 
         .ac-mono {
-          font-family: "Roboto", sans-serif;
-          font-size: 12px;
-          letter-spacing: 0.3px;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          font-size: 13px;
+          color: #94a3b8;
         }
 
         .ac-nameCell {
@@ -730,55 +740,55 @@ const AdminCategory = () => {
         }
 
         .ac-levelIcon {
-          color: #9db2bf;
+          color: #fbbf24;
           font-size: 12px;
           flex-shrink: 0;
         }
 
         .ac-rootName {
           font-weight: 800;
-          color: #35799d;
+          color: #ffffff;
         }
 
         .ac-childName {
           font-weight: 600;
-          color: #244656;
+          color: #cbd5e1;
         }
 
         .ac-badge {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-height: 26px;
+          min-height: 24px;
           padding: 0 10px;
           border-radius: 999px;
-          font-size: 12px;
+          font-size: 11.5px;
           font-weight: 800;
           border: 1px solid transparent;
-          font-family: "Roboto", sans-serif;
+          font-family: "Plus Jakarta Sans", sans-serif;
           line-height: 1;
         }
 
         .ac-badgeSuccess {
-          background: rgba(12, 107, 55, 0.1);
-          color: #0c6b37;
-          border-color: rgba(12, 107, 55, 0.22);
+          background: rgba(34, 197, 94, 0.15);
+          color: #4ade80;
+          border-color: rgba(34, 197, 94, 0.3);
         }
 
         .ac-badgeInfo {
-          background: rgba(30, 69, 159, 0.1);
-          color: #1e459f;
-          border-color: rgba(30, 69, 159, 0.22);
+          background: rgba(251, 191, 36, 0.15);
+          color: #fbbf24;
+          border-color: rgba(251, 191, 36, 0.3);
         }
 
         .ac-badgeSoft {
-          background: rgba(79, 151, 187, 0.1);
-          color: #35799d;
-          border: 1px solid rgba(79, 151, 187, 0.22);
+          background: rgba(59, 130, 246, 0.15);
+          color: #60a5fa;
+          border: 1px solid rgba(59, 130, 246, 0.3);
           border-radius: 8px;
-          min-height: 28px;
+          min-height: 26px;
           padding: 0 10px;
-          font-size: 12px;
+          font-size: 11.5px;
           font-weight: 800;
         }
 
@@ -797,7 +807,8 @@ const AdminCategory = () => {
         .ac-modalBackdrop {
           position: fixed;
           inset: 0;
-          background: rgba(36, 70, 86, 0.32);
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(4px);
           z-index: 9999;
           display: flex;
           align-items: center;
@@ -809,13 +820,14 @@ const AdminCategory = () => {
           width: 560px;
           max-width: 94%;
           max-height: 90vh;
-          background: #fff;
+          background: #131b2e;
           border-radius: 18px;
           overflow: hidden;
-          box-shadow: 0 20px 48px rgba(53, 121, 157, 0.18);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
           display: flex;
           flex-direction: column;
-          border: 1px solid #bdd4e0;
+          border: 1px solid rgba(212, 175, 55, 0.25);
+          color: #ffffff;
         }
 
         .ac-modalHead {
@@ -823,44 +835,35 @@ const AdminCategory = () => {
           align-items: center;
           justify-content: space-between;
           gap: 10px;
-          padding: 14px;
-          border-bottom: 1px solid #e6eef3;
+          padding: 16px 20px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.2);
           flex-shrink: 0;
-          background: #f7fafc;
+          background: #090d16;
         }
 
         .ac-modalTitle {
           margin: 0;
-          font-size: 17px;
-          font-weight: 900;
-          color: #35799d;
-          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          font-weight: 800;
+          color: #fbbf24;
+          font-family: "Plus Jakarta Sans", sans-serif;
         }
 
         .ac-form {
-          padding: 16px;
+          padding: 20px;
           overflow-y: auto;
           flex: 1 1 auto;
           min-height: 0;
-          font-family: "Roboto", sans-serif;
-        }
-
-        .ac-form::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        .ac-form::-webkit-scrollbar-thumb {
-          background: rgba(79, 151, 187, 0.28);
-          border-radius: 999px;
+          font-family: "Plus Jakarta Sans", sans-serif;
         }
 
         .ac-formActions {
           display: flex;
           justify-content: flex-end;
           gap: 10px;
-          padding: 14px 16px 16px;
-          border-top: 1px solid #e6eef3;
-          background: #fff;
+          padding: 14px 20px 18px;
+          border-top: 1px solid rgba(212, 175, 55, 0.2);
+          background: #090d16;
           position: sticky;
           bottom: 0;
           z-index: 2;
@@ -899,44 +902,6 @@ const AdminCategory = () => {
 
           .ac-formActions .ac-btn {
             width: 100%;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .ac-page {
-            font-size: 14px;
-          }
-
-          .ac-title {
-            font-size: 20px;
-          }
-
-          .ac-subtitle {
-            font-size: 12px;
-          }
-
-          .ac-toolbar,
-          .ac-form,
-          .ac-modalHead,
-          .ac-formActions {
-            padding-left: 12px;
-            padding-right: 12px;
-          }
-
-          .ac-toolbar {
-            padding-top: 14px;
-            padding-bottom: 14px;
-            gap: 12px;
-          }
-
-          .ac-btn {
-            min-height: 40px;
-            padding: 0 12px;
-            font-size: 12px;
-          }
-
-          .ac-input {
-            font-size: 13px;
           }
         }
       `}</style>

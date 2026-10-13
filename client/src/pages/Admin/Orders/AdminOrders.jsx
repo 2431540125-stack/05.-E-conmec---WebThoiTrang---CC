@@ -78,21 +78,21 @@ const AdminOrders = () => {
   function getStatusColor(status) {
     switch (status) {
       case "Pending":
-        return "#f0ad4e";
+        return "#fbbf24";
       case "Confirmed":
-        return "#1e459f";
+        return "#3b82f6";
       case "Processing":
-        return "#4f97bb";
+        return "#8b5cf6";
       case "Shipping":
-        return "#35799d";
+        return "#06b6d4";
       case "Delivered":
-        return "#0c6b37";
+        return "#10b981";
       case "Cancelled":
-        return "#cf2a2a";
+        return "#ef4444";
       case "Returned":
-        return "#7a4fb3";
+        return "#a855f7";
       default:
-        return "#6c757d";
+        return "#64748b";
     }
   }
 
@@ -100,27 +100,32 @@ const AdminOrders = () => {
     () => ({
       page: {
         minHeight: "100vh",
-        fontFamily: '"Roboto", sans-serif',
-        color: "#244656",
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
+        color: "#f8fafc",
+        padding: "24px",
+        background: "#0b0f17",
       },
       pageTitle: {
         margin: 0,
-        fontSize: "28px",
+        fontSize: "26px",
         fontWeight: 800,
-        color: "#35799d",
+        color: "#fbbf24",
+        textTransform: "uppercase",
+        letterSpacing: "0.5px",
       },
       pageSubtitle: {
         marginTop: 6,
-        color: "#6d8796",
-        fontSize: "14px",
+        color: "#94a3b8",
+        fontSize: "13.5px",
       },
 
       topSection: {
-        marginTop: "18px",
-        background: "#eaf4f8",
-        border: "1px solid #cfe0e8",
+        marginTop: "20px",
+        background: "#131b2e",
+        border: "1px solid rgba(212, 175, 55, 0.25)",
         borderRadius: "18px",
-        padding: "18px",
+        padding: "20px",
+        boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)",
       },
 
       filterBar: {
@@ -139,78 +144,80 @@ const AdminOrders = () => {
       },
       label: {
         fontSize: "13px",
-        color: "#5f7d8d",
+        color: "#fbbf24",
         fontWeight: 700,
       },
       input: {
-        height: "42px",
-        borderRadius: "12px",
-        border: "1px solid #cfe0e8",
+        height: "40px",
+        borderRadius: "10px",
+        border: "1px solid rgba(212, 175, 55, 0.3)",
         padding: "0 12px",
         outline: "none",
-        fontSize: "14px",
-        color: "#244656",
-        background: "#fff",
+        fontSize: "13.5px",
+        color: "#ffffff",
+        background: "#090d16",
         boxSizing: "border-box",
+        colorScheme: "dark",
       },
       select: {
-        height: "42px",
-        borderRadius: "12px",
-        border: "1px solid #cfe0e8",
+        height: "40px",
+        borderRadius: "10px",
+        border: "1px solid rgba(212, 175, 55, 0.3)",
         padding: "0 12px",
         outline: "none",
-        fontSize: "14px",
-        color: "#244656",
-        background: "#fff",
+        fontSize: "13.5px",
+        color: "#ffffff",
+        background: "#090d16",
       },
 
       actionBtn: {
         cursor: "pointer",
-        background: "#4f97bb",
-        color: "white",
+        background: "#fbbf24",
+        color: "#090d16",
         border: "none",
-        padding: "9px 14px",
+        padding: "0 18px",
         borderRadius: "10px",
-        fontWeight: 700,
-        fontFamily: '"Roboto", sans-serif',
-        boxShadow: "0 8px 18px rgba(79, 151, 187, 0.16)",
-        height: "42px",
+        fontWeight: 800,
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
+        boxShadow: "0 4px 12px rgba(251, 191, 36, 0.25)",
+        height: "40px",
+        transition: "all 0.2s ease",
       },
       secondaryBtn: {
         cursor: "pointer",
-        background: "#ffffff",
-        color: "#35799d",
-        border: "1px solid #b8cfdb",
-        padding: "9px 14px",
+        background: "#090d16",
+        color: "#cbd5e1",
+        border: "1px solid rgba(212, 175, 55, 0.3)",
+        padding: "0 18px",
         borderRadius: "10px",
         fontWeight: 700,
-        fontFamily: '"Roboto", sans-serif',
-        height: "42px",
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
+        height: "40px",
+        transition: "all 0.2s ease",
       },
 
       statsGrid: {
-        marginTop: "18px",
+        marginTop: "20px",
         display: "grid",
         gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
-        gap: "12px",
+        gap: "14px",
       },
       statCard: {
-        background: "#ffffff",
-        border: "1px solid #d7e5ec",
-        borderRadius: "16px",
+        background: "#090d16",
+        border: "1px solid rgba(212, 175, 55, 0.25)",
+        borderRadius: "14px",
         padding: "16px",
-        boxShadow: "0 4px 14px rgba(79, 151, 187, 0.08)",
       },
       statLabel: {
         fontSize: "13px",
-        color: "#6d8796",
+        color: "#94a3b8",
         marginBottom: "8px",
         fontWeight: 700,
       },
       statValue: {
         fontSize: "26px",
         fontWeight: 800,
-        color: "#35799d",
+        color: "#fbbf24",
       },
 
       tableCard: {
@@ -223,91 +230,96 @@ const AdminOrders = () => {
       tableWrap: {
         width: "100%",
         overflowX: "auto",
-        background: "#ffffff",
-        border: "1px solid #bdd4e0",
+        background: "#131b2e",
+        border: "1px solid rgba(212, 175, 55, 0.25)",
         borderRadius: "18px 18px 0 0",
       },
       table: {
         width: "100%",
         borderCollapse: "collapse",
         minWidth: "1180px",
-        fontSize: "14px",
-        background: "#ffffff",
+        fontSize: "13.5px",
+        background: "#131b2e",
       },
       thead: {
-        background: "#eaf2f7",
-        color: "#5f7d8d",
+        background: "#090d16",
+        color: "#fbbf24",
       },
       th: {
         padding: "14px 12px",
         textAlign: "left",
         fontWeight: 800,
-        borderBottom: "1px solid #d7e5ec",
+        borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
         whiteSpace: "nowrap",
+        textTransform: "uppercase",
+        letterSpacing: "0.5px",
+        fontSize: "12.5px",
       },
       tr: {
-        borderBottom: "1px solid #edf3f6",
+        borderBottom: "1px solid rgba(212, 175, 55, 0.15)",
       },
       td: {
         padding: "14px 12px",
         verticalAlign: "middle",
-        color: "#244656",
+        color: "#cbd5e1",
       },
       code: {
         fontWeight: 800,
-        color: "#35799d",
+        color: "#fbbf24",
       },
       address: {
-        color: "#7a95a4",
+        color: "#94a3b8",
         fontSize: "12px",
         lineHeight: 1.5,
       },
       dateSub: {
-        color: "#7a95a4",
+        color: "#94a3b8",
         fontSize: "12px",
       },
       price: {
-        color: "#cf2a2a",
+        color: "#f87171",
         fontWeight: 800,
       },
       empty: {
         textAlign: "center",
-        padding: 24,
-        color: "#6d8796",
+        padding: 32,
+        color: "#94a3b8",
       },
       loading: {
-        padding: 20,
-        fontFamily: '"Roboto", sans-serif',
-        color: "#244656",
+        padding: 24,
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
+        color: "#fbbf24",
+        fontSize: "14px",
       },
 
-      badge: (bg, color = "#fff") => ({
+      badge: (bg, color = "#fff", border = "transparent") => ({
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
         minWidth: "110px",
-        padding: "7px 10px",
+        padding: "6px 10px",
         borderRadius: "999px",
-        fontWeight: 700,
+        fontWeight: 800,
         fontSize: "12px",
         background: bg,
         color,
+        border: `1px solid ${border}`,
         marginTop: "6px",
       }),
 
       statusSelect: (status, disabled) => ({
         padding: "8px 12px",
-        borderRadius: "12px",
-        fontWeight: 700,
-        fontFamily: '"Roboto", sans-serif',
-        color: "#ffffff",
+        borderRadius: "10px",
+        fontWeight: 800,
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
+        color: "#090d16",
         border: "none",
         backgroundColor: getStatusColor(status),
         minWidth: "160px",
         cursor: disabled ? "not-allowed" : "pointer",
         opacity: disabled ? 0.7 : 1,
         outline: "none",
-        boxShadow: "0 6px 14px rgba(36, 70, 86, 0.12)",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
       }),
 
       paginationWrap: {
@@ -315,16 +327,16 @@ const AdminOrders = () => {
         justifyContent: "space-between",
         alignItems: "center",
         gap: "12px",
-        padding: "14px 18px",
-        background: "#ffffff",
-        border: "1px solid #bdd4e0",
+        padding: "16px 20px",
+        background: "#090d16",
+        border: "1px solid rgba(212, 175, 55, 0.25)",
         borderTop: "none",
         borderRadius: "0 0 18px 18px",
         flexWrap: "wrap",
       },
       paginationInfo: {
-        fontSize: "14px",
-        color: "#6d8796",
+        fontSize: "13.5px",
+        color: "#94a3b8",
       },
       paginationBtns: {
         display: "flex",
@@ -336,10 +348,10 @@ const AdminOrders = () => {
         minWidth: "38px",
         height: "38px",
         borderRadius: "10px",
-        border: active ? "none" : "1px solid #cfe0e8",
-        background: active ? "#4f97bb" : "#fff",
-        color: active ? "#fff" : "#35799d",
-        fontWeight: 700,
+        border: active ? "none" : "1px solid rgba(212, 175, 55, 0.3)",
+        background: active ? "#fbbf24" : "#131b2e",
+        color: active ? "#090d16" : "#cbd5e1",
+        fontWeight: 800,
         cursor: "pointer",
         padding: "0 12px",
       }),
@@ -347,73 +359,77 @@ const AdminOrders = () => {
       modalBackdrop: {
         position: "fixed",
         inset: 0,
-        background: "rgba(36, 70, 86, 0.45)",
+        background: "rgba(0, 0, 0, 0.75)",
+        backdropFilter: "blur(4px)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         zIndex: 1000,
         padding: "16px",
-        fontFamily: '"Roboto", sans-serif',
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
       },
       modal: {
-        background: "#ffffff",
+        background: "#131b2e",
         borderRadius: "18px",
         width: isMobile ? "100%" : "860px",
         maxWidth: "100%",
         maxHeight: "88vh",
         overflow: "auto",
-        scrollbarWidth: "none",
-        msOverflowStyle: "none",
-
-        border: "1px solid #bdd4e0",
-        boxShadow: "0 20px 48px rgba(53, 121, 157, 0.18)",
+        border: "1px solid rgba(212, 175, 55, 0.25)",
+        boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
+        color: "#ffffff",
       },
       modalHeader: {
-        padding: "20px 22px 14px",
-        borderBottom: "1px solid #e6eef3",
+        padding: "20px 24px",
+        borderBottom: "1px solid rgba(212, 175, 55, 0.2)",
+        background: "#090d16",
       },
       modalTitle: {
         margin: 0,
         fontSize: "20px",
         fontWeight: 800,
-        color: "#35799d",
+        color: "#fbbf24",
       },
       modalBody: {
-        padding: "18px 22px 22px",
+        padding: "22px 24px",
       },
       sectionTitle: {
-        margin: "18px 0 10px",
+        margin: "20px 0 12px",
         fontSize: "16px",
         fontWeight: 800,
-        color: "#35799d",
+        color: "#fbbf24",
       },
       infoText: {
         margin: "0 0 10px",
-        fontSize: "14px",
+        fontSize: "13.5px",
         lineHeight: 1.6,
+        color: "#cbd5e1",
       },
       detailTable: {
         width: "100%",
         marginTop: "16px",
         borderCollapse: "collapse",
-        border: "1px solid #e6eef3",
+        border: "1px solid rgba(212, 175, 55, 0.2)",
         borderRadius: "12px",
         overflow: "hidden",
       },
       detailHeadRow: {
-        background: "#f7fafc",
+        background: "#090d16",
       },
       detailHeadCell: {
-        padding: 10,
+        padding: 12,
         textAlign: "left",
-        color: "#5f7d8d",
+        color: "#fbbf24",
         fontWeight: 800,
-        borderBottom: "1px solid #e6eef3",
+        borderBottom: "1px solid rgba(212, 175, 55, 0.2)",
+        fontSize: "12.5px",
       },
       detailCell: {
-        padding: 10,
-        borderBottom: "1px solid #edf3f6",
+        padding: 12,
+        borderBottom: "1px solid rgba(212, 175, 55, 0.15)",
         verticalAlign: "middle",
+        color: "#cbd5e1",
+        fontSize: "13px",
       },
       productRow: {
         display: "flex",
@@ -425,55 +441,63 @@ const AdminOrders = () => {
         height: "44px",
         objectFit: "cover",
         borderRadius: "10px",
-        border: "1px solid #d7e5ec",
+        border: "1px solid rgba(212, 175, 55, 0.3)",
+        background: "#090d16",
         flexShrink: 0,
       },
       productMeta: {
-        color: "#7a95a4",
+        color: "#94a3b8",
         fontSize: "12px",
         lineHeight: 1.5,
       },
       moneyBlock: {
         marginTop: "20px",
-        paddingTop: "14px",
-        borderTop: "1px solid #e6eef3",
+        paddingTop: "16px",
+        borderTop: "1px solid rgba(212, 175, 55, 0.2)",
         textAlign: "right",
         lineHeight: 1.9,
-        color: "#244656",
+        color: "#cbd5e1",
       },
       finalMoney: {
         fontSize: "20px",
         marginTop: 6,
+        color: "#ffffff",
       },
       finalMoneyValue: {
-        color: "#cf2a2a",
+        color: "#fbbf24",
         fontWeight: 800,
       },
       textarea: {
         width: "100%",
         minHeight: "90px",
         borderRadius: "12px",
-        border: "1px solid #cfe0e8",
+        border: "1px solid rgba(212, 175, 55, 0.3)",
         padding: "12px",
         outline: "none",
-        fontSize: "14px",
+        fontSize: "13.5px",
         resize: "vertical",
         boxSizing: "border-box",
+        background: "#090d16",
+        color: "#ffffff",
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
       },
       noteList: {
         marginTop: "10px",
-        border: "1px solid #e6eef3",
+        border: "1px solid rgba(212, 175, 55, 0.2)",
         borderRadius: "12px",
         overflow: "hidden",
+        background: "#090d16",
       },
       noteItem: {
         padding: "12px 14px",
-        borderBottom: "1px solid #edf3f6",
-        background: "#fff",
+        borderBottom: "1px solid rgba(212, 175, 55, 0.15)",
+        background: "#090d16",
+        color: "#cbd5e1",
+        fontSize: "13px",
       },
       noteMeta: {
         fontSize: "12px",
-        color: "#7a95a4",
+        color: "#94a3b8",
         marginTop: 4,
       },
       rowFlex: {
@@ -483,18 +507,18 @@ const AdminOrders = () => {
         flexWrap: "wrap",
       },
       modalActions: {
-        marginTop: "18px",
+        marginTop: "20px",
         textAlign: "right",
       },
       closeBtn: {
-        background: "#6c7a86",
-        color: "white",
-        padding: "10px 18px",
-        border: "none",
+        background: "#090d16",
+        color: "#cbd5e1",
+        border: "1px solid rgba(212, 175, 55, 0.3)",
+        padding: "10px 20px",
         borderRadius: "10px",
         cursor: "pointer",
-        fontWeight: 700,
-        fontFamily: '"Roboto", sans-serif',
+        fontWeight: 800,
+        fontFamily: '"Plus Jakarta Sans", sans-serif',
       },
     }),
     [isMobile],
@@ -503,12 +527,12 @@ const AdminOrders = () => {
   function getPaymentStatusStyle(status) {
     switch (status) {
       case "Paid":
-        return styles.badge("#dff4e7", "#0c6b37");
+        return styles.badge("rgba(34, 197, 94, 0.15)", "#4ade80", "rgba(34, 197, 94, 0.3)");
       case "Refunded":
-        return styles.badge("#f1e8fb", "#7a4fb3");
+        return styles.badge("rgba(168, 85, 247, 0.15)", "#c084fc", "rgba(168, 85, 247, 0.3)");
       case "Unpaid":
       default:
-        return styles.badge("#fff0da", "#b26a00");
+        return styles.badge("rgba(245, 158, 11, 0.15)", "#fbbf24", "rgba(245, 158, 11, 0.3)");
     }
   }
 
@@ -1013,7 +1037,7 @@ const AdminOrders = () => {
                     </td>
 
                     <td style={styles.td}>
-                      <div>{fullName}</div>
+                      <div style={{ fontWeight: 700, color: "#ffffff" }}>{fullName}</div>
                       <div style={styles.address}>{fullAddress}</div>
                     </td>
 
@@ -1033,7 +1057,7 @@ const AdminOrders = () => {
                     </td>
 
                     <td style={styles.td}>
-                      <div>{order.paymentMethod || "COD"}</div>
+                      <div style={{ fontWeight: 600 }}>{order.paymentMethod || "COD"}</div>
                       <div
                         style={getPaymentStatusStyle(
                           order.paymentStatus || "Unpaid",
@@ -1060,7 +1084,7 @@ const AdminOrders = () => {
                         )}
                       >
                         {STATUS_OPTIONS.map((status) => (
-                          <option key={status.value} value={status.value}>
+                          <option key={status.value} value={status.value} style={{ background: "#131b2e", color: "#ffffff" }}>
                             {status.label}
                           </option>
                         ))}
@@ -1114,7 +1138,7 @@ const AdminOrders = () => {
                 return (
                   <React.Fragment key={page}>
                     {showDots && (
-                      <span style={{ color: "#6d8796", padding: "0 4px" }}>
+                      <span style={{ color: "#94a3b8", padding: "0 4px" }}>
                         ...
                       </span>
                     )}
@@ -1158,24 +1182,24 @@ const AdminOrders = () => {
 
             <div style={styles.modalBody}>
               <p style={styles.infoText}>
-                <b>Người nhận:</b>{" "}
+                <b style={{ color: "#fbbf24" }}>Người nhận:</b>{" "}
                 {selectedOrder.shippingAddress?.fullName || "---"}
               </p>
               <p style={styles.infoText}>
-                <b>SĐT:</b>{" "}
+                <b style={{ color: "#fbbf24" }}>SĐT:</b>{" "}
                 {selectedOrder.shippingAddress?.phoneNumber || "---"}
               </p>
               <p style={styles.infoText}>
-                <b>Địa chỉ:</b>{" "}
+                <b style={{ color: "#fbbf24" }}>Địa chỉ:</b>{" "}
                 {selectedOrder.shippingAddress?.fullAddress || "---"}
               </p>
               <p style={styles.infoText}>
-                <b>Ghi chú khách:</b> {selectedOrder.customerNote || "---"}
+                <b style={{ color: "#fbbf24" }}>Ghi chú khách:</b> {selectedOrder.customerNote || "---"}
               </p>
 
               <div style={styles.rowFlex}>
                 <p style={{ ...styles.infoText, margin: 0 }}>
-                  <b>Thanh toán:</b> {selectedOrder.paymentMethod || "COD"} —{" "}
+                  <b style={{ color: "#fbbf24" }}>Thanh toán:</b> {selectedOrder.paymentMethod || "COD"} —{" "}
                   {getPaymentStatusLabel(
                     selectedOrder.paymentStatus || "Unpaid",
                   )}
@@ -1188,27 +1212,27 @@ const AdminOrders = () => {
                   onChange={(e) => handlePaymentStatusChange(e.target.value)}
                 >
                   {PAYMENT_STATUS_UPDATE_OPTIONS.map((item) => (
-                    <option key={item.value} value={item.value}>
+                    <option key={item.value} value={item.value} style={{ background: "#131b2e", color: "#ffffff" }}>
                       {item.label}
                     </option>
                   ))}
                 </select>
               </div>
 
-              <p style={styles.infoText}>
-                <b>Trạng thái:</b>{" "}
+              <p style={{ ...styles.infoText, marginTop: 10 }}>
+                <b style={{ color: "#fbbf24" }}>Trạng thái:</b>{" "}
                 {getStatusLabel(selectedOrder.status || "Pending")}
               </p>
 
               {selectedOrder.cancelReason ? (
                 <p style={styles.infoText}>
-                  <b>Lý do hủy:</b> {selectedOrder.cancelReason}
+                  <b style={{ color: "#f87171" }}>Lý do hủy:</b> {selectedOrder.cancelReason}
                 </p>
               ) : null}
 
               {selectedOrder.returnReason ? (
                 <p style={styles.infoText}>
-                  <b>Lý do hoàn:</b> {selectedOrder.returnReason}
+                  <b style={{ color: "#f87171" }}>Lý do hoàn:</b> {selectedOrder.returnReason}
                 </p>
               ) : null}
 
@@ -1242,7 +1266,7 @@ const AdminOrders = () => {
                             }}
                           />
                           <div>
-                            <div>{item.productName}</div>
+                            <div style={{ fontWeight: 700, color: "#ffffff" }}>{item.productName}</div>
                             <div style={styles.productMeta}>
                               Size: {item.size || "---"} | Màu:{" "}
                               {item.color || "---"}{" "}
@@ -1254,7 +1278,7 @@ const AdminOrders = () => {
                       <td style={{ ...styles.detailCell, textAlign: "center" }}>
                         x{item.quantity}
                       </td>
-                      <td style={{ ...styles.detailCell, textAlign: "right" }}>
+                      <td style={{ ...styles.detailCell, textAlign: "right", color: "#fbbf24", fontWeight: 700 }}>
                         {formatMoney(item.unitPrice)}
                       </td>
                     </tr>
@@ -1360,7 +1384,7 @@ const AdminOrders = () => {
                         }}
                       >
                         <div>
-                          <b>{getStatusLabel(item.status)}</b>
+                          <b style={{ color: "#fbbf24" }}>{getStatusLabel(item.status)}</b>
                           {item.note ? ` - ${item.note}` : ""}
                         </div>
                         <div style={styles.noteMeta}>

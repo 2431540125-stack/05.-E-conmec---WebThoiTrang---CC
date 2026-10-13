@@ -93,60 +93,64 @@ const AdminPromotions = () => {
   return (
     <div className="apm-page">
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
         .apm-page {
-          padding: 20px;
+          padding: 24px;
           min-height: 100vh;
-          background: #f3f3f3;
-          font-family: "Roboto", sans-serif;
-          color: #244656;
+          background: #0b0f17;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          color: #f8fafc;
         }
 
         .apm-head {
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
 
         .apm-title {
           margin: 0;
-          font-size: 28px;
+          font-size: 26px;
           font-weight: 800;
-          color: #35799d;
+          color: #fbbf24;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .apm-subtitle {
           margin: 6px 0 0;
-          color: #6d8796;
-          font-size: 14px;
+          color: #94a3b8;
+          font-size: 13.5px;
           line-height: 1.5;
         }
 
         .apm-card {
-          background: #fff;
-          border: 1px solid #bdd4e0;
+          background: #131b2e;
+          border: 1px solid rgba(212, 175, 55, 0.25);
           border-radius: 18px;
-          box-shadow: 0 3px 10px rgba(79, 151, 187, 0.06);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
           overflow: hidden;
         }
 
         .apm-card-header {
-          background: #fff;
-          padding: 16px 18px;
+          background: #090d16;
+          padding: 18px 22px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 12px;
-          border-bottom: 1px solid #e6eef3;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.2);
           flex-wrap: wrap;
         }
 
         .apm-card-title-wrap {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 10px;
         }
 
         .apm-card-icon {
-          font-size: 15px;
-          color: #35799d;
+          font-size: 16px;
+          color: #fbbf24;
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -154,9 +158,9 @@ const AdminPromotions = () => {
 
         .apm-card-title {
           margin: 0;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 800;
-          color: #244656;
+          color: #fbbf24;
         }
 
         .apm-card-body {
@@ -164,19 +168,19 @@ const AdminPromotions = () => {
         }
 
         .apm-btn {
-          min-height: 38px;
-          padding: 0 14px;
+          min-height: 40px;
+          padding: 0 18px;
           border-radius: 10px;
           border: 1px solid transparent;
-          font-family: "Roboto", sans-serif;
+          font-family: "Plus Jakarta Sans", sans-serif;
           font-size: 13px;
-          font-weight: 700;
+          font-weight: 800;
           line-height: 1;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          transition: all 0.18s ease;
+          transition: all 0.2s ease;
           white-space: nowrap;
         }
 
@@ -185,27 +189,26 @@ const AdminPromotions = () => {
         }
 
         .apm-btn-primary {
-          background: #4f97bb;
-          border-color: #4f97bb;
-          color: #fff;
-          box-shadow: none;
+          background: #fbbf24;
+          border-color: #fbbf24;
+          color: #090d16;
+          box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
         }
 
         .apm-btn-primary:hover {
-          background: #35799d;
-          border-color: #35799d;
+          background: #f59e0b;
+          border-color: #f59e0b;
         }
 
         .apm-btn-ghost {
-          background: #fff;
-          border-color: #bdd4e0;
-          color: #35799d;
+          background: #090d16;
+          border-color: rgba(212, 175, 55, 0.3);
+          color: #cbd5e1;
         }
 
         .apm-btn-ghost:hover {
-          background: #e2eef5;
-          border-color: #4f97bb;
-          color: #244656;
+          border-color: #fbbf24;
+          color: #fbbf24;
         }
 
         .apm-table-wrap {
@@ -217,41 +220,43 @@ const AdminPromotions = () => {
           width: 100%;
           min-width: 980px;
           border-collapse: collapse;
-          background: #fff;
+          background: #131b2e;
         }
 
         .apm-table thead th {
-          background: #e2edf4;
-          color: #5f7d8d;
-          font-size: 12px;
+          background: #090d16;
+          color: #fbbf24;
+          font-size: 12.5px;
           font-weight: 800;
-          padding: 13px 12px;
-          border-bottom: 1px solid #d7e5ec;
+          padding: 14px 12px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.3);
           white-space: nowrap;
           text-align: left;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .apm-table td {
-          padding: 12px;
-          border-bottom: 1px solid #edf3f6;
-          font-size: 13px;
-          color: #244656;
+          padding: 14px 12px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+          font-size: 13.5px;
+          color: #cbd5e1;
           vertical-align: middle;
-          background: #fff;
+          background: #131b2e;
           transition: background 0.18s ease;
         }
 
         .apm-table tbody tr:hover td {
-          background: rgba(79, 151, 187, 0.05);
+          background: rgba(255, 255, 255, 0.02);
         }
 
         .apm-th-main {
-          padding-left: 18px !important;
+          padding-left: 20px !important;
         }
 
         .apm-coupon-name {
           font-weight: 800;
-          color: #244656;
+          color: #ffffff;
           margin-bottom: 6px;
           display: flex;
           align-items: center;
@@ -264,27 +269,27 @@ const AdminPromotions = () => {
           align-items: center;
           justify-content: center;
           min-height: 24px;
-          padding: 0 9px;
+          padding: 0 10px;
           border-radius: 999px;
-          font-size: 11px;
+          font-size: 11.5px;
           font-weight: 800;
           border: 1px solid transparent;
           line-height: 1;
         }
 
         .apm-badge-flash {
-          background: rgba(250, 189, 50, 0.18);
-          color: #9b6a00;
-          border-color: rgba(250, 189, 50, 0.3);
+          background: rgba(251, 191, 36, 0.15);
+          color: #fbbf24;
+          border-color: rgba(251, 191, 36, 0.3);
           display: inline-flex;
           align-items: center;
           gap: 5px;
         }
 
         .apm-badge-type {
-          background: rgba(30, 69, 159, 0.1);
-          color: #1e459f;
-          border-color: rgba(30, 69, 159, 0.22);
+          background: rgba(59, 130, 246, 0.15);
+          color: #60a5fa;
+          border-color: rgba(59, 130, 246, 0.3);
         }
 
         .apm-code-box {
@@ -292,30 +297,32 @@ const AdminPromotions = () => {
           align-items: center;
           justify-content: center;
           min-width: 92px;
-          padding: 6px 10px;
+          padding: 6px 12px;
           border-radius: 8px;
-          border: 1px dashed #bdd4e0;
-          background: #f7fafc;
+          border: 1px dashed rgba(212, 175, 55, 0.4);
+          background: #090d16;
           text-align: center;
-          font-family: "Roboto", sans-serif;
+          font-family: "Plus Jakarta Sans", sans-serif;
           letter-spacing: 0.8px;
-          font-size: 12px;
-          font-weight: 700;
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #fbbf24;
           line-height: 1.2;
         }
 
         .apm-discount {
           font-weight: 800;
-          color: #cf2a2a;
+          color: #f87171;
         }
 
         .apm-small {
           font-size: 13px;
+          color: #cbd5e1;
         }
 
         .apm-muted-mini {
-          color: #7a95a4;
-          font-size: 11px;
+          color: #94a3b8;
+          font-size: 11.5px;
           font-weight: 400;
           margin-top: 4px;
         }
@@ -329,11 +336,12 @@ const AdminPromotions = () => {
         }
 
         .apm-date-start {
-          color: #0c6b37;
+          color: #4ade80;
+          font-weight: 600;
         }
 
         .apm-date-end {
-          color: #7a95a4;
+          color: #94a3b8;
         }
 
         .apm-center {
@@ -341,29 +349,33 @@ const AdminPromotions = () => {
         }
 
         .apm-delete-btn {
-          border: none;
-          background: transparent;
-          color: #cf2a2a;
+          border: 1px solid rgba(239, 68, 68, 0.4);
+          background: rgba(239, 68, 68, 0.15);
+          color: #f87171;
           cursor: pointer;
-          font-size: 15px;
-          padding: 0;
+          font-size: 14px;
+          padding: 6px 10px;
+          border-radius: 8px;
+          transition: all 0.2s ease;
         }
 
         .apm-delete-btn:hover {
-          opacity: 0.8;
+          background: rgba(239, 68, 68, 0.3);
         }
 
         .apm-empty {
           text-align: center;
-          padding: 24px;
-          color: #7a95a4;
-          font-size: 13px;
+          padding: 32px 24px;
+          color: #94a3b8;
+          font-size: 14px;
         }
 
+        /* MODAL KHUYẾN MÃI */
         .apm-modal-backdrop {
           position: fixed;
           inset: 0;
-          background: rgba(36, 70, 86, 0.45);
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(4px);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -372,14 +384,15 @@ const AdminPromotions = () => {
         }
 
         .apm-modal {
-          background: #fff;
-          border: 1px solid #bdd4e0;
+          background: #131b2e;
+          border: 1px solid rgba(212, 175, 55, 0.25);
           border-radius: 18px;
-          box-shadow: 0 10px 28px rgba(53, 121, 157, 0.12);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
           width: 600px;
           max-width: 95%;
           max-height: 90vh;
           overflow-y: auto;
+          color: #ffffff;
         }
 
         .apm-modal-header {
@@ -387,16 +400,16 @@ const AdminPromotions = () => {
           justify-content: space-between;
           align-items: center;
           gap: 12px;
-          padding: 16px 18px;
-          border-bottom: 1px solid #e6eef3;
-          background: #f7fafc;
+          padding: 18px 20px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+          background: #090d16;
         }
 
         .apm-modal-title {
           margin: 0;
           font-size: 18px;
           font-weight: 800;
-          color: #35799d;
+          color: #fbbf24;
         }
 
         .apm-close-btn {
@@ -405,30 +418,34 @@ const AdminPromotions = () => {
           font-size: 22px;
           line-height: 1;
           cursor: pointer;
-          color: #5f7d8d;
+          color: #94a3b8;
+        }
+
+        .apm-close-btn:hover {
+          color: #fbbf24;
         }
 
         .apm-form {
-          padding: 18px;
+          padding: 20px;
         }
 
         .apm-row {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 14px;
+          gap: 16px;
         }
 
         .apm-field {
           display: flex;
           flex-direction: column;
           gap: 8px;
-          margin-bottom: 14px;
+          margin-bottom: 16px;
         }
 
         .apm-field label {
-          font-size: 13px;
+          font-size: 13.5px;
           font-weight: 700;
-          color: #5f7d8d;
+          color: #fbbf24;
         }
 
         .apm-field input,
@@ -436,41 +453,49 @@ const AdminPromotions = () => {
           width: 100%;
           height: 40px;
           padding: 0 12px;
-          border: 1px solid #bdd4e0;
+          border: 1px solid rgba(212, 175, 55, 0.3);
           border-radius: 12px;
           outline: none;
-          background: #fff;
-          color: #244656;
-          font-size: 13px;
-          font-family: "Roboto", sans-serif;
+          background: #090d16;
+          color: #ffffff;
+          font-size: 13.5px;
+          font-family: "Plus Jakarta Sans", sans-serif;
           box-sizing: border-box;
+          color-scheme: dark;
+        }
+
+        .apm-field select option {
+          background: #131b2e;
+          color: #ffffff;
         }
 
         .apm-field input:focus,
         .apm-field select:focus {
-          border-color: #4f97bb;
-          box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14);
+          border-color: #fbbf24;
+          box-shadow: 0 0 8px rgba(251, 191, 36, 0.25);
         }
 
         .apm-uppercase {
           text-transform: uppercase;
-          font-weight: 700;
+          font-weight: 800;
         }
 
         .apm-check {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          margin-bottom: 14px;
-          font-size: 13px;
+          gap: 10px;
+          margin-bottom: 16px;
+          font-size: 13.5px;
           font-weight: 700;
-          color: #cf2a2a;
+          color: #fbbf24;
+          cursor: pointer;
         }
 
         .apm-check input {
-          width: 16px;
-          height: 16px;
-          accent-color: #35799d;
+          width: 18px;
+          height: 18px;
+          accent-color: #fbbf24;
+          cursor: pointer;
         }
 
         .apm-input-group {
@@ -487,27 +512,27 @@ const AdminPromotions = () => {
 
         .apm-input-suffix {
           height: 40px;
-          padding: 0 12px;
+          padding: 0 14px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid #bdd4e0;
+          border: 1px solid rgba(212, 175, 55, 0.3);
           border-left: none;
           border-top-right-radius: 12px;
           border-bottom-right-radius: 12px;
-          background: #f7fafc;
-          color: #5f7d8d;
-          font-size: 13px;
-          font-weight: 700;
+          background: #090d16;
+          color: #fbbf24;
+          font-size: 13.5px;
+          font-weight: 800;
         }
 
         .apm-form-actions {
           display: flex;
           justify-content: flex-end;
-          gap: 10px;
-          margin-top: 18px;
-          padding-top: 14px;
-          border-top: 1px solid #e6eef3;
+          gap: 12px;
+          margin-top: 20px;
+          padding-top: 16px;
+          border-top: 1px solid rgba(212, 175, 55, 0.2);
           flex-wrap: wrap;
         }
 
@@ -540,14 +565,14 @@ const AdminPromotions = () => {
 
           .apm-modal-header,
           .apm-form {
-            padding-left: 14px;
-            padding-right: 14px;
+            padding-left: 16px;
+            padding-right: 16px;
           }
 
           .apm-btn {
             min-height: 38px;
             font-size: 12px;
-            padding: 0 12px;
+            padding: 0 14px;
           }
         }
       `}</style>

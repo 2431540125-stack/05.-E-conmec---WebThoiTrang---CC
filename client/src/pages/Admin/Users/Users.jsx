@@ -289,7 +289,7 @@ const Users = () => {
                         <tr>
                           <td colSpan="8" className="us-emptyCell">
                             <div
-                              className="spinner-border text-primary"
+                              className="spinner-border text-warning"
                               role="status"
                             >
                               <span className="sr-only">Loading...</span>
@@ -420,11 +420,15 @@ const Users = () => {
 
       <style jsx>{`
         .us-page {
-          font-family: "Roboto", sans-serif;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          background: #0b0f17;
+          min-height: 100vh;
+          padding: 20px 0;
+          color: #f8fafc;
         }
 
         .us-header {
-          margin-bottom: 6px;
+          margin-bottom: 12px;
         }
 
         .us-head {
@@ -436,15 +440,17 @@ const Users = () => {
 
         .us-title {
           margin: 0;
-          font-size: 2.1rem;
+          font-size: 26px;
           font-weight: 800;
-          color: #244656;
+          color: #fbbf24;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .us-subtitle {
           margin: 6px 0 0;
-          font-size: 0.95rem;
-          color: #6d8796;
+          font-size: 13.5px;
+          color: #94a3b8;
         }
 
         .us-content {
@@ -452,22 +458,22 @@ const Users = () => {
         }
 
         .us-card {
-          background: #fff;
-          border: 1px solid #bdd4e0;
+          background: #131b2e;
+          border: 1px solid rgba(212, 175, 55, 0.25);
           border-radius: 18px;
           overflow: hidden;
-          box-shadow: 0 10px 30px rgba(79, 151, 187, 0.08);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         .us-cardHeader {
           display: flex;
-          align-items: flex-start;
+          align-items: center;
           justify-content: space-between;
           gap: 16px;
           flex-wrap: wrap;
-          padding: 18px 20px;
-          border-bottom: 1px solid #e2edf4;
-          background: #fff;
+          padding: 20px 24px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+          background: #090d16;
         }
 
         .us-cardTitleWrap {
@@ -478,21 +484,21 @@ const Users = () => {
 
         .us-cardTitle {
           margin: 0;
-          font-size: 1.35rem;
+          font-size: 18px;
           font-weight: 800;
-          color: #244656;
+          color: #fbbf24;
         }
 
         .us-cardMeta {
-          font-size: 0.88rem;
-          color: #6d8796;
+          font-size: 13px;
+          color: #94a3b8;
         }
 
         .us-toolbar {
           display: flex;
           align-items: center;
           justify-content: flex-end;
-          gap: 8px;
+          gap: 10px;
           flex-wrap: wrap;
         }
 
@@ -500,18 +506,23 @@ const Users = () => {
         .us-searchInput {
           height: 38px;
           border-radius: 10px;
-          border: 1px solid #bdd4e0;
-          background: #fff;
-          color: #244656;
-          font-family: "Roboto", sans-serif;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+          background: #090d16;
+          color: #ffffff;
+          font-family: "Plus Jakarta Sans", sans-serif;
           padding: 0 12px;
           outline: none;
           transition: all 0.2s ease;
-          font-size: 0.9rem;
+          font-size: 13px;
+        }
+
+        .us-select option {
+          background: #131b2e;
+          color: #ffffff;
         }
 
         .us-select {
-          min-width: 165px;
+          min-width: 160px;
         }
 
         .us-searchInput {
@@ -521,8 +532,8 @@ const Users = () => {
 
         .us-select:focus,
         .us-searchInput:focus {
-          border-color: #4f97bb;
-          box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14);
+          border-color: #fbbf24;
+          box-shadow: 0 0 8px rgba(251, 191, 36, 0.25);
         }
 
         .us-searchWrap {
@@ -535,59 +546,56 @@ const Users = () => {
           height: 38px;
           border-radius: 10px;
           border: 1px solid transparent;
-          padding: 0 12px;
+          padding: 0 14px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           gap: 6px;
-          font-family: "Roboto", sans-serif;
-          font-weight: 700;
-          font-size: 0.88rem;
+          font-family: "Plus Jakarta Sans", sans-serif;
+          font-weight: 800;
+          font-size: 13px;
           cursor: pointer;
-          transition: all 0.18s ease;
+          transition: all 0.2s ease;
           white-space: nowrap;
         }
 
         .us-btnSearch {
           position: absolute;
           right: 4px;
-          height: 28px;
-          width: 28px;
-          border-radius: 7px;
-          background: #f3f7fa;
-          border: 1px solid #d6e5ee;
-          color: #6f8a99;
+          height: 30px;
+          width: 30px;
+          border-radius: 8px;
+          background: #131b2e;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+          color: #fbbf24;
           padding: 0;
-          box-shadow: none;
         }
 
         .us-btnSearch:hover {
-          background: #eaf2f7;
-          border-color: #c7dce8;
-          color: #4f7082;
+          background: #fbbf24;
+          color: #090d16;
         }
 
         .us-btnGhost {
-          background: #fff;
-          border-color: #bdd4e0;
-          color: #35799d;
+          background: #090d16;
+          border-color: rgba(212, 175, 55, 0.3);
+          color: #cbd5e1;
         }
 
         .us-btnGhost:hover {
-          background: #e2eef5;
-          border-color: #4f97bb;
+          border-color: #fbbf24;
+          color: #fbbf24;
         }
 
         .us-btnPrimary {
-          background: #4f97bb;
-          border-color: #4f97bb;
-          color: #fff;
-          box-shadow: 0 8px 18px rgba(79, 151, 187, 0.16);
+          background: #fbbf24;
+          border-color: #fbbf24;
+          color: #090d16;
+          box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
         }
 
         .us-btnPrimary:hover {
-          background: #35799d;
-          border-color: #35799d;
+          background: #f59e0b;
           transform: translateY(-1px);
         }
 
@@ -600,35 +608,38 @@ const Users = () => {
           width: 100%;
           border-collapse: collapse;
           min-width: 1140px;
+          background: #131b2e;
         }
 
         .us-table thead th {
-          background: #e2edf4;
-          color: #5f7d8d;
-          font-size: 0.84rem;
+          background: #090d16;
+          color: #fbbf24;
+          font-size: 12.5px;
           font-weight: 800;
-          border-bottom: 1px solid #d7e5ec;
-          padding: 13px 10px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+          padding: 14px 12px;
           vertical-align: middle;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .us-table td {
-          padding: 13px 10px;
-          border-bottom: 1px solid #edf3f6;
-          font-size: 0.92rem;
-          color: #244656;
+          padding: 14px 12px;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+          font-size: 13.5px;
+          color: #cbd5e1;
           vertical-align: middle;
           word-break: break-word;
-          background: #fff;
+          background: #131b2e;
         }
 
         .us-table tbody tr:hover td {
-          background: rgba(79, 151, 187, 0.05);
+          background: rgba(255, 255, 255, 0.02);
         }
 
         .us-rowLocked td {
-          background: #fafcfd;
-          opacity: 0.9;
+          background: #0f1623;
+          opacity: 0.8;
         }
 
         .us-center {
@@ -637,17 +648,17 @@ const Users = () => {
 
         .us-stt {
           font-weight: 800;
-          color: #35799d;
+          color: #fbbf24;
         }
 
         .us-avatarBox {
-          width: 48px;
-          height: 48px;
+          width: 44px;
+          height: 44px;
           margin: 0 auto;
-          border-radius: 12px;
+          border-radius: 10px;
           overflow: hidden;
-          border: 1px solid #d7e5ec;
-          background: #f7fafc;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+          background: #090d16;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -662,27 +673,28 @@ const Users = () => {
 
         .us-mainText {
           font-weight: 800;
-          color: #244656;
+          color: #ffffff;
           margin-bottom: 4px;
           line-height: 1.35;
         }
 
         .us-subText {
-          color: #6d8796;
-          font-size: 0.88rem;
+          color: #94a3b8;
+          font-size: 12.5px;
         }
 
         .us-contactLine {
           display: flex;
           align-items: center;
           gap: 8px;
-          margin-bottom: 5px;
-          color: #244656;
+          margin-bottom: 4px;
+          color: #cbd5e1;
           line-height: 1.45;
+          font-size: 13px;
         }
 
-        .us-contactLine:last-child {
-          margin-bottom: 0;
+        .us-contactLine i {
+          color: #fbbf24;
         }
 
         .us-roleBadge,
@@ -690,54 +702,54 @@ const Users = () => {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-width: 94px;
-          height: 30px;
+          min-width: 96px;
+          height: 28px;
           padding: 0 10px;
           border-radius: 999px;
-          font-size: 0.8rem;
+          font-size: 12px;
           font-weight: 800;
           border: 1px solid transparent;
         }
 
         .us-roleAdmin {
-          background: rgba(224, 72, 72, 0.12);
-          color: #c0392b;
-          border-color: rgba(224, 72, 72, 0.2);
+          background: rgba(239, 68, 68, 0.15);
+          color: #f87171;
+          border-color: rgba(239, 68, 68, 0.3);
         }
 
         .us-roleManager {
-          background: rgba(155, 89, 182, 0.12);
-          color: #8e44ad;
-          border-color: rgba(155, 89, 182, 0.2);
+          background: rgba(168, 85, 247, 0.15);
+          color: #c084fc;
+          border-color: rgba(168, 85, 247, 0.3);
         }
 
         .us-roleStaff {
-          background: rgba(79, 151, 187, 0.12);
-          color: #35799d;
-          border-color: rgba(79, 151, 187, 0.24);
+          background: rgba(59, 130, 246, 0.15);
+          color: #60a5fa;
+          border-color: rgba(59, 130, 246, 0.3);
         }
 
         .us-roleCustomer {
-          background: rgba(255, 193, 7, 0.14);
-          color: #b7791f;
-          border-color: rgba(255, 193, 7, 0.28);
+          background: rgba(245, 158, 11, 0.15);
+          color: #fbbf24;
+          border-color: rgba(245, 158, 11, 0.3);
         }
 
         .us-statusActive {
-          background: rgba(76, 175, 80, 0.12);
-          color: #2e7d32;
-          border-color: rgba(76, 175, 80, 0.2);
+          background: rgba(34, 197, 94, 0.15);
+          color: #4ade80;
+          border-color: rgba(34, 197, 94, 0.3);
         }
 
         .us-statusLocked {
-          background: rgba(239, 83, 80, 0.12);
-          color: #c62828;
-          border-color: rgba(239, 83, 80, 0.2);
+          background: rgba(239, 68, 68, 0.15);
+          color: #f87171;
+          border-color: rgba(239, 68, 68, 0.3);
         }
 
         .us-btnAction {
-          min-width: 64px;
-          height: 30px;
+          min-width: 60px;
+          height: 28px;
           padding: 0 8px;
           border-radius: 8px;
           border: 1px solid transparent;
@@ -745,117 +757,58 @@ const Users = () => {
           align-items: center;
           justify-content: center;
           gap: 4px;
-          font-weight: 700;
-          font-size: 0.76rem;
-          font-family: "Roboto", sans-serif;
+          font-weight: 800;
+          font-size: 12px;
+          font-family: "Plus Jakarta Sans", sans-serif;
           cursor: pointer;
-          transition: all 0.18s ease;
-        }
-
-        .us-btnAction i {
-          font-size: 0.72rem;
+          transition: all 0.2s ease;
         }
 
         .us-btnEdit {
-          background: #1e459f;
-          border-color: #1e459f;
-          color: #ffffff;
-          box-shadow: 0 4px 10px rgba(30, 69, 159, 0.14);
+          background: #fbbf24;
+          border-color: #fbbf24;
+          color: #090d16;
         }
 
         .us-btnEdit:hover {
-          background: #183b87;
-          border-color: #183b87;
-          transform: translateY(-1px);
+          background: #f59e0b;
         }
 
         .us-btnLock {
-          background: #cf2a2a;
-          border-color: #cf2a2a;
-          color: #ffffff;
-          box-shadow: 0 4px 10px rgba(207, 42, 42, 0.14);
+          background: rgba(239, 68, 68, 0.2);
+          border-color: rgba(239, 68, 68, 0.4);
+          color: #f87171;
         }
 
         .us-btnLock:hover {
-          background: #b82424;
-          border-color: #b82424;
-          transform: translateY(-1px);
+          background: rgba(239, 68, 68, 0.4);
         }
 
         .us-btnUnlock {
-          background: #ffffff;
-          border-color: #cddceb;
-          color: #1e459f;
-          box-shadow: 0 4px 10px rgba(30, 69, 159, 0.08);
+          background: #090d16;
+          border-color: rgba(212, 175, 55, 0.3);
+          color: #fbbf24;
         }
 
         .us-btnUnlock:hover {
-          background: #eef4fb;
-          border-color: #1e459f;
-          color: #16377f;
-          transform: translateY(-1px);
+          border-color: #fbbf24;
         }
 
         .us-emptyCell {
           text-align: center;
-          padding: 28px 16px !important;
-          color: #6d8796;
+          padding: 32px 16px !important;
+          color: #94a3b8;
         }
 
         .us-loadingText {
           margin: 10px 0 0;
-          color: #6d8796;
+          color: #fbbf24;
         }
 
         .us-paginationWrap {
-          padding: 14px 16px;
-          border-top: 1px solid #edf3f6;
-          background: #fff;
-        }
-
-        @media (max-width: 991px) {
-          .us-cardHeader {
-            flex-direction: column;
-            align-items: stretch;
-          }
-
-          .us-toolbar {
-            justify-content: flex-start;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .us-title {
-            font-size: 1.7rem;
-          }
-
-          .us-subtitle {
-            font-size: 0.9rem;
-          }
-
-          .us-toolbar {
-            width: 100%;
-          }
-
-          .us-select,
-          .us-searchWrap,
-          .us-searchInput,
-          .us-btnGhost,
-          .us-btnPrimary {
-            width: 100%;
-          }
-
-          .us-searchWrap {
-            display: flex;
-          }
-
-          .us-searchInput {
-            width: 100%;
-          }
-
-          .us-table {
-            min-width: 1140px;
-          }
+          padding: 16px 20px;
+          border-top: 1px solid rgba(212, 175, 55, 0.2);
+          background: #090d16;
         }
       `}</style>
     </div>
