@@ -12,6 +12,10 @@ const categorySchema = new mongoose.Schema({
         unique: true, 
         lowercase: true 
     },
+    image: {
+        type: String,
+        default: ""
+    },
     // Dùng để tạo cây danh mục (VD: Thời trang nam -> Áo nam)
     parentId: { 
         type: mongoose.Schema.Types.ObjectId, 

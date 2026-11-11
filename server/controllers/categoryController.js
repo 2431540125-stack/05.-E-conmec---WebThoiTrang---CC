@@ -26,7 +26,7 @@ exports.getCategoryById = async (req, res) => {
 // 3. Tạo danh mục mới
 exports.createCategory = async (req, res) => {
     try {
-        const { name, parentId } = req.body;
+        const { name, parentId, image } = req.body;
 
         // Tự động tạo slug từ tên
         const slug = slugify(name, { lower: true, locale: 'vi' });
@@ -34,6 +34,7 @@ exports.createCategory = async (req, res) => {
         const newCategory = new Category({
             name,
             slug,
+            image: image || "",
             parentId: parentId || null // Nếu rỗng thì là danh mục gốc
         });
 
@@ -51,7 +52,7 @@ exports.createCategory = async (req, res) => {
 // 4. Cập nhật danh mục
 exports.updateCategory = async (req, res) => {
     try {
-        const { name, parentId, isActive } = req.body;
+        const { name, parentId, isActive, image } = req.body;
         const categoryId = req.params.id;
 
         // Kiểm tra logic: Không thể chọn chính mình làm cha
@@ -62,7 +63,8 @@ exports.updateCategory = async (req, res) => {
         const updateData = {
             name,
             parentId: parentId || null,
-            isActive
+            isActive,
+            image: image !== undefined ? image : undefined,
         };
 
         // Nếu có đổi tên thì đổi luôn Slug
