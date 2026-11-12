@@ -1,4 +1,4 @@
-import "./Register.css";
+import "./Auth.css";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -343,27 +343,50 @@ export default function Register() {
   };
 
   return (
-    <div className="register-wrapper">
-      <div className="register-card">
-        <div className="register-right">
-          <h2>ĐĂNG KÝ</h2>
-          <p>Nhập thông tin để tạo tài khoản mới.</p>
+    <main className="auth-page">
+      <div className="auth-card">
+        <section className="auth-visual" aria-label="LAVIO">
+          <img
+            src="https://i.pinimg.com/1200x/e4/aa/3b/e4aa3bfcb8643af9c5ecd6031db48c78.jpg"
+            alt="LAVIO"
+            onError={(e) => {
+              if (!e.currentTarget.src.includes("/auth-hero.svg")) {
+                e.currentTarget.src = "/auth-hero.svg";
+              }
+            }}
+          />
+          <div className="auth-visual-copy">
+            <span className="auth-visual-label">LAVIO · THỜI TRANG CỦA BẠN</span>
+            <h2>Phong cách bắt đầu từ bạn.</h2>
+            <p>Tạo tài khoản để khám phá những lựa chọn dành riêng cho mình.</p>
+          </div>
+        </section>
 
-          <form onSubmit={handleRegister}>
-            <label>
-              Tên đăng nhập <span style={{ color: "red" }}>*</span>
+        <section className="auth-content">
+          <header className="auth-heading">
+            <span className="auth-eyebrow">GIA NHẬP CỘNG ĐỒNG LAVIO</span>
+            <h1>Tạo tài khoản</h1>
+            <p>Điền thông tin để bắt đầu trải nghiệm mua sắm.</p>
+          </header>
+
+          <form className="auth-form" onSubmit={handleRegister}>
+            <label htmlFor="register-username">
+              Tên đăng nhập <span aria-hidden="true">*</span>
             </label>
             <input
+              id="register-username"
               type="text"
               name="username"
               placeholder="Ví dụ: user123"
               value={formData.username}
               onChange={handleChange}
               autoComplete="username"
+              required
             />
 
-            <label>Họ và tên</label>
+            <label htmlFor="register-full-name">Họ và tên</label>
             <input
+              id="register-full-name"
               type="text"
               name="fullName"
               placeholder="Nguyễn Văn A"
@@ -372,56 +395,64 @@ export default function Register() {
               autoComplete="name"
             />
 
-            <label>
-              Email <span style={{ color: "red" }}>*</span>
+            <label htmlFor="register-email">
+              Email <span aria-hidden="true">*</span>
             </label>
             <input
+              id="register-email"
               type="email"
               name="email"
               placeholder="name@example.com"
               value={formData.email}
               onChange={handleChange}
               autoComplete="email"
+              required
             />
 
-            <label>
-              Mật khẩu <span style={{ color: "red" }}>*</span>
+            <label htmlFor="register-password">
+              Mật khẩu <span aria-hidden="true">*</span>
             </label>
             <input
+              id="register-password"
               type="password"
               name="password"
               placeholder="••••••••"
               value={formData.password}
               onChange={handleChange}
               autoComplete="new-password"
+              required
             />
 
-            <label>
-              Xác nhận mật khẩu <span style={{ color: "red" }}>*</span>
+            <label htmlFor="register-confirm-password">
+              Xác nhận mật khẩu <span aria-hidden="true">*</span>
             </label>
             <input
+              id="register-confirm-password"
               type="password"
               name="confirmPassword"
               placeholder="••••••••"
               value={formData.confirmPassword}
               onChange={handleChange}
               autoComplete="new-password"
+              required
             />
 
             <button
               type="submit"
+              className="auth-submit"
               disabled={loading || loadingGoogle || loadingApple}
             >
               {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG KÝ"}
             </button>
 
-            <div className="divider">
+            <div className="auth-divider">
               <span>HOẶC</span>
             </div>
 
-            <div className="social-login">
+            <div className="auth-social">
               <button
                 type="button"
+                className="auth-social-button"
                 onClick={handleGoogleRegister}
                 disabled={
                   loading || loadingGoogle || loadingApple || !GOOGLE_CLIENT_ID
@@ -436,6 +467,7 @@ export default function Register() {
 
               <button
                 type="button"
+                className="auth-social-button"
                 onClick={handleAppleRegister}
                 disabled={
                   loading ||
@@ -466,27 +498,11 @@ export default function Register() {
             />
           </form>
 
-          <p className="login">
+          <p className="auth-switch">
             Đã có tài khoản? <Link to="/login">Đăng nhập ngay</Link>
           </p>
-        </div>
-
-        <div className="register-left">
-          <img
-            src="https://i.pinimg.com/1200x/e4/aa/3b/e4aa3bfcb8643af9c5ecd6031db48c78.jpg"
-            alt="Fashion"
-            onError={(e) => {
-              if (!e.currentTarget.src.includes("/auth-hero.svg")) {
-                e.currentTarget.src = "/auth-hero.svg";
-              }
-            }}
-          />
-          <div className="register-overlay">
-            <h3>LAVIO</h3>
-            <p>Tham gia ngay để bắt đầu mua sắm.</p>
-          </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

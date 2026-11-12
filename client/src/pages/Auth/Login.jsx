@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/AuthContext";
-import "./Login.css";
+import "./Auth.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -357,9 +357,9 @@ export default function Login() {
   };
 
   return (
-    <div className="login-wrapper">
-      <div className="login-card">
-        <div className="login-left">
+    <main className="auth-page">
+      <div className="auth-card">
+        <section className="auth-visual" aria-label="LAVIO">
           <img
             src="https://i.pinimg.com/1200x/e4/aa/3b/e4aa3bfcb8643af9c5ecd6031db48c78.jpg"
             alt="LAVIO"
@@ -369,19 +369,24 @@ export default function Login() {
               }
             }}
           />
-          <div className="login-overlay">
-            <h3>LAVIO</h3>
-            <p>Chào mừng bạn trở lại!</p>
+          <div className="auth-visual-copy">
+            <span className="auth-visual-label">LAVIO · THỜI TRANG CỦA BẠN</span>
+            <h2>Phong cách bắt đầu từ bạn.</h2>
+            <p>Đăng nhập để khám phá những lựa chọn dành riêng cho mình.</p>
           </div>
-        </div>
+        </section>
 
-        <div className="login-right">
-          <h2>ĐĂNG NHẬP</h2>
-          <p>Nhập thông tin để tiếp tục mua sắm.</p>
+        <section className="auth-content">
+          <header className="auth-heading">
+            <span className="auth-eyebrow">CHÀO MỪNG TRỞ LẠI</span>
+            <h1>Đăng nhập</h1>
+            <p>Nhập thông tin để tiếp tục mua sắm.</p>
+          </header>
 
-          <form onSubmit={handleLogin}>
-            <label>Email</label>
+          <form className="auth-form" onSubmit={handleLogin}>
+            <label htmlFor="login-email">Email</label>
             <input
+              id="login-email"
               type="email"
               placeholder="name@example.com"
               value={email}
@@ -389,8 +394,9 @@ export default function Login() {
               required
             />
 
-            <label>Mật khẩu</label>
+            <label htmlFor="login-password">Mật khẩu</label>
             <input
+              id="login-password"
               type="password"
               placeholder="••••••••"
               value={password}
@@ -398,25 +404,26 @@ export default function Login() {
               required
             />
 
-            <div className="forgot-password">
+            <div className="auth-forgot">
               <Link to="/forgot-password">Quên mật khẩu?</Link>
             </div>
 
             <button
               type="submit"
+              className="auth-submit"
               disabled={loadingEmail || loadingGoogle || loadingApple}
             >
               {loadingEmail ? "Đang đăng nhập..." : "ĐĂNG NHẬP"}
             </button>
 
-            <div className="divider">
+            <div className="auth-divider">
               <span>HOẶC</span>
             </div>
 
-            <div className="social-login">
+            <div className="auth-social">
               <button
                 type="button"
-                className="google-btn"
+                className="auth-social-button"
                 onClick={handleGoogleLogin}
                 disabled={
                   loadingGoogle ||
@@ -435,7 +442,7 @@ export default function Login() {
 
               <button
                 type="button"
-                className="apple-btn"
+                className="auth-social-button"
                 onClick={handleAppleLogin}
                 disabled={
                   loadingApple ||
@@ -471,16 +478,16 @@ export default function Login() {
             />
           </form>
 
-          <p className="register">
+          <p className="auth-switch">
             Chưa có tài khoản? <Link to="/register">Đăng ký ngay</Link>
           </p>
 
-          <p className="admin-link">
+          <p className="auth-admin-link">
             Bạn là quản trị viên?{" "}
             <Link to="/admin-login">Đăng nhập quản trị</Link>
           </p>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
